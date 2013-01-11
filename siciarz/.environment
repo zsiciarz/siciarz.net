@@ -1,0 +1,2 @@
+unset PYTHONPATH
+source $HOME/v/siciarz.net/bin/activate
