@@ -1,0 +1,9 @@
+*~
+*.swp
+*.py[co]
+*.db
+.settings
+.codeintel
+local_settings.py
+newrelic.ini
+site_media/
