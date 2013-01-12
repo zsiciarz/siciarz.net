@@ -7,8 +7,8 @@ from .models import Article
 
 
 class ArticleListView(ListView):
-    model = Article
+    queryset = Article.published.all()
 
 
 class ArticleDetailsView(DetailView):
-    model = Article
+    queryset = Article.published.all()
