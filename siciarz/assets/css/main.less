@@ -28,6 +28,10 @@ body > header {
         span {
             color: lighten(@baseGray, 30%);
         }
+        a, a:visited, a:hover, a:active {
+            color: @baseBlue;
+            text-decoration: none;
+        }
     }
 }
 .sidebar section {
@@ -73,6 +77,16 @@ body > header {
             font-family: 'diavlo_bookregular', sans-serif;
             font-size: 2 * @baseLineHeight;
             color: @baseGray;
+            a {
+                color: @baseGray;
+            }
+            a:visited {
+                color: darken(@baseGray, 10%);
+            }
+            a:hover {
+                color: lighten(@baseBlue, 30%);
+                text-decoration: none;
+            }
         }
         h2 {
             color: lighten(@baseGray, 10%);
