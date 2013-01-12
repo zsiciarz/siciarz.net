@@ -8,7 +8,6 @@ from .models import Article
 
 class ArticleListView(ListView):
     model = Article
-    template_name = 'index.html'
 
 
 class ArticleDetailsView(DetailView):

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block content %}
+    <article>
+        <h1>{{ article.title }}</h1>
+
+        {{ article.content }}
+
+        <footer>
+            {% trans 'Written on' %} {{ article.created|date:"DATE_FORMAT" }}
+            <div class="tags">
+                {% trans 'Tags' %}:
+                {% for tag in article.tags.all %}
+                    <a href="#">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
+        </footer>
+    </article>
+{% endblock %}
+
+{% block sidebar-articles %}
+    {% include "articles/related_articles.html" %}
+    {% include "articles/top_articles.html" %}
+    {% include "articles/most_commented_articles.html" %}
+{% endblock %}
+
