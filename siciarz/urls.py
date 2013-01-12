@@ -7,11 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(
-        regex=r'^$',
-        view='siciarz.views.main',
-        name='main'
-    ),
+    url(r'^', include('articles.urls', namespace='articles')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),

@@ -142,6 +142,8 @@ INSTALLED_APPS = (
     'rosetta',
     'taggit',
     'compressor',
+
+    'articles',
 )
 
 # A sample logging configuration. The only tangible logging
