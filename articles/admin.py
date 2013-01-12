@@ -17,6 +17,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
     list_display = ('author', 'title', 'status', 'created', 'modified')
     list_display_links = ('title',)
+    list_editable = ('status',)
     list_filter = ('status',)
     date_hierarchy = 'created'
     prepopulated_fields = {'slug': ('title',)}
