@@ -25,7 +25,55 @@
     <header>
         <h1>Zbigniew Siciarz<span>blog</span></h1>
     </header>
-    {% block content %}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="span6 main-content">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="span3 sidebar articles">
+                <section class="similar-articles">
+                    <h2>Related articles</h2>
+                    <ul>
+                        <li><a href="#">Title of some similar entry</a></li>
+                        <li><a href="#">Another very similar article</a></li>
+                        <li><a href="#">Somewhat less related musings, but with a longer title</a></li>
+                    </ul>
+                </section>
+                <section class="top-articles">
+                    <h2>Top articles</h2>
+                    <ul>
+                        <li><a href="#">The most popular of all time</a></li>
+                        <li><a href="#">Second in popularity, still nice</a></li>
+                        <li><a href="#">Last but not least</a></li>
+                    </ul>
+                </section>
+                <section class="most-commented-articles">
+                    <h2>Most commented</h2>
+                    <ul>
+                        <li><a href="#">This one raised quite a buzz</a></li>
+                        <li><a href="#">My operating system is better than yours</a></li>
+                        <li><a href="#">Reality sucks</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="span3 sidebar archive">
+                <section class="archive">
+                    <h2>Archive</h2>
+                    <ul>
+                        <li><a href="#">January 2013</a></li>
+                        <li><a href="#">September 2012</a></li>
+                        <li><a href="#">August 2012</a></li>
+                        <li><a href="#">July 2012</a></li>
+                        <li><a href="#">April 2012</a></li>
+                        <li><a href="#">December 2011</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="copyright">Copyright <strong>Zbigniew Siciarz</strong> 2009-2012.</p>
+    </footer>
 
     {% block extra-script %}{% endblock %}
     <!--[if lt IE 7 ]>

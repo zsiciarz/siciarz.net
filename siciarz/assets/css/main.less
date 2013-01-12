@@ -1,15 +1,19 @@
 @import "bootstrap";
+@import "responsive";
 @import "diavlo";
 
 @baseBlue: #17497d;
+@textGray: #444;
 @baseGray: #7f7f7f;
 
 html, body {
     margin: 0;
     padding: 0;
+    color: @textGray;
+    background: #fafafa;
 }
 
-header {
+body > header {
     h1 {
         margin: 2 * @baseLineHeight 0;
         padding: 2 * @baseLineHeight @baseLineHeight;
@@ -26,18 +30,117 @@ header {
         }
     }
 }
+.sidebar section {
+    margin-bottom: @baseLineHeight;
+    color: @baseGray;
+    h2 {
+        font: normal @baseLineHeight 'diavlo_bookregular', sans-serif;
+        font-variant: small-caps;
+        line-height: @baseLineHeight;
+        color: lighten(@baseGray, 20%);
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin-bottom: 0.5 * @baseLineHeight;
+        }
+    }
+    a {
+        color: @baseGray;
+    }
+    a:visited {
+        color: darken(@baseGray, 10%);
+    }
+    a:hover {
+        color: lighten(@baseBlue, 30%);
+        text-decoration: none;
+    }
+}
+.main-content {
+    a {
+        color: saturate(@baseBlue, 50%);
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: none;
+        color: lighten(@baseBlue, 30%);
+    }
+    article {
+        h1 {
+            font-weight: normal;
+            font-family: 'diavlo_bookregular', sans-serif;
+            font-size: 2 * @baseLineHeight;
+            color: @baseGray;
+        }
+        h2 {
+            color: lighten(@baseGray, 10%);
+            font-size: @baseLineHeight;
+            font-weight: bold;
+        }
+        p {
+        }
+        strong {
+            color: lighten(@textGray, 10%);
+        }
+        em {
+            color: darken(@textGray, 10%);
+        }
+        iframe {
+            display: block;
+            margin: @baseLineHeight auto;
+        }
+        footer {
+            margin-top: 2 * @baseLineHeight;
+            color: @baseGray;
+        }
+    }
+}
+
+body > footer {
+    margin: 2 * @baseLineHeight 0 0;
+    padding: 2 * @baseLineHeight @baseLineHeight;
+    border-top: 1px #ddd solid;
+    background: url(../images/gray_jean.png);
+    font-size: 1.25 * @baseFontSize;
+    font-family: 'diavlo_bookregular', sans-serif;
+    color: @baseGray;
+    text-shadow: 0px 1px 1px #fff;
+    text-align: center;
+    strong {
+        font-family: 'diavlo_blackregular', sans-serif;
+        font-weight: normal;
+        color: lighten(@baseGray, 10%);
+    }
+}
 
 @media (min-width: 480px) and (max-width: 979px) {
-    header {
+    body > header {
         h1 {
             font-size: 2 * @baseLineHeight;
             padding: @baseLineHeight;
         }
     }
+    body > footer {
+        margin: 1.5 * @baseLineHeight 0 0;
+        padding: 1.5 * @baseLineHeight;
+    }
 }
-
+@media (max-width: 767px) {
+    .sidebar section h2 {
+        margin: @baseLineHeight 0;
+        padding: 0.5 * @baseLineHeight;
+        text-align: center;
+        border-top: 1px #ddd solid;
+        border-bottom: 1px #ddd solid;
+        background: url(../images/gray_jean.png);
+        font-family: 'diavlo_blackregular', sans-serif;
+        text-shadow: 0px 1px 1px #fff;
+    }
+}
 @media (max-width: 479px) {
-    header {
+    body > header {
         h1 {
             font-size: @baseLineHeight;
             padding: 0.5 * @baseLineHeight 0;
@@ -47,5 +150,10 @@ header {
                 display: block;
             }
         }
+    }
+    body > footer {
+        margin: @baseLineHeight 0 0;
+        padding: @baseLineHeight;
+        font-size: @baseFontSize;
     }
 }
