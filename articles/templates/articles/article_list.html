@@ -8,8 +8,14 @@
             <h1>{{ article.title }}</h1>
             {{ article.summary }}
             <footer>
-                {% trans 'Written on' %} {{ article.created|date:"DATE_FORMAT" }}
+                {% trans "Written on" %} {{ article.created|date:"DATE_FORMAT" }}
             </footer>
+        </article>
+    {% empty %}
+        <article>
+            <h1>{% trans "There aren't any articles (yet)." %}</h1>
+            <p>{% trans "Meanwhile, enjoy this glorious sketch." %}</p>
+            <iframe width="420" height="315" src="http://www.youtube.com/embed/zekiZYSVdeQ" frameborder="0" allowfullscreen></iframe>
         </article>
     {% endfor %}
 {% endblock %}
