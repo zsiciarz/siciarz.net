@@ -78,6 +78,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -140,6 +141,7 @@ INSTALLED_APPS = (
     'rosetta-grappelli',
     'rosetta',
     'taggit',
+    'compressor',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -189,7 +191,13 @@ DEBUG_TOOLBAR_CONFIG = {
 
 GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 
+
 try:
     from local_settings import *
 except ImportError:
     pass
+
+if not DEBUG:
+    COMPRESS_PRECOMPILERS = (
+        ('text/less', 'lessc {infile} {outfile}'),
+    )
