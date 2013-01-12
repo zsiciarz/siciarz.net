@@ -4,7 +4,7 @@
 from django.conf.urls import patterns, url
 
 from .feeds import ArticleFeed
-from .views import ArticleListView, ArticleDetailsView
+from .views import ArticleListView, TaggedArticleListView, ArticleDetailsView
 
 
 urlpatterns = patterns('',
@@ -17,6 +17,11 @@ urlpatterns = patterns('',
         regex=r'^rss/$',
         view=ArticleFeed(),
         name='rss'
+    ),
+    url(
+        regex=r'^tag/(?P<tag>\w+)/$',
+        view=TaggedArticleListView.as_view(),
+        name='tagged_article_list'
     ),
     url(
         regex=r'^(?P<slug>[-\w]+)/$',

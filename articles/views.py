@@ -13,6 +13,12 @@ class ArticleListView(ListView):
         return Article.published.all()
 
 
+class TaggedArticleListView(ArticleListView):
+    def get_queryset(self):
+        queryset = super(TaggedArticleListView, self).get_queryset()
+        return queryset.filter(tags__name__in=[self.kwargs['tag']])
+
+
 class ArticleDetailsView(DetailView):
     def get_queryset(self):
         if self.request.user.is_superuser:
