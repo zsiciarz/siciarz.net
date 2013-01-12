@@ -7,8 +7,14 @@ from .models import Article
 
 
 class ArticleListView(ListView):
-    queryset = Article.published.all()
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Article.objects.all()
+        return Article.published.all()
 
 
 class ArticleDetailsView(DetailView):
-    queryset = Article.published.all()
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Article.objects.all()
+        return Article.published.all()
