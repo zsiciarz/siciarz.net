@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+
+{% block title %}{% trans "Error 404 - page not found" %} | {% endblock title %}
+
+{% block content %}
+    <h1>{% trans "Page not found" %}</h1>
+    <h2>{% trans "Error 404" %}</h2>
+    <p>{% trans "Oops, nothing here!" %}</p>
+{% endblock content %}
