@@ -5,7 +5,14 @@
 {% block title %}{% trans "Error 404 - page not found" %} | {% endblock title %}
 
 {% block content %}
-    <h1>{% trans "Page not found" %}</h1>
-    <h2>{% trans "Error 404" %}</h2>
-    <p>{% trans "Oops, nothing here!" %}</p>
+    <article>
+        <h1>{% trans "Page not found" %}</h1>
+        <figure>
+        <img src="{{ STATIC_URL }}images/tb_sign1.png" alt="Tumblebeast 404" />
+            <figcaption>
+                <strong>404 Tumblebeast</strong>
+                by <a href="http://theoatmeal.com">Matthew Inman</a>.
+            </figcaption>
+        </figure>
+    </article>
 {% endblock content %}
