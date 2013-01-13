@@ -196,6 +196,8 @@ GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
 
+SENTRY_DSN = ''
+
 try:
     from local_settings import *
 except ImportError:
