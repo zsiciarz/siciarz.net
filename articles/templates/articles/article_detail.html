@@ -2,6 +2,8 @@
 {% load url from future %}
 {% load i18n %}
 
+{% block title %}{{ article.title }} | {% endblock %}
+
 {% block content %}
     <article>
         <h1>{{ article.title }}</h1>
