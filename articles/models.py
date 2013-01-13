@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.db.models import F
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from markupfield.fields import MarkupField
@@ -14,6 +15,7 @@ from model_utils.models import StatusModel, TimeStampedModel
 from taggit.managers import TaggableManager
 
 
+@python_2_unicode_compatible
 class Article(StatusModel, TimeStampedModel):
     STATUS = Choices(
         ('draft', _("draft")),
@@ -33,7 +35,7 @@ class Article(StatusModel, TimeStampedModel):
         verbose_name_plural = _("Articles")
         ordering = ['-created']
 
-    def __unicode__(self):
+    def __str__(self):
         """
         The Unicode representation of an article is its title.
         """
