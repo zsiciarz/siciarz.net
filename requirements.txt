@@ -13,8 +13,8 @@ django-extensions==1.0.2
 django-grappelli==2.4.3
 django-markupfield==1.0.2
 django-model-utils==1.1.0
-django-rosetta==0.6.8
-django-rosetta-grappelli==1.0.1
+-e git+git://github.com/mbi/django-rosetta.git#egg=rosetta
+-e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
 # using a fork until a new PyPI release is made
 -e git+git://github.com/hcarvalhoalves/django-taggit.git#egg=taggit
 docutils==0.10
