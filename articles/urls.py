@@ -2,6 +2,7 @@
 # Copyright (c) Zbigniew Siciarz 2010-2012.
 
 from django.conf.urls import patterns, url
+from django.views.generic.base import RedirectView
 
 from .feeds import ArticleFeed
 from .views import ArticleListView, TaggedArticleListView, ArticleDetailsView
@@ -17,6 +18,10 @@ urlpatterns = patterns('',
         regex=r'^rss/$',
         view=ArticleFeed(),
         name='rss'
+    ),
+    url(
+        regex=r'^blog/(?P<slug>[-\w]+)/$',
+        view=RedirectView.as_view(url='/%(slug)s/', permanent=True),
     ),
     url(
         regex=r'^tag/(?P<tag>\w+)/$',
