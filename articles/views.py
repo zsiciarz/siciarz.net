@@ -24,3 +24,8 @@ class ArticleDetailsView(DetailView):
         if self.request.user.is_superuser:
             return Article.objects.all()
         return Article.published.all()
+
+    def get_object(self):
+        article = super(ArticleDetailsView, self).get_object()
+        article.update_pageviews()
+        return article

@@ -3,6 +3,7 @@
 
 from django.conf import settings
 from django.db import models
+from django.db.models import F
 from django.utils.translation import ugettext_lazy as _
 
 from markupfield.fields import MarkupField
@@ -39,4 +40,10 @@ class Article(StatusModel, TimeStampedModel):
     @models.permalink
     def get_absolute_url(self):
         return ('articles:article_details', [], {'slug': self.slug})
+
+    def update_pageviews(self):
+        u"""
+        Atomically updates pageview counter.
+        """
+        Article.objects.filter(pk=self.pk).update(pageviews=F('pageviews') + 1)
 
