@@ -3,4 +3,5 @@
 
     {% if user.is_staff %}
         <span class="label label-info">{{ article.get_status_display }}</span>
+        <a href="{% url 'admin:articles_article_change' article.id %}">{% trans "Edit" %}</a>
     {% endif %}
