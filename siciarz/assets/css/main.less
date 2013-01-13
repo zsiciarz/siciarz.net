@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import "responsive";
 @import "diavlo";
+@import "pygments";
 
 @baseBlue: #17497d;
 @textGray: #444;
@@ -107,6 +108,20 @@ body > header {
             margin-left: 0;
             padding-left: 0;
             list-style-position: outside;
+        }
+        code {
+            color: lighten(@baseBlue, 20%);
+        }
+        .highlight {
+            margin: 0.5 * @baseLineHeight 0;
+            padding: 0.5 * @baseLineHeight;
+            background: #272822 url(../images/skewed_print.png);
+            color: #f8f8f2;
+            pre {
+                font-size: @baseFontSize;
+                background: none;
+                border: none;
+            }
         }
         iframe {
             display: block;
