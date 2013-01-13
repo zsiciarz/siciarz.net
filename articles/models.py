@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) Zbigniew Siciarz 2010-2012.
+# Copyright (c) Zbigniew Siciarz 2009-2013.
 
 from django.conf import settings
 from django.db import models
