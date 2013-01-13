@@ -28,7 +28,6 @@
 
 {% block sidebar-articles %}
     {% include "articles/related_articles.html" %}
-    {% include "articles/top_articles.html" %}
-    {% include "articles/most_commented_articles.html" %}
+    {{ block.super }}
 {% endblock %}
 
