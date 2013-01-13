@@ -6,6 +6,8 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from articles.sitemaps import ArticleSitemap
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -14,5 +16,12 @@ urlpatterns = patterns('',
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^rosetta/', include('rosetta.urls')),
 
+    url(
+        r'^sitemap\.xml$',
+        'django.contrib.sitemaps.views.sitemap',
+        {'sitemaps': {
+            'articles': ArticleSitemap,
+        }}
+    ),
     url(r'^', include('articles.urls', namespace='articles')),
 )
