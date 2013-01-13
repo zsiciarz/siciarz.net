@@ -15,7 +15,7 @@ class ArticleAdmin(admin.ModelAdmin):
     Administration for articles.
     """
 
-    list_display = ('author', 'title', 'status', 'created', 'modified')
+    list_display = ('author', 'title', 'status', 'pageviews', 'created', 'modified')
     list_display_links = ('title',)
     list_editable = ('status',)
     list_filter = ('status',)

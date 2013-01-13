@@ -22,6 +22,7 @@ class Article(StatusModel, TimeStampedModel):
     slug = models.SlugField(_(u"slug"), max_length=255, unique=True)
     summary = MarkupField(_(u"summary"), default_markup_type='markdown')
     content = MarkupField(_(u"content"), default_markup_type='markdown')
+    pageviews = models.PositiveIntegerField(default=0, verbose_name=_(u"pageviews"))
 
     tags = TaggableManager()
 
