@@ -23,3 +23,11 @@ def get_related_articles(article, count=3):
     """
     return article.tags.similar_objects()[:count]
 
+
+@register.assignment_tag
+def get_archive_dates():
+    u"""
+    Returns datetime objects for all months in which articles were written.
+    """
+    return Article.published.dates('created', 'month', order='DESC')
+
