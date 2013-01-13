@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2013.
 
+from __future__ import unicode_literals
+
 import os
 
 def project_path(path):

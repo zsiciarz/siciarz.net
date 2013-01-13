@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2013.
 
+from __future__ import unicode_literals
+
 from django.conf.urls import patterns, url
 from django.views.generic.base import RedirectView
 

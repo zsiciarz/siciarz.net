@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
+
 from contextlib import nested
 
 from fabric.api import *
 
 
 def prepare_project():
-    u"""
+    """
     Enters the directory and sources environment configuration.
 
     I know ``nested`` is deprecated, but what a nice shortcut it is here ;)

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2013.
 
+from __future__ import unicode_literals
+
 from django.views.generic import ListView, DetailView, MonthArchiveView
 
 
@@ -8,7 +10,7 @@ from .models import Article
 
 
 class StaffAccessMixin(object):
-    u"""
+    """
     Allow staff members to see all articles, including drafts.
     """
     def get_queryset(self):

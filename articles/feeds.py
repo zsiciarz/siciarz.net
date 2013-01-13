@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2013.
 
-u"""
+from __future__ import unicode_literals
+
+"""
 Article syndication feeds.
 """
 
@@ -13,28 +15,28 @@ from .models import Article
 
 
 class ArticleFeed(Feed):
-    u"""
+    """
     RSS feed with latest articles.
     """
 
-    title = _(u"siciarz.net - articles")
+    title = _("siciarz.net - articles")
     link = reverse_lazy('articles:article_list')
-    description = _(u"Latest blog articles.")
+    description = _("Latest blog articles.")
 
     def items(self):
-        u"""
+        """
         Returns recent articles.
         """
         return Article.objects.all()[:5]
 
     def item_title(self, item):
-        u"""
+        """
         Returns the title of a given article.
         """
         return item.title
 
     def item_description(self, item):
-        u"""
+        """
         Returns the HTML content of a given article as the items description.
         """
         return item.content
