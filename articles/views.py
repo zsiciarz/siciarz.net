@@ -7,11 +7,18 @@ from django.views.generic import ListView, DetailView, MonthArchiveView
 from .models import Article
 
 
-class ArticleListView(ListView):
+class StaffAccessMixin(object):
+    u"""
+    Allow staff members to see all articles, including drafts.
+    """
     def get_queryset(self):
-        if self.request.user.is_superuser:
+        if self.request.user.is_staff:
             return Article.objects.all()
         return Article.published.all()
+
+
+class ArticleListView(StaffAccessMixin, ListView):
+    pass
 
 
 class TaggedArticleListView(ArticleListView):
@@ -20,22 +27,13 @@ class TaggedArticleListView(ArticleListView):
         return queryset.filter(tags__name__in=[self.kwargs['tag']])
 
 
-class ArticleMonthArchiveView(MonthArchiveView):
+class ArticleMonthArchiveView(StaffAccessMixin, MonthArchiveView):
     date_field = 'created'
     month_format = '%m'
     make_object_list = True
 
-    def get_queryset(self):
-        if self.request.user.is_superuser:
-            return Article.objects.all()
-        return Article.published.all()
 
-
-class ArticleDetailsView(DetailView):
-    def get_queryset(self):
-        if self.request.user.is_superuser:
-            return Article.objects.all()
-        return Article.published.all()
+class ArticleDetailsView(StaffAccessMixin, DetailView):
 
     def get_object(self):
         article = super(ArticleDetailsView, self).get_object()
