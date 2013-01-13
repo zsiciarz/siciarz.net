@@ -128,12 +128,15 @@ body > header {
             margin: @baseLineHeight auto;
         }
         footer {
-            margin-top: 2 * @baseLineHeight;
-            color: @baseGray;
+            margin-top: @baseLineHeight;
+            color: lighten(@baseGray, 10%);
             a {
                 font-weight: normal;
             }
         }
+    }
+    article + article {
+        margin-top: 2 * @baseLineHeight;
     }
 }
 
