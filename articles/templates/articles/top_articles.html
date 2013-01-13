@@ -1,11 +1,13 @@
 {% load url from future %}
 {% load i18n %}
+{% load article_tags %}
 
     <section class="top-articles">
         <h2>{% trans 'Top articles' %}</h2>
         <ul>
-            <li><a href="#">The most popular of all time</a></li>
-            <li><a href="#">Second in popularity, still nice</a></li>
-            <li><a href="#">Last but not least</a></li>
+            {% get_top_articles as top_articles %}
+            {% for article in top_articles %}
+                <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+            {% endfor %}
         </ul>
     </section>
