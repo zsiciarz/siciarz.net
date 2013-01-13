@@ -193,6 +193,8 @@ DEBUG_TOOLBAR_CONFIG = {
 
 GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 
+DISQUS_API_KEY = ''
+DISQUS_WEBSITE_SHORTNAME = ''
 
 try:
     from local_settings import *
