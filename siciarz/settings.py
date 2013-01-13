@@ -102,6 +102,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'siciarz.urls'
@@ -146,6 +147,7 @@ INSTALLED_APPS = (
     'rosetta',
     'taggit',
     'compressor',
+    'pagination',
 
     'articles',
 )

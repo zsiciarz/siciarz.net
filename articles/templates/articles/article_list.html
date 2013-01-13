@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load url from future %}
 {% load i18n %}
+{% load pagination_tags %}
 
 {% block content %}
+    {% autopaginate article_list 5 %}
     {% for article in article_list %}
         <article>
             <h1><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>
@@ -21,5 +23,6 @@
             <iframe width="420" height="315" src="http://www.youtube.com/embed/zekiZYSVdeQ" frameborder="0" allowfullscreen></iframe>
         </article>
     {% endfor %}
+    {% paginate %}
 {% endblock %}
 
