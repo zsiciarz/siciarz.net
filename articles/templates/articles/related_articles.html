@@ -1,11 +1,13 @@
 {% load url from future %}
 {% load i18n %}
+{% load article_tags %}
 
     <section class="related-articles">
         <h2>{% trans 'Related articles' %}</h2>
         <ul>
-            <li><a href="#">Title of some similar entry</a></li>
-            <li><a href="#">Another very similar article</a></li>
-            <li><a href="#">Somewhat less related musings, but with a longer title</a></li>
+            {% get_related_articles article as related_articles %}
+            {% for article in related_articles %}
+                <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+            {% endfor %}
         </ul>
     </section>
