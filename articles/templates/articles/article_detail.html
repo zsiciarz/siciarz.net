@@ -6,7 +6,7 @@
 {% block title %}{{ article.title }} | {% endblock %}
 
 {% block extra-head %}
-    <link rel="canonical" href="{{ article.get_absolute_url }}" />
+    <link rel="canonical" href="http://{{ current_site.domain }}{{ article.get_absolute_url }}" />
 {% endblock %}
 
 {% block content %}
