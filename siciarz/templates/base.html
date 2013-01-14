@@ -9,6 +9,10 @@
   <title>{% block title %}{% endblock %}siciarz.net</title>
   <meta name="description" content="{% block meta-description %}{% trans "Zbigniew Siciarz - Python and Django programmer, webdeveloper, open standards enthusiast. I make the internetz." %}{% endblock %}">
   <meta name="author" content="Zbigniew Siciarz">
+  <meta property="og:type" content="{% block og-type %}blog{% endblock %}" />
+  <meta property="og:title" content="{% block og-title %}siciarz.net{% endblock %}" />
+  <meta property="og:url" content="{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
+  <meta property="og:image" content="{% block og-image %}{{ STATIC_URL }}images/me.jpeg{% endblock %}" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% compress css %}
   <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}css/main.less">
