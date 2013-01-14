@@ -5,33 +5,28 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>{% block title %}{% endblock %}siciarz.net</title>
-  <meta name="description" content="">
-  <meta name="author" content="@zsiciarz">
+  <meta name="description" content="{% block meta-description %}{% trans "Zbigniew Siciarz - Python and Django programmer, webdeveloper, open standards enthusiast. I make the internetz." %}{% endblock %}">
+  <meta name="author" content="Zbigniew Siciarz">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% compress css %}
   <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}css/main.less">
   {% endcompress %}
   {% block extra-style %}{% endblock %}
-  {% if debug %}
-    <script src="{{ STATIC_URL }}js/less-1.3.3.min.js"></script>
-  {% endif %}
+  {% if debug %}<script src="{{ STATIC_URL }}js/less-1.3.3.min.js"></script>{% endif %}
   {% block extra-head %}{% endblock %}
     <script type="text/javascript">
-
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15911963-1']);
       _gaq.push(['_trackPageview']);
-
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
     </script>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url 'articles:rss' %}" />
     <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" />
 </head>
 
