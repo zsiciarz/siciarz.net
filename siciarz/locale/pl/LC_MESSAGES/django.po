@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-13 22:14+0100\n"
-"PO-Revision-Date: 2013-01-13 22:15\n"
+"POT-Creation-Date: 2013-01-14 23:35+0100\n"
+"PO-Revision-Date: 2013-01-14 23:35\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,14 @@ msgstr "Błąd 404 - nie znaleziono strony"
 msgid "Page not found"
 msgstr "Nie znaleziono strony"
 
-#: templates/base.html:54
+#: templates/base.html:10
+msgid ""
+"Zbigniew Siciarz - Python and Django programmer, webdeveloper, open "
+"standards enthusiast. I make the internetz."
+msgstr ""
+"Zbigniew Siciarz - programista Pythona i Django, webdeveloper, zwolennik "
+"otwartych standardów. Robię internety."
+
+#: templates/base.html:50
 msgid "Archive"
 msgstr "Archiwum"
