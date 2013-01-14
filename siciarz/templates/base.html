@@ -11,7 +11,7 @@
   <meta name="author" content="Zbigniew Siciarz">
   <meta property="og:type" content="{% block og-type %}blog{% endblock %}" />
   <meta property="og:title" content="{% block og-title %}siciarz.net{% endblock %}" />
-  <meta property="og:url" content="{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
+  <meta property="og:url" content="http://{{ current_site.domain }}{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
   <meta property="og:image" content="{% block og-image %}{{ STATIC_URL }}images/me.jpeg{% endblock %}" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% compress css %}
