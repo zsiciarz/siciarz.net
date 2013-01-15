@@ -15,6 +15,13 @@ html, body {
 }
 
 body > header {
+    position: relative;
+    #toggle-mobile-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: none;
+    }
     nav {
         margin: 0;
         padding: 0;
@@ -259,7 +266,44 @@ body > footer {
 }
 @media (max-width: 479px) {
     body > header {
+        .mobile-menu {
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 0.75 * @baseLineHeight;
+            margin-bottom: 0;
+            width: 1.5 * @baseLineHeight;
+            height: 1.5 * @baseLineHeight;
+            border: 1px #ddd solid;
+            color: @baseGray;
+            #gradient.vertical(#fff, #eee);
+            text-align: center;
+            line-height: 1.5 * @baseLineHeight;
+        }
+        nav {
+            position: absolute;
+            display: none;
+            top: 2.5 * @baseLineHeight - 3px;
+            left: 5px;
+            ul {
+                background: #fff;
+                border: 1px #ddd solid;
+                box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                z-index: 90;
+                li {
+                    float: none;
+                }
+                li.social {
+                    float: none;
+                    text-align: center;
+                }
+            }
+        }
+        #toggle-mobile-menu:checked ~ nav {
+            display: block;
+        }
         h1 {
+            margin-top: @baseLineHeight;
             font-size: @baseLineHeight;
             padding: 0.5 * @baseLineHeight 0;
             text-align: center;
