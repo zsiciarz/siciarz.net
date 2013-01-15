@@ -15,8 +15,44 @@ html, body {
 }
 
 body > header {
+    nav {
+        margin: 0;
+        padding: 0;
+        height: 2 * @baseLineHeight;
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: auto;
+        }
+        li {
+            float: left;
+            a, a:visited {
+                display: inline-block;
+                padding: 0.25 * @baseLineHeight;
+                margin-right: @baseLineHeight;
+                height: 1.5 * @baseLineHeight;
+                line-height: 1.5 * @baseLineHeight;
+                font-size: 1.5 * @baseFontSize;
+                font-family: 'diavlo_blackregular', sans-serif;
+                font-variant: small-caps;
+                color: lighten(@baseGray, 20%);
+            }
+            a:hover {
+                color: lighten(@baseBlue, 30%);
+                text-decoration: none;
+            }
+        }
+        li.social {
+            float: right;
+            a {
+                padding: 0.25 * @baseLineHeight 0;
+                margin-right: 3px;
+            }
+        }
+    }
     h1 {
-        margin: 2 * @baseLineHeight 0;
+        margin: 0 0 2 * @baseLineHeight 0;
         padding: 2 * @baseLineHeight @baseLineHeight;
         border-top: 1px #ddd solid;
         border-bottom: 1px #ddd solid;
