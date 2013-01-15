@@ -167,6 +167,15 @@ body > footer {
         font-weight: normal;
         color: lighten(@baseGray, 10%);
     }
+    .social a, .social a:visited {
+        display: inline-block;
+        margin: 0 3px;
+        color: @baseGray;
+    }
+    .social a:hover {
+        color: lighten(@baseBlue, 30%);
+        text-decoration: none;
+    }
 }
 
 @media (min-width: 1200px) {
