@@ -35,6 +35,7 @@ class Article(StatusModel, TimeStampedModel):
     summary = MarkupField(_("summary"), default_markup_type='markdown')
     content = MarkupField(_("content"), default_markup_type='markdown')
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
+    is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
 
     tags = TaggableManager()
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
