@@ -12,11 +12,13 @@ from .models import Article
 class StaffAccessMixin(object):
     """
     Allow staff members to see all articles, including drafts.
+
+    Note: 'static' pages are excluded.
     """
     def get_queryset(self):
         if self.request.user.is_staff:
-            return Article.objects.all()
-        return Article.objects.published()
+            return Article.objects.only_articles()
+        return Article.objects.only_articles().published()
 
 
 class ArticleListView(StaffAccessMixin, ListView):
@@ -35,7 +37,14 @@ class ArticleMonthArchiveView(StaffAccessMixin, MonthArchiveView):
     make_object_list = True
 
 
-class ArticleDetailsView(StaffAccessMixin, DetailView):
+class ArticleDetailsView(DetailView):
+    """
+    We need to access static pages here too, so no StaffAccessMixin.
+    """
+    def get_queryset(self):
+        if self.request.user.is_staff:
+            return Article.objects.all()
+        return Article.objects.published()
 
     def get_object(self):
         article = super(ArticleDetailsView, self).get_object()
