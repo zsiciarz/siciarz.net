@@ -17,10 +17,13 @@ class ArticleAdmin(admin.ModelAdmin):
     Administration for articles.
     """
 
-    list_display = ('author', 'title', 'status', 'pageviews', 'created', 'modified')
+    list_display = (
+        'author', 'title', 'status', 'pageviews', 'created', 'modified',
+        'is_static',
+    )
     list_display_links = ('title',)
     list_editable = ('status',)
-    list_filter = ('status',)
+    list_filter = ('status', 'is_static',)
     date_hierarchy = 'created'
     prepopulated_fields = {'slug': ('title',)}
 
