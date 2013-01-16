@@ -19,7 +19,7 @@ from taggit.managers import TaggableManager
 
 class ArticleQuerySet(QuerySet):
     def published(self):
-        return self.filter(status='published')
+        return self.filter(status='published', is_static=False)
 
 
 @python_2_unicode_compatible
