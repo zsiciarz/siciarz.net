@@ -20,21 +20,25 @@
 
         {{ article.content }}
 
-        <footer>
-            {% trans 'Written on' %} {{ article.created|date:"DATE_FORMAT" }}
-            <div class="tags">
-                {% trans 'Tags' %}:
-                {% for tag in article.tags.all %}
-                    <a href="{% url 'articles:tagged_article_list' tag=tag.name %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
-                {% endfor %}
-            </div>
-        </footer>
-        {% disqus_show_comments %}
+        {% if not article.is_static %}
+            <footer>
+                {% trans 'Written on' %} {{ article.created|date:"DATE_FORMAT" }}
+                <div class="tags">
+                    {% trans 'Tags' %}:
+                    {% for tag in article.tags.all %}
+                        <a href="{% url 'articles:tagged_article_list' tag=tag.name %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+            </footer>
+            {% disqus_show_comments %}
+        {% endif %}
     </article>
 {% endblock %}
 
 {% block sidebar-articles %}
-    {% include "articles/related_articles.html" %}
+    {% if not article.is_static %}
+        {% include "articles/related_articles.html" %}
+    {% endif %}
     {{ block.super }}
 {% endblock %}
 
