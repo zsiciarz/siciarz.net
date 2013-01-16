@@ -6,13 +6,20 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.db.models import F
+from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from markupfield.fields import MarkupField
 from model_utils import Choices
+from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
 from taggit.managers import TaggableManager
+
+
+class ArticleQuerySet(QuerySet):
+    def published(self):
+        return self.filter(status='published')
 
 
 @python_2_unicode_compatible
@@ -30,6 +37,7 @@ class Article(StatusModel, TimeStampedModel):
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
 
     tags = TaggableManager()
+    objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
 
     class Meta:
         verbose_name_plural = _("Articles")

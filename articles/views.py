@@ -16,7 +16,7 @@ class StaffAccessMixin(object):
     def get_queryset(self):
         if self.request.user.is_staff:
             return Article.objects.all()
-        return Article.published.all()
+        return Article.objects.published()
 
 
 class ArticleListView(StaffAccessMixin, ListView):

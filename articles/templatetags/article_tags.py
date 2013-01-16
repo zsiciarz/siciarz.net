@@ -15,7 +15,7 @@ def get_top_articles(count=3):
     """
     Returns top articles by pageview count.
     """
-    return Article.published.all().order_by('-pageviews')[:count]
+    return Article.objects.published().order_by('-pageviews')[:count]
 
 
 @register.assignment_tag
@@ -31,5 +31,5 @@ def get_archive_dates():
     """
     Returns datetime objects for all months in which articles were written.
     """
-    return Article.published.dates('created', 'month', order='DESC')
+    return Article.objects.published().dates('created', 'month', order='DESC')
 
