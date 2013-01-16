@@ -2,6 +2,9 @@
 {% load i18n %}
 
     {% if user.is_staff %}
+        {% if article.is_static %}
+            <span class="label label-info">{% trans "static page" %}</span>
+        {% endif %}
         <span class="label label-info">{{ article.get_status_display }}</span>
         <a href="{% url 'admin:articles_article_change' article.id %}">{% trans "Edit" %}</a>
     {% endif %}
