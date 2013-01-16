@@ -41,7 +41,7 @@
         <nav class="container">
             <ul>
                 <li><a href="{% url 'articles:article_list' %}">{% trans "Blog" %}</a></li>
-                <li><a href="#">{% trans "About me" %}</a></li>
+                <li><a href="{% url 'articles:article_details' slug='about-me' %}">{% trans "About me" %}</a></li>
                 <li class="social">
                     <a href="https://www.facebook.com/zbigniew.siciarz"><i class="icon-facebook"></i></a>
                     <a href="https://twitter.com/zsiciarz"><i class="icon-twitter"></i></a>
