@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-13 21:37+0100\n"
-"PO-Revision-Date: 2013-01-13 22:12\n"
+"POT-Creation-Date: 2013-01-17 21:30+0100\n"
+"PO-Revision-Date: 2013-01-17 21:34+0100\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,52 +27,56 @@ msgstr "siciarz.net - artykuły"
 msgid "Latest blog articles."
 msgstr "Ostatnie artykuły na blogu."
 
-#: models.py:21
+#: models.py:34
 msgid "draft"
 msgstr "szkic"
 
-#: models.py:22
+#: models.py:35
 msgid "published"
 msgstr "opublikowany"
 
-#: models.py:24
+#: models.py:37
 msgid "author"
 msgstr "autor"
 
-#: models.py:25
+#: models.py:38
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:26
+#: models.py:39
 msgid "subtitle"
 msgstr "podtytuł"
 
-#: models.py:27
+#: models.py:40
 msgid "slug"
 msgstr "slug"
 
-#: models.py:28
+#: models.py:41
 msgid "summary"
 msgstr "streszczenie"
 
-#: models.py:29
+#: models.py:42
 msgid "content"
 msgstr "treść"
 
-#: models.py:30
+#: models.py:43
 msgid "pageviews"
 msgstr "liczba odsłon"
 
-#: models.py:35
+#: models.py:44
+msgid "static page?"
+msgstr "strona statyczna?"
+
+#: models.py:50
 msgid "Articles"
 msgstr "Artykuły"
 
-#: templates/articles/article_detail.html:17
+#: templates/articles/article_detail.html:25
 #: templates/articles/article_list.html:14
 msgid "Written on"
 msgstr "Napisane"
 
-#: templates/articles/article_detail.html:19
+#: templates/articles/article_detail.html:27
 msgid "Tags"
 msgstr "Tagi"
 
@@ -83,6 +87,14 @@ msgstr "Nie ma (jeszcze) żadnych artykułów."
 #: templates/articles/article_list.html:20
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
+
+#: templates/articles/article_menu.html:6
+msgid "static page"
+msgstr "strona statyczna"
+
+#: templates/articles/article_menu.html:9
+msgid "Edit"
+msgstr "Edytuj"
 
 #: templates/articles/most_commented_articles.html:5
 msgid "Most commented"
