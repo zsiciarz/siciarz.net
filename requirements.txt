@@ -11,7 +11,7 @@ django-debug-toolbar==0.9.4
 django-disqus==0.4.1
 django-extensions==1.0.2
 django-grappelli==2.4.3
-django-markupfield==1.0.2
+-e git+git://github.com/carljm/django-markitup.git#egg=markitup
 django-model-utils==1.1.0
 django-pagination==1.0.7
 -e git+git://github.com/mbi/django-rosetta.git#egg=rosetta

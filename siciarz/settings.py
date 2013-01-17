@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     'taggit',
     'compressor',
     'pagination',
+    'markitup',
 
     'articles',
 )
@@ -203,6 +204,9 @@ GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
+
+MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
+MARKITUP_SET = 'markitup/sets/markdown'
 
 SENTRY_DSN = ''
 

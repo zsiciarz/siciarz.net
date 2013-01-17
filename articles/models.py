@@ -10,7 +10,7 @@ from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
-from markupfield.fields import MarkupField
+from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
@@ -38,8 +38,8 @@ class Article(StatusModel, TimeStampedModel):
     title = models.CharField(_("title"), max_length=255)
     subtitle = models.CharField(_("subtitle"), blank=True, default="", max_length=255)
     slug = models.SlugField(_("slug"), max_length=255, unique=True)
-    summary = MarkupField(_("summary"), default_markup_type='markdown')
-    content = MarkupField(_("content"), default_markup_type='markdown')
+    summary = MarkupField(_("summary"))
+    content = MarkupField(_("content"))
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
 
