@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
 
 from articles.sitemaps import ArticleSitemap
 
@@ -16,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^rosetta/', include('rosetta.urls')),
     url(r'^markitup/', include('markitup.urls')),
+    url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt')),
 
     url(
         r'^sitemap\.xml$',
