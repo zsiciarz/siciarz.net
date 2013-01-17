@@ -35,46 +35,49 @@
 </head>
 
 <body class="nojs">
-    <header>
-        <input type="checkbox" id="toggle-mobile-menu" />
-        <label for="toggle-mobile-menu" class="mobile-menu"><i class="icon-reorder icon-large"></i></label>
-        <nav class="container">
-            <ul>
-                <li><a href="{% url 'articles:article_list' %}">{% trans "Blog" %}</a></li>
-                <li><a href="{% url 'articles:article_details' slug='about-me' %}">{% trans "About me" %}</a></li>
-                <li class="social">
-                    <a href="https://www.facebook.com/zbigniew.siciarz"><i class="icon-facebook"></i></a>
-                    <a href="https://twitter.com/zsiciarz"><i class="icon-twitter"></i></a>
-                    <a href="https://github.com/zsiciarz"><i class="icon-github"></i></a>
-                </li>
-            </ul>
-        </nav>
-        <h1><a href="{% url 'articles:article_list' %}">Zbigniew Siciarz<span>blog</span></a></h1>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="span6 main-content">
-                {% block content %}{% endblock %}
-            </div>
-            <div class="span3 sidebar articles">
-                {% block sidebar-articles %}
-                    {% include "articles/top_articles.html" %}
-                {% endblock %}
-            </div>
-            <div class="span3 sidebar archive">
-                {% block sidebar-archive %}
-                    <section class="archive">
-                        <h2>{% trans "Archive" %}</h2>
-                        <ul>
-                            {% get_archive_dates as dates %}
-                            {% for date in dates %}
-                                <li><a href="{% url 'articles:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </section>
-                {% endblock %}
+    <div id="wrap">
+        <header>
+            <input type="checkbox" id="toggle-mobile-menu" />
+            <label for="toggle-mobile-menu" class="mobile-menu"><i class="icon-reorder icon-large"></i></label>
+            <nav class="container">
+                <ul>
+                    <li><a href="{% url 'articles:article_list' %}">{% trans "Blog" %}</a></li>
+                    <li><a href="{% url 'articles:article_details' slug='about-me' %}">{% trans "About me" %}</a></li>
+                    <li class="social">
+                        <a href="https://www.facebook.com/zbigniew.siciarz"><i class="icon-facebook"></i></a>
+                        <a href="https://twitter.com/zsiciarz"><i class="icon-twitter"></i></a>
+                        <a href="https://github.com/zsiciarz"><i class="icon-github"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <h1><a href="{% url 'articles:article_list' %}">Zbigniew Siciarz<span>blog</span></a></h1>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="span6 main-content">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="span3 sidebar articles">
+                    {% block sidebar-articles %}
+                        {% include "articles/top_articles.html" %}
+                    {% endblock %}
+                </div>
+                <div class="span3 sidebar archive">
+                    {% block sidebar-archive %}
+                        <section class="archive">
+                            <h2>{% trans "Archive" %}</h2>
+                            <ul>
+                                {% get_archive_dates as dates %}
+                                {% for date in dates %}
+                                    <li><a href="{% url 'articles:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </section>
+                    {% endblock %}
+                </div>
             </div>
         </div>
+        <div id="push"></div>
     </div>
     <footer>
         <p class="copyright">Copyright <strong>Zbigniew Siciarz</strong> 2009-2013.</p>
