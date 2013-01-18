@@ -27,7 +27,7 @@ class ArticleFeed(Feed):
         """
         Returns recent articles.
         """
-        return Article.objects.all()[:5]
+        return Article.objects.published().only_articles()[:5]
 
     def item_title(self, item):
         """
