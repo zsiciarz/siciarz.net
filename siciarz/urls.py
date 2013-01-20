@@ -18,6 +18,8 @@ urlpatterns = patterns('',
     url(r'^rosetta/', include('rosetta.urls')),
     url(r'^markitup/', include('markitup.urls')),
     url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt')),
+    url(r'^404/$', TemplateView.as_view(template_name='404.html')),
+    url(r'^500/$', TemplateView.as_view(template_name='500.html')),
 
     url(
         r'^sitemap\.xml$',
