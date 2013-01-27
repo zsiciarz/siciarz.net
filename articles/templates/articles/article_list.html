@@ -10,6 +10,7 @@
             <h1><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>
             {% include "articles/article_menu.html" %}
             {{ article.summary }}
+            <a class="continue-reading" href="{{ article.get_absolute_url }}">{% trans "Continue reading" %} &raquo;</a>
             <footer>
                 {% trans "Written on" %} {{ article.created|date:"DATE_FORMAT" }}
             </footer>
