@@ -151,6 +151,7 @@ INSTALLED_APPS = (
     'compressor',
     'pagination',
     'markitup',
+    'reversion',
 
     'articles',
 )

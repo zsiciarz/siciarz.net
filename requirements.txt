@@ -14,6 +14,7 @@ django-grappelli==2.4.3
 -e git+git://github.com/carljm/django-markitup.git#egg=markitup
 django-model-utils==1.1.0
 django-pagination==1.0.7
+django-reversion==1.6.5
 -e git+git://github.com/mbi/django-rosetta.git#egg=rosetta
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
 # using a fork until a new PyPI release is made

@@ -9,10 +9,12 @@ Administration for articles.
 
 from django.contrib import admin
 
+import reversion
+
 from .models import Article
 
 
-class ArticleAdmin(admin.ModelAdmin):
+class ArticleAdmin(reversion.VersionAdmin):
     """
     Administration for articles.
     """
