@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-17 21:30+0100\n"
-"PO-Revision-Date: 2013-01-17 21:33+0100\n"
+"POT-Creation-Date: 2013-01-27 17:38+0100\n"
+"PO-Revision-Date: 2013-01-27 17:39+0100\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -58,6 +58,14 @@ msgstr "Grappelli na Google Code"
 #: dashboard.py:74
 msgid "Recent Actions"
 msgstr "Ostatnie akcje"
+
+#: settings.py:38
+msgid "Polish"
+msgstr "Polski"
+
+#: settings.py:39
+msgid "English"
+msgstr "Angielski"
 
 #: templates/404.html:5
 msgid "Error 404 - page not found"
