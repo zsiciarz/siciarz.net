@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-17 21:30+0100\n"
-"PO-Revision-Date: 2013-01-17 21:34+0100\n"
+"POT-Creation-Date: 2013-01-27 17:19+0100\n"
+"PO-Revision-Date: 2013-01-27 17:20+0100\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -71,20 +71,24 @@ msgstr "strona statyczna?"
 msgid "Articles"
 msgstr "Artykuły"
 
-#: templates/articles/article_detail.html:25
-#: templates/articles/article_list.html:14
+#: templates/articles/article_detail.html:26
+#: templates/articles/article_list.html:15
 msgid "Written on"
 msgstr "Napisane"
 
-#: templates/articles/article_detail.html:27
+#: templates/articles/article_detail.html:28
 msgid "Tags"
 msgstr "Tagi"
 
-#: templates/articles/article_list.html:19
+#: templates/articles/article_list.html:13
+msgid "Continue reading"
+msgstr "Czytaj dalej"
+
+#: templates/articles/article_list.html:20
 msgid "There aren't any articles (yet)."
 msgstr "Nie ma (jeszcze) żadnych artykułów."
 
-#: templates/articles/article_list.html:20
+#: templates/articles/article_list.html:21
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 
