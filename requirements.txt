@@ -5,12 +5,12 @@ PyGithub==1.13.1
 Pygments==1.6
 South==0.7.6
 Werkzeug==0.8.3
-django-appconf==0.5
+django-appconf==0.6
 django-compressor==1.2
 django-debug-toolbar==0.9.4
 django-disqus==0.4.1
-django-extensions==1.0.2
-django-grappelli==2.4.3
+django-extensions==1.1.1
+django-grappelli==2.4.4
 -e git+git://github.com/carljm/django-markitup.git#egg=markitup
 django-model-utils==1.1.0
 django-pagination==1.0.7
@@ -24,7 +24,7 @@ flake8==1.7.0
 gunicorn==0.17.2
 ipython==0.13.1
 newrelic==1.6.0.13
-paramiko==1.10.0
+paramiko==1.10.1
 psycopg2==2.4.6
 pycrypto==2.6
 raven==3.1.0
