@@ -21,7 +21,7 @@ django-reversion==1.7
 -e git+git://github.com/hcarvalhoalves/django-taggit.git#egg=taggit
 docutils==0.10
 flake8==2.0
-gunicorn==0.17.2
+gunicorn==0.17.4
 ipython==0.13.2
 newrelic==1.6.0.13
 paramiko==1.10.1
