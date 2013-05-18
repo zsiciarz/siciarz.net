@@ -24,7 +24,7 @@ docutils==0.10
 flake8==2.0
 gunicorn==0.17.4
 ipython==0.13.2
-newrelic==1.6.0.13
+newrelic==1.11.0.55
 paramiko==1.10.1
 psycopg2==2.5
 pycrypto==2.6
