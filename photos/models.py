@@ -49,6 +49,7 @@ class Photo(TimeStampedModel):
     gallery = models.ForeignKey(Gallery, null=True, related_name='photos', verbose_name=_("gallery"))
     author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("author"))
     title = models.CharField(_("title"), max_length=255)
+    image = models.ImageField(_("image"), upload_to='photos/%Y/%m/%d')
 
     class Meta:
         verbose_name_plural = _("Photos")
