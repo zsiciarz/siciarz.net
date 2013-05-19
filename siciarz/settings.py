@@ -161,6 +161,7 @@ INSTALLED_APPS = (
     'pagination',
     'markitup',
     'reversion',
+    'sorl.thumbnail',
 
     'articles',
     'photos',
