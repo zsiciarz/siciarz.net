@@ -187,6 +187,12 @@ html, body {
             display: block;
             margin: @baseLineHeight auto;
         }
+        .thumbnails li {
+            margin-left: @baseLineHeight / 2;
+        }
+        .thumbnails img {
+            margin: auto;
+        }
         footer {
             margin-top: @baseLineHeight;
             color: lighten(@baseGray, 10%);
@@ -276,6 +282,10 @@ body > footer {
     }
     .main-content, .sidebar section ul {
         padding: 0 @baseLineHeight;
+    }
+    .thumbnails > li {
+        float: left;
+        width: 2 * @gridColumnWidth;
     }
 }
 @media (max-width: 479px) {
