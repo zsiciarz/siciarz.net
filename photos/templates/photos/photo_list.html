@@ -3,9 +3,9 @@
 {% load i18n %}
 {% load thumbnail %}
 
-{% block title %}{{ tag }} | {{ block.super }}{% endblock %}
+{% block title %}{% trans "Tag" %}: {{ tag }} | {{ block.super }}{% endblock %}
 {% block og-type %}article{% endblock %}
-{% block og-title %}{{ tag }} | {{ block.super }}{% endblock %}
+{% block og-title %}{% trans "Tag" %}: {{ tag }} | {{ block.super }}{% endblock %}
 {% block og-url %}{% url 'photos:tagged_photo_list' tag=tag %}{% endblock %}
 
 {% block extra-head %}
@@ -14,7 +14,7 @@
 
 {% block content %}
     <article>
-        <h1>{{ tag }}</h1>
+        <h1>{% trans "Tag" %}: {{ tag }}</h1>
 
         <ul class="thumbnails">
             {% for photo in photo_list %}
