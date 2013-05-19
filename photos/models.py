@@ -10,6 +10,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from djorm_pgarray.fields import ArrayField
+from djorm_expressions.base import SqlExpression
+from djorm_expressions.models import ExpressionManager
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
@@ -53,6 +55,13 @@ class Gallery(StatusModel, TimeStampedModel):
         return self.photos.all()[:4]
 
 
+class PhotoManager(ExpressionManager):
+    def tagged(self, tag):
+        return self.where(
+            SqlExpression("tags", "@>", [tag])
+        )
+
+
 @python_2_unicode_compatible
 class Photo(TimeStampedModel):
     gallery = models.ForeignKey(Gallery, null=True, related_name='photos', verbose_name=_("gallery"))
@@ -60,6 +69,8 @@ class Photo(TimeStampedModel):
     title = models.CharField(_("title"), max_length=255)
     image = ImageField(_("image"), upload_to='photos/%Y/%m/%d')
     tags = ArrayField(dbtype="text")
+
+    objects = PhotoManager()
 
     class Meta:
         verbose_name_plural = _("Photos")
