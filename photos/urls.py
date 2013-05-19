@@ -5,7 +5,8 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
-from .views import GalleryListView, GalleryDetailsView, PhotoDetailsView
+from .views import GalleryListView, GalleryMonthArchiveView, \
+    GalleryDetailsView, PhotoDetailsView
 
 urlpatterns = patterns('',
     url(
@@ -17,5 +18,10 @@ urlpatterns = patterns('',
         regex=r'^(?P<slug>[-\w]+)/$',
         view=GalleryDetailsView.as_view(),
         name='gallery_details'
+    ),
+    url(
+        regex=r'^(?P<year>\d{4})/(?P<month>\d+)/$',
+        view=GalleryMonthArchiveView.as_view(),
+        name='month_archive'
     ),
 )

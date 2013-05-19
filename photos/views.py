@@ -3,7 +3,7 @@
 
 from __future__ import unicode_literals
 
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, MonthArchiveView
 
 from .models import Gallery, Photo
 
@@ -20,6 +20,12 @@ class StaffAccessMixin(object):
 
 class GalleryListView(StaffAccessMixin, ListView):
     pass
+
+
+class GalleryMonthArchiveView(StaffAccessMixin, MonthArchiveView):
+    date_field = 'created'
+    month_format = '%m'
+    make_object_list = True
 
 
 class GalleryDetailsView(StaffAccessMixin, DetailView):
