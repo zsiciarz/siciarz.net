@@ -11,7 +11,7 @@ from .models import Photo
 
 
 class PhotoForm(forms.ModelForm):
-    tags = ArrayFormField(required=False)
+    tags = ArrayFormField(label=_("tags"), required=False)
 
     class Meta:
         model = Photo
