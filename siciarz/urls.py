@@ -29,6 +29,7 @@ urlpatterns = patterns('',
             'articles': ArticleSitemap,
         }}
     ),
+    url(r'^photos/', include('photos.urls', namespace='photos')),
     url(r'^', include('articles.urls', namespace='articles')),
 )
 
