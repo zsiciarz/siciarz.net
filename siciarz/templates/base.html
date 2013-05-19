@@ -55,6 +55,7 @@
         </header>
         <div class="container">
             <div class="row">
+            {% block base-content %}
                 <div class="span6 main-content">
                     {% block content %}{% endblock %}
                 </div>
@@ -76,6 +77,7 @@
                         </section>
                     {% endblock %}
                 </div>
+            {% endblock %}
             </div>
         </div>
         <div id="push"></div>
