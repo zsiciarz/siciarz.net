@@ -43,6 +43,10 @@ class Gallery(StatusModel, TimeStampedModel):
         """
         return self.title
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('photos:gallery_details', [], {'slug': self.slug})
+
 
 @python_2_unicode_compatible
 class Photo(TimeStampedModel):
