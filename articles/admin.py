@@ -43,5 +43,12 @@ class ArticleAdmin(reversion.VersionAdmin):
     date_hierarchy = 'created'
     prepopulated_fields = {'slug': ('title',)}
 
+    def save_model(self, request, obj, form, change):
+        """
+        Set currently authenticated user as the author of the article.
+        """
+        obj.author = request.user
+        obj.save()
+
 
 admin.site.register(Article, ArticleAdmin)

@@ -34,7 +34,7 @@ class Article(StatusModel, TimeStampedModel):
         ('draft', _("draft")),
         ('published', _("published")),
     )
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("author"))
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False, verbose_name=_("author"))
     title = models.CharField(_("title"), max_length=255)
     subtitle = models.CharField(_("subtitle"), blank=True, default="", max_length=255)
     slug = models.SlugField(_("slug"), max_length=255, unique=True)
