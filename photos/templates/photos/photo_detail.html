@@ -29,6 +29,12 @@
             {% disqus_dev %}
             <h2>{{ photo.gallery.title }}</h2>
             {{ photo.title }}
+            <div class="tags">
+                {% trans "Tags" %}:
+                {% for tag in photo.tags %}
+                    <a href="#" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </div>
             {% disqus_show_comments %}
         </section>
     </div>
