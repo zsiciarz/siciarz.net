@@ -32,5 +32,15 @@ class GalleryDetailsView(StaffAccessMixin, DetailView):
     pass
 
 
+class TaggedPhotoListView(ListView):
+    def get_queryset(self):
+        return Photo.objects.tagged(self.kwargs['tag'])
+
+    def get_context_data(self, **kwargs):
+        data = super(TaggedPhotoListView, self).get_context_data(**kwargs)
+        data['tag'] = self.kwargs['tag']
+        return data
+
+
 class PhotoDetailsView(DetailView):
     model = Photo
