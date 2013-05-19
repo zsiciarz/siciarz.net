@@ -8,6 +8,7 @@
     {% for gallery in gallery_list %}
         <article>
             <h1><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h1>
+            {% include "photos/gallery_menu.html" %}
             {{ gallery.description }}
             <a class="continue-reading" href="{{ gallery.get_absolute_url }}">{% trans "See gallery" %} &raquo;</a>
             <footer>
