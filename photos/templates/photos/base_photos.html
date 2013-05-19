@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load photo_tags %}
 
 {% block header-addon %}{% trans "photography" %}{% endblock %}
 
 {% block sidebar-articles %}
     {% include "photos/recent_galleries.html" %}
+{% endblock %}
+
+{% block sidebar-archive %}
+    <section class="archive">
+        <h2>{% trans "Archive" %}</h2>
+        <ul>
+            {% get_gallery_archive_dates as dates %}
+            {% for date in dates %}
+                <li><a href="{% url 'photos:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
