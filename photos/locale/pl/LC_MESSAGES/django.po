@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-19 10:02+0200\n"
-"PO-Revision-Date: 2013-05-19 10:04+0200\n"
+"POT-Creation-Date: 2013-05-19 16:18+0200\n"
+"PO-Revision-Date: 2013-05-19 16:19+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,70 +19,78 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.2\n"
 
-#: models.py:26
+#: forms.py:15
+msgid "tags"
+msgstr "tagi"
+
+#: models.py:28
 msgid "draft"
 msgstr "szkic"
 
-#: models.py:27
+#: models.py:29
 msgid "published"
 msgstr "opublikowana"
 
-#: models.py:29 models.py:54
+#: models.py:31 models.py:59
 msgid "author"
 msgstr "autor"
 
-#: models.py:30 models.py:55
+#: models.py:32 models.py:60
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:31
+#: models.py:33
 msgid "slug"
 msgstr "slug"
 
-#: models.py:32
+#: models.py:34
 msgid "description"
 msgstr "opis"
 
-#: models.py:37
+#: models.py:39
 msgid "Galleries"
 msgstr "Galerie"
 
-#: models.py:53
+#: models.py:58
 msgid "gallery"
 msgstr "galeria"
 
-#: models.py:56
+#: models.py:61
 msgid "image"
 msgstr "obraz"
 
-#: models.py:59
+#: models.py:65
 msgid "Photos"
 msgstr "Zdjęcia"
 
-#: templates/photos/base_photos.html:4
+#: templates/photos/base_photos.html:5 templates/photos/photo_detail.html:17
 msgid "photography"
 msgstr "fotografia"
 
-#: templates/photos/gallery_detail.html:25
+#: templates/photos/base_photos.html:13
+msgid "Archive"
+msgstr "Archiwum"
+
+#: templates/photos/gallery_detail.html:38
 msgid "Added on"
 msgstr "Dodane"
 
-#: templates/photos/gallery_list.html:13
-msgid "See gallery"
-msgstr "Zobacz galerię"
-
-#: templates/photos/gallery_list.html:15
+#: templates/photos/gallery_list.html:31
 msgid "added on"
 msgstr "dodane"
 
-#: templates/photos/gallery_list.html:20
+#: templates/photos/gallery_list.html:36
 msgid "There aren't any galleries (yet)."
 msgstr "Nie ma (jeszcze) żadnych galerii."
 
-#: templates/photos/gallery_list.html:21
+#: templates/photos/gallery_list.html:37
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 
 #: templates/photos/gallery_menu.html:6
 msgid "Edit"
 msgstr "Edytuj"
+
+#: templates/photos/recent_galleries.html:6
+msgid "Recent galleries"
+msgstr "Ostatnie galerie"
