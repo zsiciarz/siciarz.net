@@ -15,6 +15,11 @@ urlpatterns = patterns('',
         name='gallery_list'
     ),
     url(
+        regex=r'^photo/(?P<pk>\d+)/$',
+        view=PhotoDetailsView.as_view(),
+        name='photo_details'
+    ),
+    url(
         regex=r'^(?P<slug>[-\w]+)/$',
         view=GalleryDetailsView.as_view(),
         name='gallery_details'
