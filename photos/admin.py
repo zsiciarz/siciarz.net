@@ -10,8 +10,17 @@ Administration for photos and galleries.
 from django.contrib import admin
 
 import reversion
+from sorl.thumbnail.admin import AdminImageMixin
 
 from .models import Gallery, Photo
+
+
+class PhotoInline(AdminImageMixin, admin.TabularInline):
+    """
+    Administration for photos.
+    """
+    model = Photo
+    ordering = ['created']
 
 
 class GalleryAdmin(reversion.VersionAdmin):
@@ -26,18 +35,7 @@ class GalleryAdmin(reversion.VersionAdmin):
     list_filter = ('status',)
     date_hierarchy = 'created'
     prepopulated_fields = {'slug': ('title',)}
-
-
-class PhotoAdmin(reversion.VersionAdmin):
-    """
-    Administration for photos.
-    """
-    list_display = (
-        'title', 'gallery', 'author',
-    )
-    list_display_links = ('title',)
-    date_hierarchy = 'created'
+    inlines = [PhotoInline]
 
 
 admin.site.register(Gallery, GalleryAdmin)
-admin.site.register(Photo, PhotoAdmin)
