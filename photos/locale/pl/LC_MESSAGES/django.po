@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-19 16:18+0200\n"
-"PO-Revision-Date: 2013-05-19 16:19+0200\n"
+"POT-Creation-Date: 2013-05-19 19:49+0200\n"
+"PO-Revision-Date: 2013-05-19 19:50+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,51 +23,56 @@ msgstr ""
 msgid "tags"
 msgstr "tagi"
 
-#: models.py:28
+#: models.py:30
 msgid "draft"
 msgstr "szkic"
 
-#: models.py:29
+#: models.py:31
 msgid "published"
 msgstr "opublikowana"
 
-#: models.py:31 models.py:59
+#: models.py:33 models.py:68
 msgid "author"
 msgstr "autor"
 
-#: models.py:32 models.py:60
+#: models.py:34 models.py:69
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:33
+#: models.py:35
 msgid "slug"
 msgstr "slug"
 
-#: models.py:34
+#: models.py:36
 msgid "description"
 msgstr "opis"
 
-#: models.py:39
+#: models.py:41
 msgid "Galleries"
 msgstr "Galerie"
 
-#: models.py:58
+#: models.py:67
 msgid "gallery"
 msgstr "galeria"
 
-#: models.py:61
+#: models.py:70
 msgid "image"
 msgstr "obraz"
 
-#: models.py:65
+#: models.py:76
 msgid "Photos"
 msgstr "Zdjęcia"
 
-#: templates/photos/base_photos.html:5 templates/photos/photo_detail.html:17
+#: templates/photos/base_photos.html:5 templates/photos/base_photos.html:6
+#: templates/photos/photo_detail.html:7 templates/photos/photo_detail.html:9
+msgid "Photography"
+msgstr "Fotografia"
+
+#: templates/photos/base_photos.html:8 templates/photos/photo_detail.html:17
 msgid "photography"
 msgstr "fotografia"
 
-#: templates/photos/base_photos.html:13
+#: templates/photos/base_photos.html:16
 msgid "Archive"
 msgstr "Archiwum"
 
@@ -90,6 +95,15 @@ msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 #: templates/photos/gallery_menu.html:6
 msgid "Edit"
 msgstr "Edytuj"
+
+#: templates/photos/photo_detail.html:33
+msgid "Tags"
+msgstr "Tagi"
+
+#: templates/photos/photo_list.html:6 templates/photos/photo_list.html.py:8
+#: templates/photos/photo_list.html:17
+msgid "Tag"
+msgstr "Tag"
 
 #: templates/photos/recent_galleries.html:6
 msgid "Recent galleries"
