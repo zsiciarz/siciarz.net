@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load thumbnail %}
 
-{% block title %}{{ tag }} | {% endblock %}
+{% block title %}{{ tag }} | {{ block.super }}{% endblock %}
 {% block og-type %}article{% endblock %}
 {% block og-title %}{{ tag }} | {{ block.super }}{% endblock %}
 {% block og-url %}{% url 'photos:tagged_photo_list' tag=tag %}{% endblock %}

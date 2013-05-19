@@ -4,9 +4,9 @@
 {% load disqus_tags %}
 {% load thumbnail %}
 
-{% block title %}{{ photo.title }} | {% endblock %}
+{% block title %}{{ photo.title }} | {% trans "Photography" %} | {{ block.super }}{% endblock %}
 {% block og-type %}article{% endblock %}
-{% block og-title %}{{ photo.title }} | {{ block.super }}{% endblock %}
+{% block og-title %}{{ photo.title }} | {% trans "Photography" %} | {{ block.super }}{% endblock %}
 {% block og-url %}{{ photo.get_absolute_url }}{% endblock %}
 
 {% block extra-head %}

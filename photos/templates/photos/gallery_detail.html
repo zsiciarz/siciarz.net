@@ -4,7 +4,7 @@
 {% load disqus_tags %}
 {% load thumbnail %}
 
-{% block title %}{{ gallery.title }} | {% endblock %}
+{% block title %}{{ gallery.title }} | {{ block.super }}{% endblock %}
 {% block og-type %}article{% endblock %}
 {% block og-title %}{{ gallery.title }} | {{ block.super }}{% endblock %}
 {% block og-url %}{{ gallery.get_absolute_url }}{% endblock %}
