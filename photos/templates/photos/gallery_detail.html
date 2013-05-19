@@ -21,6 +21,12 @@
 
         {{ gallery.description }}
 
+        <ul>
+            {% for photo in gallery.photos.all reversed %}
+                <li><a title="{{ photo.title }}" href="{{ photo.image.url }}">{{ photo.image.url }}</a></li>
+            {% endfor %}
+        </ul>
+
         <footer>
             {% trans 'Added on' %} {{ gallery.created|date:"DATE_FORMAT" }}
         </footer>
