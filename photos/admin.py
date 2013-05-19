@@ -12,6 +12,7 @@ from django.contrib import admin
 import reversion
 from sorl.thumbnail.admin import AdminImageMixin
 
+from .forms import PhotoForm
 from .models import Gallery, Photo
 
 
@@ -20,6 +21,7 @@ class PhotoInline(AdminImageMixin, admin.TabularInline):
     Administration for photos.
     """
     model = Photo
+    form = PhotoForm
     ordering = ['created']
 
 
