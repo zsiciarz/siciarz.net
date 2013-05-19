@@ -65,3 +65,7 @@ class Photo(TimeStampedModel):
         The string representation of a photo is its title.
         """
         return self.title
+
+    @models.permalink
+    def get_absolute_url(self):
+        return ('photos:photo_details', [], {'pk': self.pk})
