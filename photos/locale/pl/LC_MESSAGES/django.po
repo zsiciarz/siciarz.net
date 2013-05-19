@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-19 10:02+0200\n"
+"PO-Revision-Date: 2013-05-19 10:04+0200\n"
+"Last-Translator:   <antyqjon@interia.pl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.2\n"
+
+#: models.py:26
+msgid "draft"
+msgstr "szkic"
+
+#: models.py:27
+msgid "published"
+msgstr "opublikowana"
+
+#: models.py:29 models.py:54
+msgid "author"
+msgstr "autor"
+
+#: models.py:30 models.py:55
+msgid "title"
+msgstr "tytuł"
+
+#: models.py:31
+msgid "slug"
+msgstr "slug"
+
+#: models.py:32
+msgid "description"
+msgstr "opis"
+
+#: models.py:37
+msgid "Galleries"
+msgstr "Galerie"
+
+#: models.py:53
+msgid "gallery"
+msgstr "galeria"
+
+#: models.py:56
+msgid "image"
+msgstr "obraz"
+
+#: models.py:59
+msgid "Photos"
+msgstr "Zdjęcia"
+
+#: templates/photos/base_photos.html:4
+msgid "photography"
+msgstr "fotografia"
+
+#: templates/photos/gallery_detail.html:25
+msgid "Added on"
+msgstr "Dodane"
+
+#: templates/photos/gallery_list.html:13
+msgid "See gallery"
+msgstr "Zobacz galerię"
+
+#: templates/photos/gallery_list.html:15
+msgid "added on"
+msgstr "dodane"
+
+#: templates/photos/gallery_list.html:20
+msgid "There aren't any galleries (yet)."
+msgstr "Nie ma (jeszcze) żadnych galerii."
+
+#: templates/photos/gallery_list.html:21
+msgid "Meanwhile, enjoy this glorious sketch."
+msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
+
+#: templates/photos/gallery_menu.html:6
+msgid "Edit"
+msgstr "Edytuj"
