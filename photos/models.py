@@ -9,6 +9,7 @@ from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from djorm_pgarray.fields import ArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
@@ -58,6 +59,7 @@ class Photo(TimeStampedModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False, verbose_name=_("author"))
     title = models.CharField(_("title"), max_length=255)
     image = ImageField(_("image"), upload_to='photos/%Y/%m/%d')
+    tags = ArrayField(dbtype="varchar(127)")
 
     class Meta:
         verbose_name_plural = _("Photos")
