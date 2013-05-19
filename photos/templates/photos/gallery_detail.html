@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% load i18n %}
+{% load disqus_tags %}
+
+{% block title %}{{ gallery.title }} | {% endblock %}
+{% block og-type %}article{% endblock %}
+{% block og-title %}{{ gallery.title }} | {{ block.super }}{% endblock %}
+{% block og-url %}{{ gallery.get_absolute_url }}{% endblock %}
+
+{% block extra-head %}
+    <meta property="og:description" content="{{ gallery.description|striptags }}" />
+    <link rel="canonical" href="http://{{ current_site.domain }}{{ gallery.get_absolute_url }}" />
+{% endblock %}
+
+{% block content %}
+    {% disqus_dev %}
+    <article>
+        <h1>{{ gallery.title }}</h1>
+
+        {{ gallery.description }}
+
+        <footer>
+            {% trans 'Added on' %} {{ gallery.created|date:"DATE_FORMAT" }}
+        </footer>
+        {% disqus_show_comments %}
+    </article>
+{% endblock %}
+
