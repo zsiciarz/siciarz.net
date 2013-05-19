@@ -2,6 +2,7 @@
 {% load url from future %}
 {% load i18n %}
 {% load disqus_tags %}
+{% load thumbnail %}
 
 {% block title %}{{ gallery.title }} | {% endblock %}
 {% block og-type %}article{% endblock %}
@@ -21,9 +22,15 @@
 
         {{ gallery.description }}
 
-        <ul>
+        <ul class="thumbnails">
             {% for photo in gallery.photos.all reversed %}
-                <li><a title="{{ photo.title }}" href="{{ photo.image.url }}">{{ photo.image.url }}</a></li>
+            <li class="span2">
+                <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.image.url }}">
+                    {% thumbnail photo.image "160x160" crop="center" as im %}
+                        <img src="{{ im.url }}" alt="{{ photo.title }}" />
+                    {% endthumbnail %}
+                </a>
+            </li>
             {% endfor %}
         </ul>
 
