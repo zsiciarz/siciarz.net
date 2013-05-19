@@ -1,0 +1,33 @@
+{% extends "photos/base_photos.html" %}
+{% load url from future %}
+{% load i18n %}
+{% load disqus_tags %}
+{% load thumbnail %}
+
+{% block title %}{{ photo.title }} | {% endblock %}
+{% block og-type %}article{% endblock %}
+{% block og-title %}{{ photo.title }} | {{ block.super }}{% endblock %}
+{% block og-url %}{{ photo.get_absolute_url }}{% endblock %}
+
+{% block extra-head %}
+    <meta property="og:description" content="{{ photo.title|striptags }}" />
+    <link rel="canonical" href="http://{{ current_site.domain }}{{ photo.get_absolute_url }}" />
+{% endblock %}
+
+{% block content %}
+    {% disqus_dev %}
+    <article>
+        <h1>{{ photo.gallery.title }}</h1>
+
+        {{ photo.title }}
+
+        <a title="{{ photo.title }}" href="{{ photo.image.url }}">
+            {% thumbnail photo.image "750x525" crop="center" as im %}
+                <img src="{{ im.url }}" alt="{{ photo.title }}" />
+            {% endthumbnail %}
+        </a>
+
+        {% disqus_show_comments %}
+    </article>
+{% endblock %}
+
