@@ -48,6 +48,9 @@ class Gallery(StatusModel, TimeStampedModel):
     def get_absolute_url(self):
         return ('photos:gallery_details', [], {'slug': self.slug})
 
+    def get_teaser_photos(self):
+        return self.photos.all().order_by('created')[:4]
+
 
 @python_2_unicode_compatible
 class Photo(TimeStampedModel):

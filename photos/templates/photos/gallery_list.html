@@ -2,6 +2,7 @@
 {% load url from future %}
 {% load i18n %}
 {% load pagination_tags %}
+{% load thumbnail %}
 
 {% block content %}
     {% autopaginate gallery_list 5 %}
@@ -10,7 +11,22 @@
             <h1><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h1>
             {% include "photos/gallery_menu.html" %}
             {{ gallery.description }}
-            <a class="continue-reading" href="{{ gallery.get_absolute_url }}">{% trans "See gallery" %} &raquo;</a>
+
+            <ul class="thumbnails">
+                {% for photo in gallery.get_teaser_photos %}
+                <li class="span">
+                    <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
+                        {% thumbnail photo.image "48x48" crop="center" as im %}
+                            <img src="{{ im.url }}" alt="{{ photo.title }}" />
+                        {% endthumbnail %}
+                    </a>
+                </li>
+                {% endfor %}
+                <li class="span">
+                    <a class="thumbnail continue-reading" href="{{ gallery.get_absolute_url }}">&raquo;</a>
+                </li>
+            </ul>
+
             <footer>
                 {% trans "added on" %} {{ gallery.created|date:"DATE_FORMAT" }}
             </footer>

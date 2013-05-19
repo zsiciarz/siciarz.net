@@ -196,6 +196,17 @@ html, body {
         .thumbnails img {
             margin: auto;
         }
+        .thumbnails li.span a {
+            width: 48px;
+            height: 48px;
+        }
+        .thumbnails .continue-reading {
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 44px;
+            text-align: center;
+        }
         footer {
             margin-top: @baseLineHeight;
             color: lighten(@baseGray, 10%);
@@ -292,6 +303,11 @@ body > footer {
     .thumbnails > li {
         float: left;
         width: 2 * @gridColumnWidth;
+    }
+    .thumbnails > li.span {
+        width: 48px + @baseLineHeight / 2;
+        margin-left: @baseLineHeight / 2;
+        margin-bottom: @baseLineHeight / 2;
     }
 }
 @media (max-width: 479px) {
