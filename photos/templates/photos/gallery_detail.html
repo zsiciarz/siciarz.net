@@ -25,7 +25,7 @@
         <ul class="thumbnails">
             {% for photo in gallery.photos.all reversed %}
             <li class="span2">
-                <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.image.url }}">
+                <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
                     {% thumbnail photo.image "160x160" crop="center" as im %}
                         <img src="{{ im.url }}" alt="{{ photo.title }}" />
                     {% endthumbnail %}
