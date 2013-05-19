@@ -23,7 +23,7 @@
         {{ gallery.description }}
 
         <ul class="thumbnails">
-            {% for photo in gallery.photos.all reversed %}
+            {% for photo in gallery.photos.all %}
             <li class="span2">
                 <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
                     {% thumbnail photo.image "160x160" crop="center" as im %}
