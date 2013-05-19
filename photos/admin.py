@@ -37,5 +37,22 @@ class GalleryAdmin(reversion.VersionAdmin):
     prepopulated_fields = {'slug': ('title',)}
     inlines = [PhotoInline]
 
+    def save_model(self, request, obj, form, change):
+        """
+        Set currently authenticated user as the author of the gallery.
+        """
+        obj.author = request.user
+        obj.save()
+
+    def save_formset(self, request, form, formset, change):
+        """
+        For each photo set it's author to currently authenticated user.
+        """
+        instances = formset.save(commit=False)
+        for instance in instances:
+            if isinstance(instance, Photo):
+                instance.author = request.user
+            instance.save()
+
 
 admin.site.register(Gallery, GalleryAdmin)
