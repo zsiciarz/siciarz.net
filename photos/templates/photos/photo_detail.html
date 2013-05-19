@@ -17,7 +17,7 @@
 {% block base-content %}
     <div class="span9 main-content big-photo">
         <article>
-            <a title="{{ photo.title }}" href="#">
+            <a title="{{ photo.title }}" href="{{ photo.get_next_photo.get_absolute_url }}">
                 <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
             </a>
         </article>

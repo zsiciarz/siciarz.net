@@ -49,7 +49,7 @@ class Gallery(StatusModel, TimeStampedModel):
         return ('photos:gallery_details', [], {'slug': self.slug})
 
     def get_teaser_photos(self):
-        return self.photos.all().order_by('created')[:4]
+        return self.photos.all()[:4]
 
 
 @python_2_unicode_compatible
@@ -61,7 +61,7 @@ class Photo(TimeStampedModel):
 
     class Meta:
         verbose_name_plural = _("Photos")
-        ordering = ['-created']
+        ordering = ['created']
 
     def __str__(self):
         """
@@ -72,3 +72,18 @@ class Photo(TimeStampedModel):
     @models.permalink
     def get_absolute_url(self):
         return ('photos:photo_details', [], {'pk': self.pk})
+
+    def get_next_photo(self):
+        """
+        Returns next photo from the same gallery (in chronological order).
+
+        Wraps around from last photo in the gallery to the first one.
+        """
+        try:
+            next_photo = Photo.objects.filter(
+                gallery=self.gallery,
+                created__gt=self.created,
+            )[0]
+        except IndexError:
+            next_photo = Photo.objects.filter(gallery=self.gallery)[0]
+        return next_photo
