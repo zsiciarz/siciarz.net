@@ -59,7 +59,7 @@ class Photo(TimeStampedModel):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, editable=False, verbose_name=_("author"))
     title = models.CharField(_("title"), max_length=255)
     image = ImageField(_("image"), upload_to='photos/%Y/%m/%d')
-    tags = ArrayField(dbtype="varchar(127)")
+    tags = ArrayField(dbtype="text")
 
     class Meta:
         verbose_name_plural = _("Photos")
