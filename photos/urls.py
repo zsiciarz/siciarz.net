@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 
+from .feeds import GalleryFeed
 from .views import GalleryListView, GalleryMonthArchiveView, \
     GalleryDetailsView, TaggedPhotoListView, PhotoDetailsView
 
@@ -13,6 +14,11 @@ urlpatterns = patterns('',
         regex=r'^$',
         view=GalleryListView.as_view(),
         name='gallery_list'
+    ),
+    url(
+        regex=r'^rss/$',
+        view=GalleryFeed(),
+        name='gallery_rss'
     ),
     url(
         regex=r'^photo/(?P<pk>\d+)/$',
