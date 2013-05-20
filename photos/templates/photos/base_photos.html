@@ -4,6 +4,7 @@
 
 {% block title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
 {% block og-title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
+{% block rss-url %}{% url 'photos:gallery_rss' %}{% endblock %}
 
 {% block header-addon %}{% trans "photography" %}{% endblock %}
 
