@@ -4,7 +4,8 @@
 from __future__ import unicode_literals
 
 from django.contrib.sitemaps import Sitemap
-from .models import Gallery
+
+from .models import Gallery, Photo
 
 
 class GallerySitemap(Sitemap):
@@ -13,6 +14,17 @@ class GallerySitemap(Sitemap):
 
     def items(self):
         return Gallery.published.all()
+
+    def lastmod(self, obj):
+        return obj.modified
+
+
+class PhotoSitemap(Sitemap):
+    changefreq = 'weekly'
+    priority = 0.5
+
+    def items(self):
+        return Photo.objects.all()
 
     def lastmod(self, obj):
         return obj.modified
