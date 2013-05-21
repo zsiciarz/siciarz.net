@@ -9,6 +9,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 from articles.sitemaps import ArticleSitemap
+from photos.sitemaps import GallerySitemap
 
 admin.autodiscover()
 
@@ -27,6 +28,7 @@ urlpatterns = patterns('',
         'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {
             'articles': ArticleSitemap,
+            'galleries': GallerySitemap,
         }}
     ),
     url(r'^photos/', include('photos.urls', namespace='photos')),
