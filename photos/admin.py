@@ -30,12 +30,12 @@ class GalleryAdmin(reversion.VersionAdmin):
     Administration for galleries.
     """
     list_display = (
-        'author', 'title', 'status', 'description', 'created', 'modified',
+        'author', 'title', 'status', 'description', 'shot_date', 'modified',
     )
     list_display_links = ('title',)
     list_editable = ('status',)
     list_filter = ('status',)
-    date_hierarchy = 'created'
+    date_hierarchy = 'shot_date'
     prepopulated_fields = {'slug': ('title',)}
     inlines = [PhotoInline]
 
