@@ -34,6 +34,7 @@ class Gallery(StatusModel, TimeStampedModel):
     title = models.CharField(_("title"), max_length=255)
     slug = models.SlugField(_("slug"), max_length=255, unique=True)
     description = MarkupField(_("description"))
+    shot_date = models.DateField(_("shot date"), null=True, blank=True)
 
     objects = PassThroughManager.for_queryset_class(GalleryQuerySet)()
 
