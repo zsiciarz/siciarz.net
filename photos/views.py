@@ -23,7 +23,7 @@ class GalleryListView(StaffAccessMixin, ListView):
 
 
 class GalleryMonthArchiveView(StaffAccessMixin, MonthArchiveView):
-    date_field = 'created'
+    date_field = 'shot_date'
     month_format = '%m'
     make_object_list = True
 
