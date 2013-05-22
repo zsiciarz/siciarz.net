@@ -40,7 +40,7 @@ class Gallery(StatusModel, TimeStampedModel):
 
     class Meta:
         verbose_name_plural = _("Galleries")
-        ordering = ['-created']
+        ordering = ['-shot_date']
 
     def __str__(self):
         """
