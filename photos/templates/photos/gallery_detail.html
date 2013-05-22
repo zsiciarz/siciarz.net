@@ -35,7 +35,7 @@
         </ul>
 
         <footer>
-            {% trans 'Added on' %} {{ gallery.created|date:"DATE_FORMAT" }}
+            {% trans 'Added on' %} {{ gallery.shot_date|date:"DATE_FORMAT" }}
         </footer>
         {% disqus_show_comments %}
     </article>

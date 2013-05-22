@@ -28,7 +28,7 @@
             </ul>
 
             <footer>
-                {% trans "added on" %} {{ gallery.created|date:"DATE_FORMAT" }}
+                {% trans "added on" %} {{ gallery.shot_date|date:"DATE_FORMAT" }}
             </footer>
         </article>
     {% empty %}
