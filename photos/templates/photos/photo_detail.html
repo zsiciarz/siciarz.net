@@ -44,7 +44,15 @@
 <script src="{{ STATIC_URL }}js/pjax-standalone.js"></script>
 <script>
     pjax.connect({
-        'container': 'base-content'
+        'container': 'base-content',
+        'success': function () {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.url = window.location.href;
+                }
+            });
+        }
     });
 </script>
 {{ block.super }}
