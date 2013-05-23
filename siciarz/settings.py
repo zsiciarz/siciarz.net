@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'markitup',
     'reversion',
     'sorl.thumbnail',
+    'easy_pjax',
 
     'articles',
     'photos',
