@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html"|pjax:request %}
 {% load url from future %}
 {% load i18n %}
 {% load disqus_tags %}
@@ -19,7 +19,7 @@
 {% block base-content %}
     <div class="span9 main-content big-photo">
         <article>
-            <a title="{{ photo.title }}" href="{{ photo.get_next_photo.get_absolute_url }}">
+            <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }}" href="{{ photo.get_next_photo.get_absolute_url }}">
                 <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
             </a>
         </article>
@@ -40,3 +40,12 @@
     </div>
 {% endblock %}
 
+{% block extra-script %}
+<script src="{{ STATIC_URL }}js/pjax-standalone.js"></script>
+<script>
+    pjax.connect({
+        'container': 'base-content'
+    });
+</script>
+{{ block.super }}
+{% endblock %}

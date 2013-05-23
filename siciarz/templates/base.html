@@ -54,7 +54,7 @@
             <h1><a href="{% url 'articles:article_list' %}">Zbigniew Siciarz<span>{% block header-addon %}{% trans "blog" %}{% endblock %}</span></a></h1>
         </header>
         <div class="container">
-            <div class="row">
+            <div class="row" id="base-content">
             {% block base-content %}
                 <div class="span6 main-content">
                     {% block content %}{% endblock %}
