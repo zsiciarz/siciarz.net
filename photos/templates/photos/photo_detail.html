@@ -19,7 +19,7 @@
 {% block base-content %}
     <div class="span9 main-content big-photo">
         <article>
-            <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }}" href="{{ photo.get_next_photo.get_absolute_url }}">
+            <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }}" href="{{ photo.get_next_photo.get_absolute_url }}" class="pjaxer">
                 <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
             </a>
         </article>
@@ -45,6 +45,7 @@
 <script>
     pjax.connect({
         'container': 'base-content',
+        'useClass': 'pjaxer',
         'success': function () {
             DISQUS.reset({
                 reload: true,
