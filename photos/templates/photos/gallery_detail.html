@@ -26,7 +26,7 @@
             {% for photo in gallery.photos.all %}
             <li class="span2">
                 <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
-                    {% thumbnail photo.image "160x160" crop="center" as im %}
+                    {% thumbnail photo.image "200x200" crop="center" as im %}
                         <img src="{{ im.url }}" alt="{{ photo.title }}" />
                     {% endthumbnail %}
                 </a>
