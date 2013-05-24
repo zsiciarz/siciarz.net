@@ -1,4 +1,4 @@
-{% load url from future %}{% load i18n %}{% load compress %}{% load article_tags %}<!doctype html>
+{% load url from future %}{% load i18n %}{% load compress %}<!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -56,27 +56,6 @@
         <div class="container">
             <div class="row" id="base-content">
             {% block base-content %}
-                <div class="span6 main-content">
-                    {% block content %}{% endblock %}
-                </div>
-                <div class="span3 sidebar articles">
-                    {% block sidebar-articles %}
-                        {% include "articles/top_articles.html" %}
-                    {% endblock %}
-                </div>
-                <div class="span3 sidebar archive">
-                    {% block sidebar-archive %}
-                        <section class="archive">
-                            <h2>{% trans "Archive" %}</h2>
-                            <ul>
-                                {% get_archive_dates as dates %}
-                                {% for date in dates %}
-                                    <li><a href="{% url 'articles:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </section>
-                    {% endblock %}
-                </div>
             {% endblock %}
             </div>
         </div>

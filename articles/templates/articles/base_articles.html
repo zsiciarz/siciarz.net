@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load photo_tags %}
+{% load article_tags %}
 
-{% block title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
-{% block og-title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
+{% block title %}{% trans "Blog" %} | {{ block.super }}{% endblock %}
+{% block og-title %}{% trans "Blog" %} | {{ block.super }}{% endblock %}
 {% block rss-url %}{% url 'photos:gallery_rss' %}{% endblock %}
 
-{% block header-addon %}{% trans "photography" %}{% endblock %}
+{% block header-addon %}{% trans "blog" %}{% endblock %}
 
 {% block base-content %}
     <div class="span6 main-content">
@@ -14,7 +14,7 @@
     </div>
     <div class="span3 sidebar articles">
         {% block sidebar-articles %}
-            {% include "photos/recent_galleries.html" %}
+            {% include "articles/top_articles.html" %}
         {% endblock %}
     </div>
     <div class="span3 sidebar archive">
@@ -22,13 +22,12 @@
             <section class="archive">
                 <h2>{% trans "Archive" %}</h2>
                 <ul>
-                    {% get_gallery_archive_dates as dates %}
+                    {% get_archive_dates as dates %}
                     {% for date in dates %}
-                        <li><a href="{% url 'photos:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
+                        <li><a href="{% url 'articles:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
                     {% endfor %}
                 </ul>
             </section>
         {% endblock %}
     </div>
 {% endblock %}
-
