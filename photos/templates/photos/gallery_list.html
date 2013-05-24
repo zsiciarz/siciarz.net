@@ -9,22 +9,17 @@
     {% for gallery in gallery_list %}
         <article>
             <h1><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h1>
-            {% include "photos/gallery_menu.html" %}
-            {{ gallery.description }}
 
             <ul class="thumbnails">
                 {% for photo in gallery.get_teaser_photos %}
-                <li class="span">
-                    <a class="thumbnail" title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
-                        {% thumbnail photo.image "48x48" crop="center" as im %}
+                <li class="span2">
+                    <a class="thumbnail" title="{{ photo.title }}" href="{{ gallery.get_absolute_url }}">
+                        {% thumbnail photo.image "200x200" crop="center" as im %}
                             <img src="{{ im.url }}" alt="{{ photo.title }}" />
                         {% endthumbnail %}
                     </a>
                 </li>
                 {% endfor %}
-                <li class="span">
-                    <a class="thumbnail continue-reading" href="{{ gallery.get_absolute_url }}">&raquo;</a>
-                </li>
             </ul>
 
             <footer>
