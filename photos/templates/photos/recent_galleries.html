@@ -5,7 +5,7 @@
     <section class="recent-galleries">
         <h2>{% trans 'Recent galleries' %}</h2>
         <ul>
-            {% get_recent_galleries 5 as recent_galleries %}
+            {% get_recent_galleries 10 as recent_galleries %}
             {% for gallery in recent_galleries %}
                 <li><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></li>
             {% endfor %}
