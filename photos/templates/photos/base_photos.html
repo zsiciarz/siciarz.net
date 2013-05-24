@@ -9,26 +9,20 @@
 {% block header-addon %}{% trans "photography" %}{% endblock %}
 
 {% block base-content %}
-    <div class="span6 main-content">
+    <div class="span9 main-content">
         {% block content %}{% endblock %}
     </div>
-    <div class="span3 sidebar articles">
-        {% block sidebar-articles %}
-            {% include "photos/recent_galleries.html" %}
-        {% endblock %}
-    </div>
     <div class="span3 sidebar archive">
-        {% block sidebar-archive %}
-            <section class="archive">
-                <h2>{% trans "Archive" %}</h2>
-                <ul>
-                    {% get_gallery_archive_dates as dates %}
-                    {% for date in dates %}
-                        <li><a href="{% url 'photos:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
-                    {% endfor %}
-                </ul>
-            </section>
-        {% endblock %}
+        {% include "photos/recent_galleries.html" %}
+        <section class="archive">
+            <h2>{% trans "Archive" %}</h2>
+            <ul>
+                {% get_gallery_archive_dates as dates %}
+                {% for date in dates %}
+                    <li><a href="{% url 'photos:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
     </div>
 {% endblock %}
 
