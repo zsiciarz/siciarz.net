@@ -27,7 +27,7 @@
     <div class="span3 sidebar photo">
         <section class="photo-information">
             {% disqus_dev %}
-            <h2>{{ photo.gallery.title }}</h2>
+            <h2><a href="{{ photo.gallery.get_absolute_url }}">{{ photo.gallery.title }}</a></h2>
             {{ photo.title }}
             <div class="tags">
                 {% trans "Tags" %}:
