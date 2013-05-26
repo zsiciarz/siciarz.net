@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-20 22:33+0200\n"
-"PO-Revision-Date: 2013-05-20 22:34+0200\n"
+"POT-Creation-Date: 2013-05-26 18:31+0200\n"
+"PO-Revision-Date: 2013-05-26 18:32+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,11 +39,11 @@ msgstr "szkic"
 msgid "published"
 msgstr "opublikowana"
 
-#: models.py:33 models.py:68
+#: models.py:33 models.py:69
 msgid "author"
 msgstr "autor"
 
-#: models.py:34 models.py:69
+#: models.py:34 models.py:70
 msgid "title"
 msgstr "tytuł"
 
@@ -55,24 +55,29 @@ msgstr "slug"
 msgid "description"
 msgstr "opis"
 
-#: models.py:41
+#: models.py:37
+msgid "shot date"
+msgstr "data wykonania zdjęcia"
+
+#: models.py:42
 msgid "Galleries"
 msgstr "Galerie"
 
-#: models.py:67
+#: models.py:68
 msgid "gallery"
 msgstr "galeria"
 
-#: models.py:70
+#: models.py:71
 msgid "image"
 msgstr "obraz"
 
-#: models.py:76
+#: models.py:77
 msgid "Photos"
 msgstr "Zdjęcia"
 
 #: templates/photos/base_photos.html:5 templates/photos/base_photos.html:6
 #: templates/photos/photo_detail.html:7 templates/photos/photo_detail.html:9
+#: templates/photos/photo_detail.html:22
 msgid "Photography"
 msgstr "Fotografia"
 
@@ -80,7 +85,7 @@ msgstr "Fotografia"
 msgid "photography"
 msgstr "fotografia"
 
-#: templates/photos/base_photos.html:17
+#: templates/photos/base_photos.html:18
 msgid "Archive"
 msgstr "Archiwum"
 
@@ -88,15 +93,15 @@ msgstr "Archiwum"
 msgid "Added on"
 msgstr "Dodane"
 
-#: templates/photos/gallery_list.html:31
+#: templates/photos/gallery_list.html:26
 msgid "added on"
 msgstr "dodane"
 
-#: templates/photos/gallery_list.html:36
+#: templates/photos/gallery_list.html:31
 msgid "There aren't any galleries (yet)."
 msgstr "Nie ma (jeszcze) żadnych galerii."
 
-#: templates/photos/gallery_list.html:37
+#: templates/photos/gallery_list.html:32
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 
