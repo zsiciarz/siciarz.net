@@ -9,6 +9,7 @@ Administration for photos and galleries.
 
 from django.contrib import admin
 from django.db.models import Count
+from django.utils.translation import ugettext_lazy as _
 
 import reversion
 from sorl.thumbnail.admin import AdminImageMixin
@@ -43,6 +44,7 @@ class GalleryAdmin(reversion.VersionAdmin):
 
     def photo_count(self, obj):
         return obj.photo_count
+    photo_count.short_description = _("Photo count")
 
     def queryset(self, request):
         """
