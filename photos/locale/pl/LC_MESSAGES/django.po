@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-26 18:31+0200\n"
-"PO-Revision-Date: 2013-05-26 18:32+0200\n"
+"POT-Creation-Date: 2013-05-27 21:14+0200\n"
+"PO-Revision-Date: 2013-05-27 21:14+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Translated-Using: django-rosetta 0.7.2\n"
+
+#: admin.py:47
+msgid "Photo count"
+msgstr "Liczba zdjęć"
 
 #: feeds.py:22
 msgid "siciarz.net - galleries"
