@@ -8,6 +8,7 @@ Administration for photos and galleries.
 """
 
 from django.contrib import admin
+from django.db.models import Count
 
 import reversion
 from sorl.thumbnail.admin import AdminImageMixin
@@ -31,6 +32,7 @@ class GalleryAdmin(reversion.VersionAdmin):
     """
     list_display = (
         'author', 'title', 'status', 'description', 'shot_date', 'modified',
+        'photo_count',
     )
     list_display_links = ('title',)
     list_editable = ('status',)
@@ -38,6 +40,18 @@ class GalleryAdmin(reversion.VersionAdmin):
     date_hierarchy = 'shot_date'
     prepopulated_fields = {'slug': ('title',)}
     inlines = [PhotoInline]
+
+    def photo_count(self, obj):
+        return obj.photo_count
+
+    def queryset(self, request):
+        """
+        Add number of photos to each gallery.
+
+        TODO rename to get_queryset for Django 1.6.
+        """
+        qs = super(GalleryAdmin, self).queryset(request)
+        return qs.annotate(photo_count=Count('photos'))
 
     def save_model(self, request, obj, form, change):
         """
