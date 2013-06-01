@@ -204,12 +204,27 @@ html, body {
             margin: 0 1px 1px 0;
             width: 200px;
             height: 200px;
+            position: relative;
             a {
                 border: none;
                 box-shadow: none;
                 width: 200px;
                 height: 200px;
                 padding: 0;
+            }
+            .description {
+                position: absolute;
+                z-index: 55;
+                bottom: 10px;
+                left: 10px;
+                width: 170px;
+                padding: 5px;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.7);
+                display: none;
+            }
+            &:hover .description {
+                display: block;
             }
         }
         .thumbnails img {
