@@ -4,8 +4,9 @@
 from __future__ import unicode_literals
 
 from django import template
+from django.db import connection
 
-from photos.models import Gallery
+from photos.models import Gallery, Photo
 
 register = template.Library()
 
@@ -24,3 +25,24 @@ def get_gallery_archive_dates():
     Returns datetime objects for all months in which galleries were added.
     """
     return Gallery.objects.published().dates('shot_date', 'month', order='DESC')
+
+
+@register.assignment_tag
+def get_popular_tags(count=10):
+    """
+    Returns most popular tags.
+    """
+    query = """
+    select
+        t.tag,
+        count(t.tag) as tag_count
+    from
+        (select unnest(tags) as tag from photos_photo) t
+    group by tag
+    order by tag_count desc
+    limit %s
+    """
+    cursor = connection.cursor()
+    cursor.execute(query, (count,))
+    tags = [{'tag': row[0], 'count': row[1]} for row in cursor.fetchall()]
+    return tags
