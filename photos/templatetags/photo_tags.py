@@ -37,11 +37,11 @@ def get_popular_tags(count=10):
         t.tag,
         count(t.tag) as tag_count
     from
-        (select unnest(tags) as tag from photos_photo) t
+        (select unnest(tags) as tag from %s) t
     group by tag
     order by tag_count desc
-    limit %s
-    """
+    limit %%s
+    """ % Photo._meta.db_table
     cursor = connection.cursor()
     cursor.execute(query, (count,))
     tags = [{'tag': row[0], 'count': row[1]} for row in cursor.fetchall()]
