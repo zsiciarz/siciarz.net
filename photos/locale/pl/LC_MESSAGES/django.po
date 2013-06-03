@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-27 21:14+0200\n"
-"PO-Revision-Date: 2013-05-27 21:14+0200\n"
+"POT-Creation-Date: 2013-06-03 18:41+0200\n"
+"PO-Revision-Date: 2013-06-03 18:42+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -93,7 +93,11 @@ msgstr "fotografia"
 msgid "Archive"
 msgstr "Archiwum"
 
-#: templates/photos/gallery_detail.html:38
+#: templates/photos/base_photos.html:27
+msgid "Popular tags"
+msgstr "Popularne tagi"
+
+#: templates/photos/gallery_detail.html:39
 msgid "Added on"
 msgstr "Dodane"
 
