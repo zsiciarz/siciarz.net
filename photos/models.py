@@ -12,9 +12,11 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 
+from django_hstore import hstore
+from django_hstore.query import HStoreQuerySet
 from djorm_pgarray.fields import ArrayField
 from djorm_expressions.base import SqlExpression
-from djorm_expressions.models import ExpressionManager
+from djorm_expressions.models import ExpressionQuerySetMixin, ExpressionManagerMixin
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
@@ -65,7 +67,22 @@ class Gallery(StatusModel, TimeStampedModel):
         return self.photos.all()[:4]
 
 
-class PhotoManager(ExpressionManager):
+class PhotoQuerySet(ExpressionQuerySetMixin, HStoreQuerySet):
+    """
+    We need the behavior of both ExpressionQuerySet and HStoreQuerySet,
+    so we mix in the operations of the former and fully inherit from the
+    latter.
+    """
+    pass
+
+
+class PhotoManager(ExpressionManagerMixin, hstore.HStoreManager):
+    """
+    Same story as with the queryset - both behaviors are used.
+    """
+    def get_query_set(self):
+        return PhotoQuerySet(self.model, using=self._db)
+
     def tagged(self, tag):
         return self.where(
             SqlExpression("tags", "@>", [tag])
