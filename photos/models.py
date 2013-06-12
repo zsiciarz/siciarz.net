@@ -96,6 +96,7 @@ class Photo(TimeStampedModel):
     title = models.CharField(_("title"), max_length=255)
     image = ImageField(_("image"), upload_to='photos/%Y/%m/%d')
     tags = ArrayField(dbtype="text")
+    exif = hstore.DictionaryField(editable=False, default='')
 
     objects = PhotoManager()
 
