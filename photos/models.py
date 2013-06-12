@@ -3,6 +3,8 @@
 
 from __future__ import unicode_literals
 
+from PIL import Image, ExifTags
+
 from django.conf import settings
 from django.db import models
 from django.db.models.query import QuerySet
@@ -82,6 +84,17 @@ class Photo(TimeStampedModel):
         The string representation of a photo is its title.
         """
         return self.title
+
+    def save(self, *args, **kwargs):
+        """
+        Updates EXIF data after saving.
+        """
+        super(Photo, self).save(*args, **kwargs)
+        # you really should be doing this in a background task
+        img = Image.open(self.image.file)
+        raw_exif = img._getexif()
+        exif = {ExifTags.TAGS[k]: v for k, v in raw_exif.items() if k in ExifTags.TAGS}
+        print exif
 
     @models.permalink
     def get_absolute_url(self):
