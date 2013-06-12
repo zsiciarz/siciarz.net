@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding field 'Photo.exif'
         db.add_column(u'photos_photo', 'exif',
-                      self.gf('django_hstore.fields.DictionaryField')(default='', db_index=True),
+                      self.gf('djorm_hstore.fields.DictionaryField')(default='', db_index=True),
                       keep_default=False)
 
 
