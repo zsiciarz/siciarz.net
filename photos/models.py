@@ -9,6 +9,7 @@ from django.conf import settings
 from django.db import models
 from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
+from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 
 from djorm_pgarray.fields import ArrayField
@@ -19,6 +20,12 @@ from model_utils import Choices
 from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
 from sorl.thumbnail import ImageField
+
+
+def sanitize_exif_value(key, value):
+    if isinstance(value, six.string_types):
+        return value.replace('\x00', '').strip()
+    return str(value)
 
 
 class GalleryQuerySet(QuerySet):
@@ -93,7 +100,7 @@ class Photo(TimeStampedModel):
         # you really should be doing this in a background task
         img = Image.open(self.image.file)
         raw_exif = img._getexif()
-        exif = {ExifTags.TAGS[k]: v for k, v in raw_exif.items() if k in ExifTags.TAGS}
+        exif = {ExifTags.TAGS[k]: sanitize_exif_value(k, v) for k, v in raw_exif.items() if k in ExifTags.TAGS}
         print exif
 
     @models.permalink
