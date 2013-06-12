@@ -112,14 +112,13 @@ class Photo(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         """
-        Updates EXIF data after saving.
+        Updates EXIF data before saving.
         """
-        super(Photo, self).save(*args, **kwargs)
         # you really should be doing this in a background task
         img = Image.open(self.image.file)
         raw_exif = img._getexif()
-        exif = {ExifTags.TAGS[k]: sanitize_exif_value(k, v) for k, v in raw_exif.items() if k in ExifTags.TAGS}
-        print exif
+        self.exif = {ExifTags.TAGS[k]: sanitize_exif_value(k, v) for k, v in raw_exif.items() if k in ExifTags.TAGS}
+        super(Photo, self).save(*args, **kwargs)
 
     @models.permalink
     def get_absolute_url(self):
