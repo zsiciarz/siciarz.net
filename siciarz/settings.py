@@ -213,6 +213,10 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
 
+SOUTH_DATABASE_ADAPTERS = {
+    'default': 'south.db.postgresql_psycopg2',
+}
+
 GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 
 DISQUS_API_KEY = ''
