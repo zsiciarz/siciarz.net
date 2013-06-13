@@ -70,7 +70,7 @@ class PhotoManager(HStoreManager):
     def tagged(self, tag):
         return self.where(
             SqlExpression("tags", "@>", [tag])
-        )
+        ).order_by('-gallery__shot_date')
 
 
 @python_2_unicode_compatible
