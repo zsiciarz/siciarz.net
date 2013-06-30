@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 from django import template
 from django.db import connection
 
-from photos.models import Gallery, Photo
+from pgallery.models import Gallery, Photo
 
 register = template.Library()
 

@@ -165,7 +165,7 @@ INSTALLED_APPS = (
     'easy_pjax',
 
     'articles',
-    'photos',
+    'pgallery',
 )
 
 # A sample logging configuration. The only tangible logging

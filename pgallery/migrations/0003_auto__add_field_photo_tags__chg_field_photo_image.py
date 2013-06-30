@@ -9,21 +9,21 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding field 'Photo.tags'
-        db.add_column(u'photos_photo', 'tags',
+        db.add_column(u'pgallery_photo', 'tags',
                       self.gf('djorm_pgarray.fields.ArrayField')(default=None, dbtype=u'varchar(127)', null=True, blank=True),
                       keep_default=False)
 
 
         # Changing field 'Photo.image'
-        db.alter_column(u'photos_photo', 'image', self.gf('sorl.thumbnail.fields.ImageField')(max_length=100))
+        db.alter_column(u'pgallery_photo', 'image', self.gf('sorl.thumbnail.fields.ImageField')(max_length=100))
 
     def backwards(self, orm):
         # Deleting field 'Photo.tags'
-        db.delete_column(u'photos_photo', 'tags')
+        db.delete_column(u'pgallery_photo', 'tags')
 
 
         # Changing field 'Photo.image'
-        db.alter_column(u'photos_photo', 'image', self.gf('django.db.models.fields.files.ImageField')(max_length=100))
+        db.alter_column(u'pgallery_photo', 'image', self.gf('django.db.models.fields.files.ImageField')(max_length=100))
 
     models = {
         u'auth.group': {
@@ -62,7 +62,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'photos.gallery': {
+        u'pgallery.gallery': {
             'Meta': {'ordering': "[u'-created']", 'object_name': 'Gallery'},
             '_description_rendered': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"}),
@@ -75,11 +75,11 @@ class Migration(SchemaMigration):
             'status_changed': ('model_utils.fields.MonitorField', [], {'default': 'datetime.datetime.now', 'monitor': "'status'"}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'photos.photo': {
+        u'pgallery.photo': {
             'Meta': {'ordering': "[u'created']", 'object_name': 'Photo'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"}),
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
-            'gallery': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'photos'", 'null': 'True', 'to': u"orm['photos.Gallery']"}),
+            'gallery': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'photos'", 'null': 'True', 'to': u"orm['pgallery.Gallery']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('sorl.thumbnail.fields.ImageField', [], {'max_length': '100'}),
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime.now'}),
@@ -88,4 +88,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['photos']
+    complete_apps = ['pgallery']

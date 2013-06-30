@@ -9,7 +9,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 
 from articles.sitemaps import ArticleSitemap
-from photos.sitemaps import GallerySitemap, PhotoSitemap
+from pgallery.sitemaps import GallerySitemap, PhotoSitemap
 
 admin.autodiscover()
 
@@ -29,10 +29,10 @@ urlpatterns = patterns('',
         {'sitemaps': {
             'articles': ArticleSitemap,
             'galleries': GallerySitemap,
-            'photos': PhotoSitemap,
+            'pgallery': PhotoSitemap,
         }}
     ),
-    url(r'^photos/', include('photos.urls', namespace='photos')),
+    url(r'^photos/', include('pgallery.urls', namespace='pgallery')),
     url(r'^', include('articles.urls', namespace='articles')),
 )
 

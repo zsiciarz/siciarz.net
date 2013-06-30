@@ -1,4 +1,4 @@
-{% extends "photos/base_photos.html" %}
+{% extends "pgallery/base_photos.html" %}
 {% load url from future %}
 {% load i18n %}
 {% load disqus_tags %}
@@ -18,7 +18,7 @@
     {% disqus_dev %}
     <article>
         <h1>{{ gallery.title }}</h1>
-        {% include "photos/gallery_menu.html" %}
+        {% include "pgallery/gallery_menu.html" %}
 
         {{ gallery.description }}
 

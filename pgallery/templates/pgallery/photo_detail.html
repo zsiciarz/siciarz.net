@@ -32,7 +32,7 @@
             <div class="tags">
                 {% trans "Tags" %}:
                 {% for tag in photo.tags %}
-                    <a href="{% url 'photos:tagged_photo_list' tag=tag %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                    <a href="{% url 'pgallery:tagged_photo_list' tag=tag %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </div>
             {% disqus_show_comments %}

@@ -4,7 +4,7 @@
 
 {% block title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
 {% block og-title %}{% trans "Photography" %} | {{ block.super }}{% endblock %}
-{% block rss-url %}{% url 'photos:gallery_rss' %}{% endblock %}
+{% block rss-url %}{% url 'pgallery:gallery_rss' %}{% endblock %}
 
 {% block header-addon %}{% trans "photography" %}{% endblock %}
 
@@ -13,13 +13,13 @@
         {% block content %}{% endblock %}
     </div>
     <div class="span3 sidebar archive">
-        {% include "photos/recent_galleries.html" %}
+        {% include "pgallery/recent_galleries.html" %}
         <section class="archive">
             <h2>{% trans "Archive" %}</h2>
             <ul>
                 {% get_gallery_archive_dates as dates %}
                 {% for date in dates %}
-                    <li><a href="{% url 'photos:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
+                    <li><a href="{% url 'pgallery:month_archive' year=date.year month=date.month %}">{{ date|date:"F Y" }}</a></li>
                 {% endfor %}
             </ul>
         </section>
@@ -28,7 +28,7 @@
             <ul>
                 {% get_popular_tags as tags %}
                 {% for tag in tags %}
-                    <li><a href="{% url 'photos:tagged_photo_list' tag=tag.tag %}" rel="tag">{{ tag.tag }}</a></li>
+                    <li><a href="{% url 'pgallery:tagged_photo_list' tag=tag.tag %}" rel="tag">{{ tag.tag }}</a></li>
                 {% endfor %}
             </ul>
         </section>

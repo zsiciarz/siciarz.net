@@ -9,7 +9,7 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Gallery'
-        db.create_table(u'photos_gallery', (
+        db.create_table(u'pgallery_gallery', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created', self.gf('model_utils.fields.AutoCreatedField')(default=datetime.datetime.now)),
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
@@ -21,26 +21,26 @@ class Migration(SchemaMigration):
             ('description', self.gf('markitup.fields.MarkupField')(no_rendered_field=True)),
             ('_description_rendered', self.gf('django.db.models.fields.TextField')(blank=True)),
         ))
-        db.send_create_signal(u'photos', ['Gallery'])
+        db.send_create_signal(u'pgallery', ['Gallery'])
 
         # Adding model 'Photo'
-        db.create_table(u'photos_photo', (
+        db.create_table(u'pgallery_photo', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('created', self.gf('model_utils.fields.AutoCreatedField')(default=datetime.datetime.now)),
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
-            ('gallery', self.gf('django.db.models.fields.related.ForeignKey')(related_name=u'photos', null=True, to=orm['photos.Gallery'])),
+            ('gallery', self.gf('django.db.models.fields.related.ForeignKey')(related_name=u'photos', null=True, to=orm['pgallery.Gallery'])),
             ('author', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'])),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
         ))
-        db.send_create_signal(u'photos', ['Photo'])
+        db.send_create_signal(u'pgallery', ['Photo'])
 
 
     def backwards(self, orm):
         # Deleting model 'Gallery'
-        db.delete_table(u'photos_gallery')
+        db.delete_table(u'pgallery_gallery')
 
         # Deleting model 'Photo'
-        db.delete_table(u'photos_photo')
+        db.delete_table(u'pgallery_photo')
 
 
     models = {
@@ -80,7 +80,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'photos.gallery': {
+        u'pgallery.gallery': {
             'Meta': {'ordering': "[u'-created']", 'object_name': 'Gallery'},
             '_description_rendered': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"}),
@@ -93,15 +93,15 @@ class Migration(SchemaMigration):
             'status_changed': ('model_utils.fields.MonitorField', [], {'default': 'datetime.datetime.now', 'monitor': "'status'"}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
-        u'photos.photo': {
+        u'pgallery.photo': {
             'Meta': {'ordering': "[u'-created']", 'object_name': 'Photo'},
             'author': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['auth.User']"}),
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
-            'gallery': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'photos'", 'null': 'True', 'to': u"orm['photos.Gallery']"}),
+            'gallery': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "u'photos'", 'null': 'True', 'to': u"orm['pgallery.Gallery']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime.now'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
 
-    complete_apps = ['photos']
+    complete_apps = ['pgallery']

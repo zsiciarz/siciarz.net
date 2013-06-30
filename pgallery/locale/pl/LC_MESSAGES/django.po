@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -79,53 +79,53 @@ msgstr "obraz"
 msgid "Photos"
 msgstr "Zdjęcia"
 
-#: templates/photos/base_photos.html:5 templates/photos/base_photos.html:6
-#: templates/photos/photo_detail.html:7 templates/photos/photo_detail.html:9
-#: templates/photos/photo_detail.html:22
+#: templates/pgallery/base_photos.html:5 templates/pgallery/base_photos.html:6
+#: templates/pgallery/photo_detail.html:7 templates/pgallery/photo_detail.html:9
+#: templates/pgallery/photo_detail.html:22
 msgid "Photography"
 msgstr "Fotografia"
 
-#: templates/photos/base_photos.html:9 templates/photos/photo_detail.html:17
+#: templates/pgallery/base_photos.html:9 templates/pgallery/photo_detail.html:17
 msgid "photography"
 msgstr "fotografia"
 
-#: templates/photos/base_photos.html:18
+#: templates/pgallery/base_photos.html:18
 msgid "Archive"
 msgstr "Archiwum"
 
-#: templates/photos/base_photos.html:27
+#: templates/pgallery/base_photos.html:27
 msgid "Popular tags"
 msgstr "Popularne tagi"
 
-#: templates/photos/gallery_detail.html:39
+#: templates/pgallery/gallery_detail.html:39
 msgid "Added on"
 msgstr "Dodane"
 
-#: templates/photos/gallery_list.html:26
+#: templates/pgallery/gallery_list.html:26
 msgid "added on"
 msgstr "dodane"
 
-#: templates/photos/gallery_list.html:31
+#: templates/pgallery/gallery_list.html:31
 msgid "There aren't any galleries (yet)."
 msgstr "Nie ma (jeszcze) żadnych galerii."
 
-#: templates/photos/gallery_list.html:32
+#: templates/pgallery/gallery_list.html:32
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 
-#: templates/photos/gallery_menu.html:6
+#: templates/pgallery/gallery_menu.html:6
 msgid "Edit"
 msgstr "Edytuj"
 
-#: templates/photos/photo_detail.html:33
+#: templates/pgallery/photo_detail.html:33
 msgid "Tags"
 msgstr "Tagi"
 
-#: templates/photos/photo_list.html:6 templates/photos/photo_list.html.py:8
-#: templates/photos/photo_list.html:17
+#: templates/pgallery/photo_list.html:6 templates/pgallery/photo_list.html.py:8
+#: templates/pgallery/photo_list.html:17
 msgid "Tag"
 msgstr "Tag"
 
-#: templates/photos/recent_galleries.html:6
+#: templates/pgallery/recent_galleries.html:6
 msgid "Recent galleries"
 msgstr "Ostatnie galerie"

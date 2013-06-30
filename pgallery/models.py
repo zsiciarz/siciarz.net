@@ -60,7 +60,7 @@ class Gallery(StatusModel, TimeStampedModel):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('photos:gallery_details', [], {'slug': self.slug})
+        return ('pgallery:gallery_details', [], {'slug': self.slug})
 
     def get_teaser_photos(self):
         return self.photos.all()[:4]
@@ -80,7 +80,7 @@ class Photo(TimeStampedModel):
     title = models.CharField(_("title"), max_length=255)
     image = ImageField(_("image"), upload_to='photos/%Y/%m/%d')
     tags = ArrayField(dbtype="text")
-    exif = DictionaryField(editable=False, default='')
+    exif = DictionaryField(editable=False, default='', db_index=True)
 
     objects = PhotoManager()
 
@@ -106,7 +106,7 @@ class Photo(TimeStampedModel):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('photos:photo_details', [], {'pk': self.pk})
+        return ('pgallery:photo_details', [], {'pk': self.pk})
 
     def get_next_photo(self):
         """
