@@ -31,7 +31,7 @@
                     {% for key, value in photo.exif.items %}
                         <tr>
                             <th>{{ key }}</th>
-                            <td>{{ value }}</td>
+                            <td><a href="{% url 'pgallery:exif_photo_list' exif_key=key exif_value=value %}">{{ value }}</a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
