@@ -12,6 +12,7 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 
+from djorm_hstore.expressions import HstoreExpression
 from djorm_hstore.fields import DictionaryField
 from djorm_hstore.models import HStoreManager
 from djorm_pgarray.fields import ArrayField
@@ -70,6 +71,11 @@ class PhotoManager(HStoreManager):
     def tagged(self, tag):
         return self.where(
             SqlExpression("tags", "@>", [tag])
+        ).order_by('-gallery__shot_date')
+
+    def for_exif(self, exif_key, exif_value):
+        return self.where(
+            HstoreExpression("exif").contains({exif_key: exif_value})
         ).order_by('-gallery__shot_date')
 
 
