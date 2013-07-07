@@ -42,5 +42,18 @@ class TaggedPhotoListView(ListView):
         return data
 
 
+class ExifPhotoListView(ListView):
+    template_name = 'pgallery/exif_photo_list.html'
+
+    def get_queryset(self):
+        return Photo.objects.for_exif(self.kwargs['exif_key'], self.kwargs['exif_value'])
+
+    def get_context_data(self, **kwargs):
+        data = super(ExifPhotoListView, self).get_context_data(**kwargs)
+        data['exif_key'] = self.kwargs['exif_key']
+        data['exif_value'] = self.kwargs['exif_value']
+        return data
+
+
 class PhotoDetailsView(DetailView):
     model = Photo
