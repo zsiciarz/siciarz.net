@@ -7,7 +7,7 @@ from django.conf.urls import patterns, url
 
 from .feeds import GalleryFeed
 from .views import GalleryListView, GalleryMonthArchiveView, \
-    GalleryDetailsView, TaggedPhotoListView, PhotoDetailsView
+    GalleryDetailsView, TaggedPhotoListView, ExifPhotoListView, PhotoDetailsView
 
 urlpatterns = patterns('',
     url(
@@ -29,6 +29,11 @@ urlpatterns = patterns('',
         regex=r'^tag/(?P<tag>[ \w]+)/$',
         view=TaggedPhotoListView.as_view(),
         name='tagged_photo_list'
+    ),
+    url(
+        regex=r'^exif/(?P<exif_key>[ \w]+)/(?P<exif_value>.+)/$',
+        view=ExifPhotoListView.as_view(),
+        name='exif_photo_list'
     ),
     url(
         regex=r'^(?P<slug>[-\w]+)/$',
