@@ -16,6 +16,7 @@ django-grappelli==2.4.5
 -e git+git://github.com/carljm/django-markitup.git#egg=markitup
 django-model-utils==1.4.0
 django-pagination==1.0.7
+django-pgallery==0.1dev
 django-reversion==1.7.1
 django-rosetta==0.7.2
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
