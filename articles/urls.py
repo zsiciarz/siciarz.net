@@ -8,7 +8,8 @@ from django.views.generic.base import RedirectView
 
 from .feeds import ArticleFeed
 from .views import ArticleListView, TaggedArticleListView, \
-    ArticleMonthArchiveView, ArticleDetailsView, ArticleUpdateView
+    ArticleMonthArchiveView, ArticleDetailsView, ArticleCreateView, \
+    ArticleUpdateView
 
 
 urlpatterns = patterns('',
@@ -35,6 +36,11 @@ urlpatterns = patterns('',
         regex=r'^(?P<year>\d{4})/(?P<month>\d+)/$',
         view=ArticleMonthArchiveView.as_view(),
         name='month_archive'
+    ),
+    url(
+        regex=r'^create/$',
+        view=ArticleCreateView.as_view(),
+        name='article_create'
     ),
     url(
         regex=r'^(?P<slug>[-\w]+)/$',
