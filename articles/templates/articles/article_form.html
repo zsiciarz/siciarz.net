@@ -8,20 +8,22 @@
     <script src="{{ STATIC_URL }}epiceditor/js/epiceditor.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function(event) {
-            var textareaId = '{{ form.content.auto_id }}',
-                textarea = document.getElementById(textareaId),
-                containerId = 'epic_' + textareaId,
-                container = document.createElement('div'),
-                label = document.querySelector('label[for="' + textareaId + '"]');
-            textarea.style.display = 'none';
-            container.id = containerId;
-            label.parentNode.appendChild(container);
-            var opts = {
-                container: containerId,
-                textarea: textareaId,
-                basePath: '{{ STATIC_URL }}epiceditor/'
-            };
-            var editor = new EpicEditor(opts).load();
+            var ids = ['{{ form.summary.auto_id }}', '{{ form.content.auto_id }}'];
+            ids.forEach(function(textareaId) {
+                var textarea = document.getElementById(textareaId),
+                    containerId = 'epic_' + textareaId,
+                    container = document.createElement('div'),
+                    label = document.querySelector('label[for="' + textareaId + '"]');
+                textarea.style.display = 'none';
+                container.id = containerId;
+                label.parentNode.appendChild(container);
+                var opts = {
+                    container: containerId,
+                    textarea: textareaId,
+                    basePath: '{{ STATIC_URL }}epiceditor/'
+                };
+                var editor = new EpicEditor(opts).load();
+            });
         });
     </script>
 {% endblock %}
