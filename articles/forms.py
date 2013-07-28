@@ -4,9 +4,9 @@
 from __future__ import unicode_literals
 
 from django import forms
-from django.utils.text import slugify
 
 from braces.forms import UserKwargModelFormMixin
+from slugify import slugify
 
 from .models import Article
 
