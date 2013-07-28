@@ -8,7 +8,7 @@ from django.views.generic.base import RedirectView
 
 from .feeds import ArticleFeed
 from .views import ArticleListView, TaggedArticleListView, \
-    ArticleMonthArchiveView, ArticleDetailsView
+    ArticleMonthArchiveView, ArticleDetailsView, ArticleUpdateView
 
 
 urlpatterns = patterns('',
@@ -40,5 +40,10 @@ urlpatterns = patterns('',
         regex=r'^(?P<slug>[-\w]+)/$',
         view=ArticleDetailsView.as_view(),
         name='article_details'
+    ),
+    url(
+        regex=r'^(?P<slug>[-\w]+)/update/$',
+        view=ArticleUpdateView.as_view(),
+        name='article_update'
     ),
 )
