@@ -20,6 +20,12 @@
     <div class="span3 sidebar archive">
         {% block sidebar-archive %}
             <section class="archive">
+                {% if user.is_staff %}
+                <h2>{% trans "Administration" %}</h2>
+                <ul>
+                    <li><a href="{% url 'articles:article_create' %}">{% trans "Create article" %}</a></li>
+                </ul>
+                {% endif %}
                 <h2>{% trans "Archive" %}</h2>
                 <ul>
                     {% get_archive_dates as dates %}
