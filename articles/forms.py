@@ -4,6 +4,9 @@
 from __future__ import unicode_literals
 
 from django import forms
+from django.utils.text import slugify
+
+from braces.forms import UserKwargModelFormMixin
 
 from .models import Article
 
@@ -15,3 +18,14 @@ class ArticleForm(forms.ModelForm):
             'status', 'title', 'subtitle', 'summary', 'content',
             'is_static', 'language', 'tags',
         )
+
+
+class ArticleCreateForm(UserKwargModelFormMixin, ArticleForm):
+    def save(self, *args, **kwargs):
+        kwargs['commit'] = False
+        article = super(ArticleCreateForm, self).save(*args, **kwargs)
+        article.author = self.user
+        article.slug = slugify(article.title)
+        article.save()
+        self.save_m2m()
+        return article
