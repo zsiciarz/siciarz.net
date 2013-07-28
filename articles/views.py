@@ -4,11 +4,12 @@
 from __future__ import unicode_literals
 
 from django.views.generic import ListView, DetailView, MonthArchiveView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import CreateView, UpdateView
 
-from braces.views import LoginRequiredMixin, StaffuserRequiredMixin
+from braces.views import LoginRequiredMixin, StaffuserRequiredMixin, \
+    UserFormKwargsMixin
 
-from .forms import ArticleForm
+from .forms import ArticleForm, ArticleCreateForm
 from .models import Article
 
 
@@ -53,6 +54,11 @@ class ArticleDetailsView(DetailView):
         article = super(ArticleDetailsView, self).get_object()
         article.update_pageviews()
         return article
+
+
+class ArticleCreateView(LoginRequiredMixin, StaffuserRequiredMixin, UserFormKwargsMixin, CreateView):
+    model = Article
+    form_class = ArticleCreateForm
 
 
 class ArticleUpdateView(LoginRequiredMixin, StaffuserRequiredMixin, UpdateView):
