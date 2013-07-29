@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-27 17:19+0100\n"
-"PO-Revision-Date: 2013-01-27 17:20+0100\n"
+"POT-Creation-Date: 2013-07-29 20:21+0200\n"
+"PO-Revision-Date: 2013-07-29 20:22+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Translated-Using: django-rosetta 0.7.0\n"
+"X-Translated-Using: django-rosetta 0.7.2\n"
 
 #: feeds.py:22
 msgid "siciarz.net - articles"
@@ -67,7 +67,11 @@ msgstr "liczba odsłon"
 msgid "static page?"
 msgstr "strona statyczna?"
 
-#: models.py:50
+#: models.py:45
+msgid "language"
+msgstr "język"
+
+#: models.py:51
 msgid "Articles"
 msgstr "Artykuły"
 
@@ -79,6 +83,15 @@ msgstr "Napisane"
 #: templates/articles/article_detail.html:28
 msgid "Tags"
 msgstr "Tagi"
+
+#: templates/articles/article_form.html:5
+#: templates/articles/article_form.html:34
+msgid "Edit article"
+msgstr "Edytuj artykuł"
+
+#: templates/articles/article_form.html:38
+msgid "Save"
+msgstr "Zapisz"
 
 #: templates/articles/article_list.html:13
 msgid "Continue reading"
@@ -99,6 +112,27 @@ msgstr "strona statyczna"
 #: templates/articles/article_menu.html:9
 msgid "Edit"
 msgstr "Edytuj"
+
+#: templates/articles/base_articles.html:5
+#: templates/articles/base_articles.html:6
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/articles/base_articles.html:9
+msgid "blog"
+msgstr "blog"
+
+#: templates/articles/base_articles.html:24
+msgid "Administration"
+msgstr "Administracja"
+
+#: templates/articles/base_articles.html:26
+msgid "Create article"
+msgstr "Utwórz artykuł"
+
+#: templates/articles/base_articles.html:29
+msgid "Archive"
+msgstr "Archiwum"
 
 #: templates/articles/most_commented_articles.html:5
 msgid "Most commented"
