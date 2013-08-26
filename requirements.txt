@@ -7,7 +7,7 @@ Pygments==1.6
 South==0.8.2
 Werkzeug==0.9.4
 django-appconf==0.6
-django-braces==1.2.1
+django-braces==1.2.2
 django-compressor==1.2
 django-debug-toolbar==0.9.4
 django-disqus==0.4.1
