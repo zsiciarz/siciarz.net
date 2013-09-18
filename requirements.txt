@@ -36,5 +36,6 @@ paramiko==1.11.0
 psycopg2==2.5.1
 pycrypto==2.6
 raven==3.4.1
+six==1.4.1
 sorl-thumbnail==11.12
 unicode-slugify==0.1.1
