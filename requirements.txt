@@ -1,5 +1,5 @@
 Django==1.5.4
-Fabric==1.7.0
+Fabric==1.8.0
 Markdown==2.3.1
 Pillow==2.1.0
 PyGithub==1.19.0
@@ -32,7 +32,7 @@ flake8==2.0
 gunicorn==0.17.4
 ipython==0.13.2
 newrelic==1.13.1.31
-paramiko==1.11.0
+paramiko==1.11.1
 psycopg2==2.5.1
 pycrypto==2.6
 raven==3.4.1
