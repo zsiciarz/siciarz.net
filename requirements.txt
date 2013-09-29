@@ -35,7 +35,7 @@ newrelic==1.13.1.31
 paramiko==1.11.1
 psycopg2==2.5.1
 pycrypto==2.6
-raven==3.4.1
+raven==3.5.0
 six==1.4.1
 sorl-thumbnail==11.12
 unicode-slugify==0.1.1
