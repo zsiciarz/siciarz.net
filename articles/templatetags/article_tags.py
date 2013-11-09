@@ -31,5 +31,5 @@ def get_archive_dates():
     """
     Returns datetime objects for all months in which articles were written.
     """
-    return Article.objects.only_articles().published().dates('created', 'month', order='DESC')
+    return Article.objects.only_articles().published().datetimes('created', 'month', order='DESC')
 
