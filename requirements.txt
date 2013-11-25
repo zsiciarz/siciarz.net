@@ -23,7 +23,7 @@ django-rosetta==0.7.2
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
 # using a fork until a new PyPI release is made
 -e git+git://github.com/alex/django-taggit.git#egg=taggit
-djorm-ext-core==0.4.3
+djorm-ext-core==0.5
 djorm-ext-expressions==0.6
 djorm-ext-hstore==0.5
 -e git+git://github.com/ntucker/djorm-ext-pgarray.git#egg=djorm_pgarray
