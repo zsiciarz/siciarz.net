@@ -209,9 +209,6 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.signals.SignalDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False,
-}
 
 SOUTH_DATABASE_ADAPTERS = {
     'default': 'south.db.postgresql_psycopg2',
