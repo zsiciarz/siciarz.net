@@ -19,7 +19,7 @@ django-model-utils==1.5.0
 django-pagination==1.0.7
 django-pgallery==0.1dev
 django-reversion==1.8.0
-django-rosetta==0.7.2
+django-rosetta==0.7.3
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
 # using a fork until a new PyPI release is made
 -e git+git://github.com/alex/django-taggit.git#egg=taggit
