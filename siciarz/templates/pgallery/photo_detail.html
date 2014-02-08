@@ -22,7 +22,7 @@
         <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }} | {% trans "Photography" %} | siciarz.net" href="{{ photo.get_next_photo.get_absolute_url }}" class="pjaxer">
                 <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
             </a>
-            {% comment %}
+            {% if user.is_staff %}
             <section class="exif">
                 <h2>{% trans "Exif data" %}</h2>
                 <table class="table table-condensed">
@@ -38,7 +38,7 @@
                     </tbody>
                 </table>
             </section>
-            {% endcomment %}
+            {% endif %}
         </article>
     </div>
     <div class="span3 sidebar photo">
