@@ -9,15 +9,15 @@
 {% block header-addon %}{% trans "blog" %}{% endblock %}
 
 {% block base-content %}
-    <div class="span6 main-content">
+    <div class="col-lg-6 main-content">
         {% block content %}{% endblock %}
     </div>
-    <div class="span3 sidebar articles">
+    <div class="col-lg-3 sidebar articles">
         {% block sidebar-articles %}
             {% include "articles/top_articles.html" %}
         {% endblock %}
     </div>
-    <div class="span3 sidebar archive">
+    <div class="col-lg-3 sidebar archive">
         {% block sidebar-archive %}
             <section class="archive">
                 {% if user.is_staff %}
