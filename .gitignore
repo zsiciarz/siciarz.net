@@ -9,3 +9,4 @@ newrelic.ini
 site_media/
 static/
 media/
+build/
