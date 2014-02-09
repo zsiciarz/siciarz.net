@@ -158,6 +158,7 @@ INSTALLED_APPS = (
     'rosetta',
     'taggit',
     'compressor',
+    'twitter_bootstrap',
     'pagination',
     'markitup',
     'reversion',
