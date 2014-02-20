@@ -30,7 +30,7 @@ djorm-ext-hstore==0.5
 -e git+git://github.com/ntucker/djorm-ext-pgarray.git#egg=djorm_pgarray
 docutils==0.11
 gunicorn==18.0
-ipython==1.1.0
+ipython==1.2.0
 newrelic==2.14.0.11
 paramiko==1.12.2
 psycopg2==2.5.2
