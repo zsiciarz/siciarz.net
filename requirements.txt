@@ -31,7 +31,7 @@ djorm-ext-hstore==0.5
 docutils==0.11
 gunicorn==18.0
 ipython==1.2.1
-newrelic==2.14.0.11
+newrelic==2.16.0.12
 paramiko==1.12.2
 psycopg2==2.5.2
 pycrypto==2.6.1
