@@ -27,7 +27,7 @@ django-twitter-bootstrap==3.1.0
 djorm-ext-core==0.7
 djorm-ext-expressions==0.6
 djorm-ext-hstore==0.5
--e git+git://github.com/ntucker/djorm-ext-pgarray.git#egg=djorm_pgarray
+djorm-ext-pgarray==0.10
 docutils==0.11
 gunicorn==18.0
 ipython==1.2.1
