@@ -30,7 +30,7 @@ class StaffAccessMixin(object):
 class ArticleListView(StaffAccessMixin, ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(ArticleListView, self).get_context_data(*args, **kwargs)
-        context['latest_gallery'] = Gallery.objects.last()
+        context['latest_gallery'] = Gallery.objects.first()
         return context
 
 
