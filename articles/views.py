@@ -12,6 +12,8 @@ from braces.views import LoginRequiredMixin, StaffuserRequiredMixin, \
 from .forms import ArticleForm, ArticleCreateForm
 from .models import Article
 
+from pgallery.models import Gallery
+
 
 class StaffAccessMixin(object):
     """
@@ -26,7 +28,10 @@ class StaffAccessMixin(object):
 
 
 class ArticleListView(StaffAccessMixin, ListView):
-    pass
+    def get_context_data(self, *args, **kwargs):
+        context = super(ArticleListView, self).get_context_data(*args, **kwargs)
+        context['latest_gallery'] = Gallery.objects.last()
+        return context
 
 
 class TaggedArticleListView(ArticleListView):

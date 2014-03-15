@@ -15,6 +15,15 @@
                 {% trans "Written on" %} {{ article.created|date:"DATE_FORMAT" }}
             </footer>
         </article>
+        {% if forloop.first and latest_gallery %}
+            <article>
+                <h1><a href="{{ latest_gallery.get_absolute_url }}">{{ latest_gallery.title }}</a></h1>
+                {% include "pgallery/thumbnail_list.html" with photo_list=latest_gallery.get_teaser_photos %}
+                <footer>
+                    {% trans "added on" %} {{ latest_gallery.shot_date|date:"DATE_FORMAT" }}
+                </footer>
+            </article>
+        {% endif %}
     {% empty %}
         <article>
             <h1>{% trans "There aren't any articles (yet)." %}</h1>
