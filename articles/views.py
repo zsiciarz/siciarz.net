@@ -34,7 +34,7 @@ class ArticleListView(StaffAccessMixin, ListView):
         return context
 
 
-class TaggedArticleListView(ArticleListView):
+class TaggedArticleListView(StaffAccessMixin, ListView):
     def get_queryset(self):
         queryset = super(TaggedArticleListView, self).get_queryset()
         return queryset.filter(tags__name__in=[self.kwargs['tag']])
