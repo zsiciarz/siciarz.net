@@ -31,7 +31,7 @@ djorm-ext-pgarray==0.10
 docutils==0.11
 gunicorn==18.0
 ipython==1.2.1
-newrelic==2.16.0.12
+newrelic==2.18.1.15
 paramiko==1.13.0
 psycopg2==2.5.2
 pycrypto==2.6.1
