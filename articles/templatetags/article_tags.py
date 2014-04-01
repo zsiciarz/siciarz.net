@@ -22,8 +22,10 @@ def get_top_articles(count=3):
 def get_related_articles(article, count=3):
     """
     Returns articles with similar set of tags as the given article.
+
+    TODO: bring back this functionality after migrating tags.
     """
-    return article.tags.similar_objects()[:count]
+    return Article.objects.only_articles().published()[:count]
 
 
 @register.assignment_tag
@@ -32,4 +34,3 @@ def get_archive_dates():
     Returns datetime objects for all months in which articles were written.
     """
     return Article.objects.only_articles().published().datetimes('created', 'month', order='DESC')
-
