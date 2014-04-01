@@ -22,8 +22,6 @@ def get_top_articles(count=3):
 def get_related_articles(article, count=3):
     """
     Returns articles with similar set of tags as the given article.
-
-    TODO: bring back this functionality after migrating tags.
     """
     return Article.objects.only_articles().published().similar(article)[:count]
 
