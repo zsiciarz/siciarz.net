@@ -26,8 +26,8 @@
                 {% trans 'Written on' %} {{ article.created|date:"DATE_FORMAT" }}
                 <div class="tags">
                     {% trans 'Tags' %}:
-                    {% for tag in article.tags.all %}
-                        <a href="{% url 'articles:tagged_article_list' tag=tag.name %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
+                    {% for tag in article.tags %}
+                        <a href="{% url 'articles:tagged_article_list' tag=tag %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </div>
             </footer>
