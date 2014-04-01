@@ -10,6 +10,7 @@ from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from djorm_pgarray.fields import ArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
@@ -43,6 +44,7 @@ class Article(StatusModel, TimeStampedModel):
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
+    pgtags = ArrayField(_("tags"), dbtype="text")
 
     tags = TaggableManager()
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
