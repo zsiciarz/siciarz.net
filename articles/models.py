@@ -15,7 +15,6 @@ from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
-from taggit.managers import TaggableManager
 
 
 class ArticleQuerySet(QuerySet):
@@ -46,7 +45,6 @@ class Article(StatusModel, TimeStampedModel):
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
     pgtags = ArrayField(_("tags"), dbtype="text")
 
-    tags = TaggableManager()
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
 
     class Meta:
