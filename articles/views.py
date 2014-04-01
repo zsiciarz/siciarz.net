@@ -37,7 +37,7 @@ class ArticleListView(StaffAccessMixin, ListView):
 class TaggedArticleListView(StaffAccessMixin, ListView):
     def get_queryset(self):
         queryset = super(TaggedArticleListView, self).get_queryset()
-        return queryset.filter(tags__name__in=[self.kwargs['tag']])
+        return queryset.tagged(self.kwargs['tag'])
 
 
 class ArticleMonthArchiveView(StaffAccessMixin, MonthArchiveView):
