@@ -25,7 +25,7 @@ def get_related_articles(article, count=3):
 
     TODO: bring back this functionality after migrating tags.
     """
-    return Article.objects.only_articles().published()[:count]
+    return Article.objects.only_articles().published().similar(article)[:count]
 
 
 @register.assignment_tag
