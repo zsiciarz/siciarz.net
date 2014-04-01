@@ -156,7 +156,6 @@ INSTALLED_APPS = (
     'disqus',
     'rosetta-grappelli',
     'rosetta',
-    'taggit',
     'compressor',
     'twitter_bootstrap',
     'pagination',
