@@ -10,6 +10,8 @@ from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+from djorm_expressions.base import SqlExpression
+from djorm_expressions.models import ExpressionQuerySet
 from djorm_pgarray.fields import ArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
@@ -17,7 +19,7 @@ from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
 
 
-class ArticleQuerySet(QuerySet):
+class ArticleQuerySet(ExpressionQuerySet):
     def published(self):
         return self.filter(status='published')
 
@@ -26,6 +28,11 @@ class ArticleQuerySet(QuerySet):
 
     def only_static(self):
         return self.filter(is_static=True)
+
+    def tagged(self, tag):
+        return self.where(
+            SqlExpression("tags", "@>", [tag])
+        )
 
 
 @python_2_unicode_compatible
