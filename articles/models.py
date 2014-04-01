@@ -43,7 +43,7 @@ class Article(StatusModel, TimeStampedModel):
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
-    pgtags = ArrayField(_("tags"), dbtype="text")
+    tags = ArrayField(_("tags"), dbtype="text")
 
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
 
