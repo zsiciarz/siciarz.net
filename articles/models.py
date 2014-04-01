@@ -33,6 +33,14 @@ class ArticleQuerySet(ExpressionQuerySet):
             SqlExpression("tags", "@>", [tag])
         )
 
+    def similar(self, article):
+        """
+        Returns a set of articles which tags overlap (&&) given article's tags.
+        """
+        return self.where(
+            SqlExpression("tags", "&&", article.tags)
+        )
+
 
 @python_2_unicode_compatible
 class Article(StatusModel, TimeStampedModel):
