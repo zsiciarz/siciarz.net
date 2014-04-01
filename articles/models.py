@@ -6,7 +6,6 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.db.models import F
-from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
@@ -73,4 +72,3 @@ class Article(StatusModel, TimeStampedModel):
         Atomically updates pageview counter.
         """
         Article.objects.filter(pk=self.pk).update(pageviews=F('pageviews') + 1)
-
