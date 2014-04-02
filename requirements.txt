@@ -1,7 +1,7 @@
 Django==1.6.2
 Fabric==1.8.2
 Markdown==2.4
-Pillow==2.3.1
+Pillow==2.4.0
 PyGithub==1.24.1
 Pygments==1.6
 South==0.8.4
