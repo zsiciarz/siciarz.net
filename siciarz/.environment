@@ -1,2 +1,1 @@
-unset PYTHONPATH
-source $HOME/v/siciarz.net/bin/activate
+export PATH="$HOME/.npm/bin:$PATH"
