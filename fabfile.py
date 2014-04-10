@@ -59,7 +59,7 @@ def collect_static():
 @task
 @roles("web")
 def restart():
-    run("appctl restart siciarz.net")
+    run("appctl restart siciarznet")
 
 
 @task
