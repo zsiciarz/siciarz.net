@@ -15,15 +15,14 @@ def prepare_project():
     """
     return nested(
         cd(PROJECT_PATH),
-        prefix("source ../bin/activate"),
-        prefix("source ./siciarz/.environment")
+        prefix("source ../../../.siciarznet/bin/activate"),
     )
 
 
 PROJECT_PATH = "$HOME/v/siciarz.net/siciarz.net"
 
 env.roledefs = {
-    'web': ["siciarz@siciarz.megiteam.pl"],
+    'web': ["siciarznet@siciarznet.megiteam.pl"],
 }
 env.color = True
 
