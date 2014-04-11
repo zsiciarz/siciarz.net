@@ -15,7 +15,7 @@ def prepare_project():
     """
     return nested(
         cd(PROJECT_PATH),
-        prefix("source ../../../.siciarznet/bin/activate"),
+        prefix("source ../../../.virtualenvs/siciarznet/bin/activate"),
     )
 
 
