@@ -7,6 +7,7 @@
 {% block og-type %}article{% endblock %}
 {% block og-title %}{{ article.title }} | {{ block.super }}{% endblock %}
 {% block og-url %}{{ article.get_absolute_url }}{% endblock %}
+{% block og-image %}{% if article.header_image %}{{ article.header_image.url }}{% else %}{{ block.super }}{% endif %}{% endblock %}
 
 {% block extra-head %}
     <meta property="og:description" content="{{ article.summary|striptags }}" />
