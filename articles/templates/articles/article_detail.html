@@ -23,6 +23,7 @@
         {% endif %}
         {% include "articles/article_menu.html" %}
 
+        {{ article.summary }}
         {{ article.content }}
 
         {% if not article.is_static %}
