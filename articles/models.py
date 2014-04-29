@@ -58,6 +58,7 @@ class Article(StatusModel, TimeStampedModel):
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
     tags = ArrayField(_("tags"), dbtype="text")
+    header_image = models.ImageField(_("header image"), blank=True, null=True, upload_to='articles/%Y/%m/%d')
 
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
 
