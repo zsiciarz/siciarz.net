@@ -17,6 +17,9 @@
     {% disqus_dev %}
     <article>
         <h1>{{ article.title }}</h1>
+        {% if article.header_image %}
+            <img src="{{ article.header_image.url }}" alt="{{ article.title }}" />
+        {% endif %}
         {% include "articles/article_menu.html" %}
 
         {{ article.content }}
