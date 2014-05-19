@@ -33,7 +33,7 @@ newrelic==2.18.1.15
 paramiko==1.14.0
 psycopg2==2.5.3
 pycrypto==2.6.1
-raven==4.2.1
+raven==4.2.3
 requests==2.3.0
 six==1.6.1
 sorl-thumbnail==11.12
