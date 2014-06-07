@@ -163,6 +163,7 @@ INSTALLED_APPS = (
     'reversion',
     'sorl.thumbnail',
     'easy_pjax',
+    'raven.contrib.django.raven_compat',
 
     'articles',
     'pgallery',
@@ -211,7 +212,9 @@ DISQUS_WEBSITE_SHORTNAME = ''
 MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': False, 'extensions': ['codehilite']})
 MARKITUP_SET = 'markitup/sets/markdown'
 
-SENTRY_DSN = ''
+RAVEN_CONFIG = {
+    'dsn': '',
+}
 
 try:
     from local_settings import *
