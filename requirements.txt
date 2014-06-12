@@ -27,7 +27,7 @@ djorm-ext-expressions==0.6
 djorm-ext-hstore==0.6
 djorm-ext-pgarray==0.10
 docutils==0.11
-gunicorn==18.0
+gunicorn==19.0.0
 ipython==2.1.0
 newrelic==2.20.0.17
 paramiko==1.14.0
