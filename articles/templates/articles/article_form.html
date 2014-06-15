@@ -39,7 +39,7 @@
     <form action="" method="post" id="article-form">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" value="{% trans "Save" %}" />
+        <button class="btn btn-lg btn-primary" type="submit">{% trans "Save" %}</button>
     </form>
 </article>
 {% endblock %}
