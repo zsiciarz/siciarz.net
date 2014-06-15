@@ -5,7 +5,7 @@
 {% block title %}{% trans "Edit article" %} | {% endblock %}
 
 {% block extra-head %}
-    <script src="{{ STATIC_URL }}epiceditor/js/epiceditor.js"></script>
+    <script src="{{ STATIC_URL }}epiceditor/js/epiceditor.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function(event) {
             var ids = ['{{ form.summary.auto_id }}', '{{ form.content.auto_id }}'];
