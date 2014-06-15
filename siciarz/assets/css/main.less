@@ -165,11 +165,11 @@ html, body {
 }
 .main-content {
     margin-bottom: @line-height-computed;
-    a {
+    a:not(.btn) {
         color: saturate(@baseBlue, 50%);
         font-weight: bold;
     }
-    a:hover {
+    a:not(.btn):hover {
         text-decoration: none;
         color: lighten(@baseBlue, 30%);
     }
