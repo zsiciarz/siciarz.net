@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 
+from django.core.urlresolvers import reverse
 from django.views.generic import ListView, DetailView, MonthArchiveView
 from django.views.generic.edit import CreateView, UpdateView
 
@@ -64,6 +65,12 @@ class ArticleDetailsView(DetailView):
 class ArticleCreateView(LoginRequiredMixin, StaffuserRequiredMixin, UserFormKwargsMixin, CreateView):
     model = Article
     form_class = ArticleCreateForm
+
+    def get_success_url(self):
+        if 'continue' in self.request.POST:
+            return reverse('articles:article_update', kwargs={'slug': self.object.slug})
+        else:
+            return self.object.get_absolute_url()
 
 
 class ArticleUpdateView(LoginRequiredMixin, StaffuserRequiredMixin, UpdateView):
