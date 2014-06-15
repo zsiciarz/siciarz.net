@@ -1,10 +1,10 @@
 {% load url from future %}
 {% load i18n %}
 
-    {% if user.is_staff %}
-        {% if article.is_static %}
-            <span class="label label-info">{% trans "static page" %}</span>
-        {% endif %}
-        <span class="label label-info">{{ article.get_status_display }}</span>
-        <a href="{% url 'articles:article_update' slug=article.slug %}">{% trans "Edit" %}</a>
+{% if user.is_staff %}
+    {% if article.is_static %}
+        <span class="label label-info">{% trans "static page" %}</span>
     {% endif %}
+    <span class="label label-info">{{ article.get_status_display }}</span>
+    <a href="{% url 'articles:article_update' slug=article.slug %}">{% trans "Edit" %}</a>
+{% endif %}
