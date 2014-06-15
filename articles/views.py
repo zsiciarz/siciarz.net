@@ -69,3 +69,9 @@ class ArticleCreateView(LoginRequiredMixin, StaffuserRequiredMixin, UserFormKwar
 class ArticleUpdateView(LoginRequiredMixin, StaffuserRequiredMixin, UpdateView):
     model = Article
     form_class = ArticleForm
+
+    def get_success_url(self):
+        if 'continue' in self.request.POST:
+            return self.request.get_full_path()
+        else:
+            return self.object.get_absolute_url()
