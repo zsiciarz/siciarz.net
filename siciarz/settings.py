@@ -164,6 +164,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'easy_pjax',
     'raven.contrib.django.raven_compat',
+    'crispy_forms',
 
     'articles',
     'pgallery',
@@ -215,6 +216,8 @@ MARKITUP_SET = 'markitup/sets/markdown'
 RAVEN_CONFIG = {
     'dsn': '',
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 try:
     from local_settings import *
