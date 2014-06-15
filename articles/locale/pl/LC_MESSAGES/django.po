@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-29 20:21+0200\n"
-"PO-Revision-Date: 2013-07-29 20:22+0200\n"
+"POT-Creation-Date: 2014-06-15 22:39+0200\n"
+"PO-Revision-Date: 2014-06-15 22:40+0200\n"
 "Last-Translator:   <antyqjon@interia.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Translated-Using: django-rosetta 0.7.2\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
 
 #: feeds.py:22
 msgid "siciarz.net - articles"
@@ -27,69 +27,81 @@ msgstr "siciarz.net - artykuły"
 msgid "Latest blog articles."
 msgstr "Ostatnie artykuły na blogu."
 
-#: models.py:34
+#: models.py:48
 msgid "draft"
 msgstr "szkic"
 
-#: models.py:35
+#: models.py:49
 msgid "published"
 msgstr "opublikowany"
 
-#: models.py:37
+#: models.py:51
 msgid "author"
 msgstr "autor"
 
-#: models.py:38
+#: models.py:52
 msgid "title"
 msgstr "tytuł"
 
-#: models.py:39
+#: models.py:53
 msgid "subtitle"
 msgstr "podtytuł"
 
-#: models.py:40
+#: models.py:54
 msgid "slug"
 msgstr "slug"
 
-#: models.py:41
+#: models.py:55
 msgid "summary"
 msgstr "streszczenie"
 
-#: models.py:42
+#: models.py:56
 msgid "content"
 msgstr "treść"
 
-#: models.py:43
+#: models.py:57
 msgid "pageviews"
 msgstr "liczba odsłon"
 
-#: models.py:44
+#: models.py:58
 msgid "static page?"
 msgstr "strona statyczna?"
 
-#: models.py:45
+#: models.py:59
 msgid "language"
 msgstr "język"
 
-#: models.py:51
+#: models.py:60
+msgid "tags"
+msgstr "tagi"
+
+#: models.py:61
+msgid "header image"
+msgstr "obrazek w nagłówku"
+
+#: models.py:66
 msgid "Articles"
 msgstr "Artykuły"
 
-#: templates/articles/article_detail.html:26
+#: templates/articles/article_detail.html:31
 #: templates/articles/article_list.html:15
 msgid "Written on"
 msgstr "Napisane"
 
-#: templates/articles/article_detail.html:28
+#: templates/articles/article_detail.html:33
 msgid "Tags"
 msgstr "Tagi"
 
-#: templates/articles/article_form.html:5
-#: templates/articles/article_form.html:34
+#: templates/articles/article_form.html:6
+#: templates/articles/article_form.html:38
 msgid "Edit article"
 msgstr "Edytuj artykuł"
 
-#: templates/articles/article_form.html:38
+#: templates/articles/article_form.html:42
+msgid "Save and continue"
+msgstr "Zapisz i kontynuuj"
+
+#: templates/articles/article_form.html:43
 msgid "Save"
 msgstr "Zapisz"
 
@@ -97,19 +109,23 @@ msgstr "Zapisz"
 msgid "Continue reading"
 msgstr "Czytaj dalej"
 
-#: templates/articles/article_list.html:20
+#: templates/articles/article_list.html:23
+msgid "added on"
+msgstr "dodano"
+
+#: templates/articles/article_list.html:29
 msgid "There aren't any articles (yet)."
 msgstr "Nie ma (jeszcze) żadnych artykułów."
 
-#: templates/articles/article_list.html:21
+#: templates/articles/article_list.html:30
 msgid "Meanwhile, enjoy this glorious sketch."
 msgstr "W międzyczasie obejrzyj ten wspaniały skecz."
 
-#: templates/articles/article_menu.html:6
+#: templates/articles/article_menu.html:7
 msgid "static page"
 msgstr "strona statyczna"
 
-#: templates/articles/article_menu.html:9
+#: templates/articles/article_menu.html:10
 msgid "Edit"
 msgstr "Edytuj"
 
@@ -122,11 +138,11 @@ msgstr "Blog"
 msgid "blog"
 msgstr "blog"
 
-#: templates/articles/base_articles.html:24
+#: templates/articles/base_articles.html:21
 msgid "Administration"
 msgstr "Administracja"
 
-#: templates/articles/base_articles.html:26
+#: templates/articles/base_articles.html:22
 msgid "Create article"
 msgstr "Utwórz artykuł"
 
