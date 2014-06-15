@@ -168,10 +168,10 @@ html, body {
     a:not(.btn) {
         color: saturate(@baseBlue, 50%);
         font-weight: bold;
-    }
-    a:not(.btn):hover {
-        text-decoration: none;
-        color: lighten(@baseBlue, 30%);
+        &:hover {
+            text-decoration: none;
+            color: lighten(@baseBlue, 30%);
+        }
     }
     article {
         h1 {
