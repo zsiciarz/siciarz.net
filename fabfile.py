@@ -25,6 +25,7 @@ env.roledefs = {
     'web': ["zsiciarz@siciarz.net"],
 }
 env.color = True
+env.forward_agent = True
 
 
 @task
