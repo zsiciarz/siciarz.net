@@ -15,14 +15,14 @@ def prepare_project():
     """
     return nested(
         cd(PROJECT_PATH),
-        prefix("source ../../../.virtualenvs/siciarznet/bin/activate"),
+        prefix("source ../../../.virtualenvs/zsiciarz/bin/activate"),
     )
 
 
 PROJECT_PATH = "$HOME/v/siciarz.net/siciarz.net"
 
 env.roledefs = {
-    'web': ["siciarznet@siciarznet.megiteam.pl"],
+    'web': ["zsiciarz@siciarz.net"],
 }
 env.color = True
 
@@ -59,13 +59,7 @@ def collect_static():
 @task
 @roles("web")
 def restart():
-    run("appctl restart siciarznet")
-
-
-@task
-def open_browser():
-    import webbrowser
-    webbrowser.open("http://siciarz.net")
+    run("appctl restart zsiciarz")
 
 
 @task
