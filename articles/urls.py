@@ -28,7 +28,7 @@ urlpatterns = patterns('',
         view=RedirectView.as_view(url='/%(slug)s/', permanent=True),
     ),
     url(
-        regex=r'^tag/(?P<tag>[\w\ ]+)/$',
+        regex=r'^tag/(?P<tag>[\w\-\ ]+)/$',
         view=TaggedArticleListView.as_view(),
         name='tagged_article_list'
     ),
