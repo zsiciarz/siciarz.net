@@ -15,7 +15,7 @@ django-disqus==0.4.3
 django-easy-pjax==1.1.0
 django-extensions==1.4.0
 django-grappelli==2.5.3
-django-markitup==2.2.1
+django-markitup==2.2.2
 django-model-utils==2.2
 django-pagination==1.0.7
 django-pgallery==0.4dev
