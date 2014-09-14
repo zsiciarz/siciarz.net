@@ -36,6 +36,6 @@ psycopg2==2.5.4
 pycrypto==2.6.1
 raven==5.0.0
 requests==2.4.1
-six==1.7.3
+six==1.8.0
 sorl-thumbnail==11.12
 unicode-slugify==0.1.1
