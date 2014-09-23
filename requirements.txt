@@ -31,7 +31,7 @@ docutils==0.12
 gunicorn==19.1.1
 ipython==2.2.0
 newrelic==2.30.0.27
-paramiko==1.15.0
+paramiko==1.15.1
 psycopg2==2.5.4
 pycrypto==2.6.1
 raven==5.0.0
