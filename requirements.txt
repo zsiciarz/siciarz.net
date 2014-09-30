@@ -2,7 +2,7 @@ Django==1.6.7
 Fabric==1.10.0
 Markdown==2.5.1
 Pillow==2.5.3
-PyGithub==1.25.0
+PyGithub==1.25.1
 Pygments==1.6
 South==1.0
 Werkzeug==0.9.6
