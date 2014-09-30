@@ -22,7 +22,7 @@ django-pgallery==0.4dev
 django-reversion==1.8.4
 django-rosetta==0.7.4
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
-git+https://github.com/zsiciarz/django-twitter-bootstrap.git@fix-package-data#egg=twitter_bootstrap
+django-twitter-bootstrap==3.2.0-1
 djorm-ext-core==0.7
 djorm-ext-expressions==0.6
 djorm-ext-hstore==0.6
