@@ -29,7 +29,7 @@ djorm-ext-hstore==0.6
 djorm-ext-pgarray==0.10
 docutils==0.12
 gunicorn==19.1.1
-ipython==2.2.0
+ipython==2.3.0
 newrelic==2.32.0.28
 paramiko==1.15.1
 psycopg2==2.5.4
