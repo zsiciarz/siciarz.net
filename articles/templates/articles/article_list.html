@@ -7,7 +7,14 @@
     {% autopaginate article_list 5 %}
     {% for article in article_list %}
         <article>
-            <h1><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h1>
+            <header{% if article.header_image %} class="image"{% endif %}>
+                <a href="{{ article.get_absolute_url }}">
+                <h1>{{ article.title }}</h1>
+                {% if article.header_image %}
+                    <img src="{{ article.header_image.url }}" alt="{{ article.title }}" />
+                {% endif %}
+                </a>
+            </header>
             {% include "articles/article_menu.html" %}
             {{ article.summary }}
             <a class="continue-reading" href="{{ article.get_absolute_url }}">{% trans "Continue reading" %} &raquo;</a>
