@@ -37,8 +37,9 @@ class ArticleQuerySet(ExpressionQuerySet):
         """
         Returns a set of articles which tags overlap (&&) given article's tags.
         """
-        return self.where(
-            SqlExpression("tags", "&&", article.tags)
+        return self.extra(select={
+            'common_tag_count': 'coalesce(array_length(array(select unnest(tags) intersect select unnest(%s)), 1), 0)',
+        }, select_params=(article.tags,), order_by=('-common_tag_count',)
         ).exclude(pk=article.pk)
 
 
