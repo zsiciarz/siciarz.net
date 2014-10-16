@@ -35,7 +35,7 @@ class ArticleQuerySet(ExpressionQuerySet):
 
     def similar(self, article):
         """
-        Returns a set of articles which tags overlap (&&) given article's tags.
+        Returns articles ordered by number of common tags with the given one.
         """
         return self.extra(select={
             'common_tag_count': 'coalesce(array_length(array(select unnest(tags) intersect select unnest(%s)), 1), 0)',
