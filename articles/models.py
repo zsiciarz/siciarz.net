@@ -39,7 +39,7 @@ class ArticleQuerySet(ExpressionQuerySet):
         """
         return self.where(
             SqlExpression("tags", "&&", article.tags)
-        )
+        ).exclude(pk=article.pk)
 
 
 @python_2_unicode_compatible
