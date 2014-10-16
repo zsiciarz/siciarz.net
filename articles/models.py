@@ -67,9 +67,6 @@ class Article(StatusModel, TimeStampedModel):
         ordering = ['-created']
 
     def __str__(self):
-        """
-        The Unicode representation of an article is its title.
-        """
         return self.title
 
     @models.permalink
