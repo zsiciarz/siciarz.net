@@ -23,7 +23,8 @@ def get_related_articles(article, count=3):
     """
     Returns articles with similar set of tags as the given article.
     """
-    return Article.objects.only_articles().published().similar(article)[:count]
+    queryset = Article.objects.only_articles().published().similar(article)
+    return [obj for obj in queryset if obj.common_tag_count > 0][:count]
 
 
 @register.assignment_tag
