@@ -1,5 +1,4 @@
 Django==1.6.8
-Fabric==1.10.0
 Markdown==2.5.1
 Pillow==2.6.1
 PyGithub==1.25.2
@@ -31,9 +30,7 @@ docutils==0.12
 gunicorn==19.1.1
 ipython==2.3.0
 newrelic==2.34.0.29
-paramiko==1.15.1
 psycopg2==2.5.4
-pycrypto==2.6.1
 raven==5.1.1
 requests==2.4.3
 six==1.8.0
