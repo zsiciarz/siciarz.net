@@ -24,11 +24,13 @@
         </article>
         {% if forloop.first and latest_gallery %}
             <article>
+                {% with photo_list=latest_gallery.get_teaser_photos %}
                 <h1><a href="{{ latest_gallery.get_absolute_url }}">{{ latest_gallery.title }}</a></h1>
-                {% include "pgallery/thumbnail_list.html" with photo_list=latest_gallery.get_teaser_photos %}
+                {% include "pgallery/thumbnail_list.html" %}
                 <footer>
                     {% trans "added on" %} {{ latest_gallery.shot_date|date:"DATE_FORMAT" }}
                 </footer>
+                {% endwith %}
             </article>
         {% endif %}
     {% empty %}
