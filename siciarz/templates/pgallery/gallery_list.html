@@ -14,7 +14,6 @@
                 <img src="{{ photo_list.0.image.url }}" alt="{{ gallery.title }}" />
                 </a>
             </header>
-            {% include "pgallery/thumbnail_list.html" with photo_list=photo_list|slice:"1:" %}
             <footer>
                 {% trans "added on" %} {{ gallery.shot_date|date:"DATE_FORMAT" }}
             </footer>
