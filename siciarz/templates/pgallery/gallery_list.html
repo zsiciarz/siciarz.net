@@ -1,0 +1,32 @@
+{% extends "pgallery/base_photos.html" %}
+{% load url from future %}
+{% load i18n %}
+{% load pagination_tags %}
+
+{% block content %}
+    {% autopaginate gallery_list 5 %}
+    {% for gallery in gallery_list %}
+        <article>
+            {% with photo_list=gallery.get_teaser_photos %}
+            <header class="image">
+                <a href="{{ gallery.get_absolute_url }}">
+                <h1>{{ gallery.title }}</h1>
+                <img src="{{ photo_list.0.image.url }}" alt="{{ gallery.title }}" />
+                </a>
+            </header>
+            {% include "pgallery/thumbnail_list.html" with photo_list=photo_list|slice:"1:" %}
+            <footer>
+                {% trans "added on" %} {{ gallery.shot_date|date:"DATE_FORMAT" }}
+            </footer>
+            {% endwith %}
+        </article>
+    {% empty %}
+        <article>
+            <h1>{% trans "There aren't any galleries (yet)." %}</h1>
+            <p>{% trans "Meanwhile, enjoy this glorious sketch." %}</p>
+            <iframe width="420" height="315" src="http://www.youtube.com/embed/zekiZYSVdeQ" frameborder="0" allowfullscreen></iframe>
+        </article>
+    {% endfor %}
+    {% paginate %}
+{% endblock %}
+
