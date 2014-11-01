@@ -8,10 +8,9 @@
     {% for gallery in gallery_list %}
         <article>
             {% with photo_list=gallery.get_teaser_photos %}
-            <header class="image">
+            <header class="image" style="background-image: url('{{ photo_list.0.image.url }}');">
                 <a href="{{ gallery.get_absolute_url }}">
                 <h1>{{ gallery.title }}</h1>
-                <img src="{{ photo_list.0.image.url }}" alt="{{ gallery.title }}" />
                 </a>
             </header>
             <footer>

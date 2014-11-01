@@ -7,12 +7,9 @@
     {% autopaginate article_list 5 %}
     {% for article in article_list %}
         <article>
-            <header{% if article.header_image %} class="image"{% endif %}>
+            <header{% if article.header_image %} class="image" style="background-image: url('{{ article.header_image.url }}');"{% endif %}>
                 <a href="{{ article.get_absolute_url }}">
                 <h1>{{ article.title }}</h1>
-                {% if article.header_image %}
-                    <img src="{{ article.header_image.url }}" alt="{{ article.title }}" />
-                {% endif %}
                 </a>
             </header>
             {% include "articles/article_menu.html" %}
@@ -25,10 +22,9 @@
         {% if forloop.first and latest_gallery %}
             <article>
                 {% with photo_list=latest_gallery.get_teaser_photos %}
-                <header class="image">
+                <header class="image" style="background-image: url('{{ photo_list.0.image.url }}');">
                     <a href="{{ latest_gallery.get_absolute_url }}">
                     <h1>{{ latest_gallery.title }}</h1>
-                    <img src="{{ photo_list.0.image.url }}" alt="{{ latest_gallery.title }}" />
                     </a>
                 </header>
                 <footer>
