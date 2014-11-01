@@ -12,7 +12,7 @@ django-crispy-forms==1.4.0
 django-debug-toolbar==1.2.2
 django-disqus==0.4.3
 django-easy-pjax==1.1.0
-django-extensions==1.4.4
+django-extensions==1.4.5
 django-grappelli==2.5.4
 django-markitup==2.2.2
 django-model-utils==2.2
