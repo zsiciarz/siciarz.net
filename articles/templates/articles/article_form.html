@@ -33,19 +33,16 @@
     </script>
 {% endblock %}
 
-{% block content %}
-<article>
-    <h1>{% trans "Edit article" %}</h1>
-    <form action="" method="post" id="article-form" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button name="continue" class="btn btn-lg btn-primary" type="submit">{% trans "Save and continue" %}</button>
-        <button class="btn btn-lg btn-default" type="submit">{% trans "Save" %}</button>
-    </form>
-</article>
+{% block base-content %}
+    <div class="col-lg-12 main-content">
+    <article>
+        <h1>{% trans "Edit article" %}</h1>
+        <form action="" method="post" id="article-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button name="continue" class="btn btn-lg btn-primary" type="submit">{% trans "Save and continue" %}</button>
+            <button class="btn btn-lg btn-default" type="submit">{% trans "Save" %}</button>
+        </form>
+    </article>
+    </div>
 {% endblock %}
-
-{% block sidebar-articles %}
-    {{ block.super }}
-{% endblock %}
-
