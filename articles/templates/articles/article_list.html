@@ -25,8 +25,13 @@
         {% if forloop.first and latest_gallery %}
             <article>
                 {% with photo_list=latest_gallery.get_teaser_photos %}
-                <h1><a href="{{ latest_gallery.get_absolute_url }}">{{ latest_gallery.title }}</a></h1>
-                {% include "pgallery/thumbnail_list.html" %}
+                <header class="image">
+                    <a href="{{ latest_gallery.get_absolute_url }}">
+                    <h1>{{ latest_gallery.title }}</h1>
+                    <img src="{{ photo_list.0.image.url }}" alt="{{ latest_gallery.title }}" />
+                    </a>
+                </header>
+                {% include "pgallery/thumbnail_list.html" with photo_list=photo_list|slice:"1:" %}
                 <footer>
                     {% trans "added on" %} {{ latest_gallery.shot_date|date:"DATE_FORMAT" }}
                 </footer>
