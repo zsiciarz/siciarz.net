@@ -35,6 +35,16 @@ class ArticleListView(StaffAccessMixin, ListView):
         return context
 
 
+class ArticleDashboardView(LoginRequiredMixin, StaffuserRequiredMixin, StaffAccessMixin, ListView):
+    template_name = "articles/article_dashboard.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ArticleDashboardView, self).get_context_data(*args, **kwargs)
+        context['drafts'] = Article.objects.only_articles().drafts()
+        context['published'] = Article.objects.only_articles().published()
+        return context
+
+
 class TaggedArticleListView(StaffAccessMixin, ListView):
     def get_queryset(self):
         queryset = super(TaggedArticleListView, self).get_queryset()

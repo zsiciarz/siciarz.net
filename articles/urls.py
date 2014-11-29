@@ -7,7 +7,7 @@ from django.conf.urls import patterns, url
 from django.views.generic.base import RedirectView
 
 from .feeds import ArticleFeed
-from .views import ArticleListView, TaggedArticleListView, \
+from .views import ArticleListView, ArticleDashboardView, TaggedArticleListView, \
     ArticleMonthArchiveView, ArticleDetailsView, ArticleCreateView, \
     ArticleUpdateView
 
@@ -17,6 +17,11 @@ urlpatterns = patterns('',
         regex=r'^$',
         view=ArticleListView.as_view(),
         name='article_list'
+    ),
+    url(
+        regex=r'^dashboard/$',
+        view=ArticleDashboardView.as_view(),
+        name='article_dashboard'
     ),
     url(
         regex=r'^rss/$',

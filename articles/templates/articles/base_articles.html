@@ -17,6 +17,7 @@
         <section class="well">
             <h2>{% trans "Administration" %}</h2>
             <a class="btn btn-sm btn-primary" href="{% url 'articles:article_create' %}">{% trans "Create article" %}</a>
+            <a class="btn btn-sm btn-default" href="{% url 'articles:article_dashboard' %}">{% trans "Dashboard" %}</a>
         </section>
         {% endif %}
         {% block sidebar-articles %}

@@ -19,6 +19,9 @@ from model_utils.models import StatusModel, TimeStampedModel
 
 
 class ArticleQuerySet(ExpressionQuerySet):
+    def drafts(self):
+        return self.filter(status='draft')
+
     def published(self):
         return self.filter(status='published')
 
