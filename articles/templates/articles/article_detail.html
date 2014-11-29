@@ -17,11 +17,8 @@
 {% block content %}
     {% disqus_dev %}
     <article>
-        <header{% if article.header_image %} class="image"{% endif %}>
+        <header{% if article.header_image %} class="image" style="background-image: url('{{ article.header_image.url }}');"{% endif %}>
             <h1>{{ article.title }}</h1>
-            {% if article.header_image %}
-                <img src="{{ article.header_image.url }}" alt="{{ article.title }}" />
-            {% endif %}
         </header>
         {% include "articles/article_menu.html" %}
 
