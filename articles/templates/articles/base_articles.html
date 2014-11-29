@@ -13,15 +13,15 @@
         {% block content %}{% endblock %}
     </div>
     <div class="col-lg-3 sidebar articles">
-        {% block sidebar-articles %}
-            {% include "articles/top_articles.html" %}
-        {% endblock %}
         {% if user.is_staff %}
         <section class="well">
             <h2>{% trans "Administration" %}</h2>
             <a class="btn btn-sm btn-primary" href="{% url 'articles:article_create' %}">{% trans "Create article" %}</a>
         </section>
         {% endif %}
+        {% block sidebar-articles %}
+            {% include "articles/top_articles.html" %}
+        {% endblock %}
     </div>
     <div class="col-lg-3 sidebar archive">
         {% block sidebar-archive %}
