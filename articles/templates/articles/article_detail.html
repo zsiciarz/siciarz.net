@@ -33,6 +33,20 @@
                         <a href="{% url 'articles:tagged_article_list' tag=tag %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </div>
+                <div class="row links-next-prev">
+                    <div class="col-sm-6 link-previous">
+                    {% if previous_article %}
+                        {% trans "Previous article" %}<br>
+                        <a href="{{ previous_article.get_absolute_url }}">{{ previous_article }}</a>
+                    {% endif %}
+                    </div>
+                    <div class="col-sm-6 link-next">
+                    {% if next_article %}
+                        {% trans "Next article" %}<br>
+                        <a href="{{ next_article.get_absolute_url }}">{{ next_article }}</a>
+                    {% endif %}
+                    </div>
+                </div>
             </footer>
             {% disqus_show_comments %}
         {% endif %}

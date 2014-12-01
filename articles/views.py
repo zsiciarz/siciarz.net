@@ -71,6 +71,18 @@ class ArticleDetailsView(DetailView):
         article.update_pageviews()
         return article
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(ArticleDetailsView, self).get_context_data(*args, **kwargs)
+        try:
+            context['next_article'] = self.object.get_next_by_created(status='published')
+        except Article.DoesNotExist:
+            context['next_article'] = None
+        try:
+            context['previous_article'] = self.object.get_previous_by_created(status='published')
+        except Article.DoesNotExist:
+            context['previous_article'] = None
+        return context
+
 
 class ArticleCreateView(LoginRequiredMixin, StaffuserRequiredMixin, UserFormKwargsMixin, CreateView):
     model = Article
