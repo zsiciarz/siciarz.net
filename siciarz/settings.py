@@ -210,7 +210,7 @@ GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
 
-MARKITUP_FILTER = ('markdown.markdown', {'extensions': ['codehilite']})
+MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['codehilite']})
 MARKITUP_SET = 'markitup/sets/markdown'
 
 RAVEN_CONFIG = {
