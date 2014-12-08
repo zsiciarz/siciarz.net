@@ -39,4 +39,4 @@ class ArticleFeed(Feed):
         """
         Returns the HTML content of a given article as the items description.
         """
-        return item.content
+        return "%s\n\n%s" % (item.summary, item.content)
