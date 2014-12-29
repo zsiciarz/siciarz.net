@@ -32,7 +32,7 @@ ipython==2.3.1
 newrelic==2.40.0.34
 psycopg2==2.5.4
 raven==5.1.1
-requests==2.5.0
+requests==2.5.1
 six==1.8.0
 sorl-thumbnail==11.12
 unicode-slugify==0.1.1
