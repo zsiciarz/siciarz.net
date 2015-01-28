@@ -1,6 +1,5 @@
 {% extends "base.html"|pjax:request %}
 {% load i18n %}
-{% load disqus_tags %}
 {% load thumbnail %}
 
 {% block title %}{{ photo.title }} | {% trans "Photography" %} | {{ block.super }}{% endblock %}
@@ -42,7 +41,6 @@
     </div>
     <div class="col-lg-3 sidebar photo">
         <section class="photo-information">
-            {% disqus_dev %}
             <h2><a href="{{ photo.gallery.get_absolute_url }}">{{ photo.gallery.title }}</a></h2>
             {{ photo.title }}
             <div class="tags">
@@ -51,7 +49,6 @@
                     <a href="{% url 'pgallery:tagged_photo_list' tag=tag %}" rel="tag">{{ tag }}</a>{% if not forloop.last %}, {% endif %}
                 {% endfor %}
             </div>
-            {% disqus_show_comments %}
         </section>
     </div>
 {% endblock %}
@@ -61,15 +58,7 @@
 <script>
     pjax.connect({
         'container': 'base-content',
-        'useClass': 'pjaxer',
-        'success': function () {
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.url = window.location.href;
-                }
-            });
-        }
+        'useClass': 'pjaxer'
     });
 </script>
 {{ block.super }}

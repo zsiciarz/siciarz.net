@@ -153,7 +153,6 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'debug_toolbar',
-    'disqus',
     'rosetta-grappelli',
     'rosetta',
     'compressor',
@@ -206,9 +205,6 @@ SOUTH_DATABASE_ADAPTERS = {
 }
 
 GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
-
-DISQUS_API_KEY = ''
-DISQUS_WEBSITE_SHORTNAME = ''
 
 MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['codehilite']})
 MARKITUP_SET = 'markitup/sets/markdown'

@@ -1,6 +1,5 @@
 {% extends "articles/base_articles.html" %}
 {% load i18n %}
-{% load disqus_tags %}
 
 {% block title %}{{ article.title }} | {% endblock %}
 {% block og-type %}article{% endblock %}
@@ -14,7 +13,6 @@
 {% endblock %}
 
 {% block content %}
-    {% disqus_dev %}
     <article>
         <header{% if article.header_image %} class="image" style="background-image: url('{{ article.header_image.url }}');"{% endif %}>
             <h1>{{ article.title }}</h1>
@@ -48,7 +46,6 @@
                     </div>
                 </div>
             </footer>
-            {% disqus_show_comments %}
         {% endif %}
     </article>
 {% endblock %}
