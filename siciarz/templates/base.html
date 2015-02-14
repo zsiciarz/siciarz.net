@@ -1,4 +1,4 @@
-{% load i18n %}{% load compress %}<!doctype html>
+{% load i18n %}{% load staticfiles %}{% load compress %}<!doctype html>
 <html class="no-js" lang="pl">
 <head>
   <meta charset="utf-8">
@@ -9,13 +9,13 @@
   <meta property="og:type" content="{% block og-type %}blog{% endblock %}" />
   <meta property="og:title" content="{% block og-title %}siciarz.net{% endblock %}" />
   <meta property="og:url" content="http://{{ current_site.domain }}{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
-  <meta property="og:image" content="http://{{ current_site.domain }}{% block og-image %}{{ STATIC_URL }}images/me.jpeg{% endblock %}" />
+  <meta property="og:image" content="http://{{ current_site.domain }}{% block og-image %}{% static 'images/me.jpeg' %}{% endblock %}" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   {% compress css %}
-  <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}css/main.less">
+  <link rel="stylesheet" type="text/less" href="{% static 'css/main.less' %}">
   {% endcompress %}
   {% block extra-style %}{% endblock %}
-  {% if debug %}<script src="{{ STATIC_URL }}js/less-1.6.2.min.js"></script>{% endif %}
+  {% if debug %}<script src="{% static 'js/less-1.6.2.min.js' %}"></script>{% endif %}
   {% block extra-head %}{% endblock %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -28,7 +28,7 @@
       })();
     </script>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% block rss-url %}{% url 'articles:rss' %}{% endblock %}" />
-    <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
 </head>
 
 <body class="nojs">
@@ -79,9 +79,9 @@
         </p>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-2.1.0.min.js"><\/script>')</script>
-    <script defer src="{{ STATIC_URL }}twitter_bootstrap/js/transition.js"></script>
-    <script defer src="{{ STATIC_URL }}twitter_bootstrap/js/collapse.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'js/jquery-2.1.0.min.js' %}"><\/script>')</script>
+    <script defer src="{% static 'twitter_bootstrap/js/transition.js' %}"></script>
+    <script defer src="{% static 'twitter_bootstrap/js/collapse.js' %}"></script>
     {% block extra-script %}{% endblock %}
 </body>
 </html>

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block title %}{% trans "Error 404 - page not found" %} | {% endblock title %}
 
@@ -8,7 +9,7 @@
     <article>
         <h1 class="error-title">{% trans "Page not found" %}</h1>
         <figure>
-        <img src="{{ STATIC_URL }}images/tb_sign1.png" alt="Tumblebeast 404" />
+        <img src="{% static 'images/tb_sign1.png' %}" alt="Tumblebeast 404" />
             <figcaption>
                 <strong>404 Tumblebeast</strong>
                 by <a href="http://theoatmeal.com">Matthew Inman</a>.

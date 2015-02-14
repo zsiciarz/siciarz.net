@@ -1,11 +1,12 @@
 {% extends "articles/base_articles.html" %}
 {% load i18n %}
+{% load staticfiles %}
 {% load crispy_forms_tags %}
 
 {% block title %}{% trans "Edit article" %} | {% endblock %}
 
 {% block extra-head %}
-    <script src="{{ STATIC_URL }}epiceditor/js/epiceditor.min.js"></script>
+    <script src="{% static 'epiceditor/js/epiceditor.min.js' %}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function(event) {
             var ids = ['{{ form.summary.auto_id }}', '{{ form.content.auto_id }}'];
@@ -20,7 +21,7 @@
                 var opts = {
                     container: containerId,
                     textarea: textareaId,
-                    basePath: '{{ STATIC_URL }}epiceditor/',
+                    basePath: '{% static 'epiceditor/' %}',
                     clientSideStorage: false,
                     button: {
                         preview: false

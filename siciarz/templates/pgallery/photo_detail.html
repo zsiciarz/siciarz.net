@@ -1,5 +1,6 @@
 {% extends "base.html"|pjax:request %}
 {% load i18n %}
+{% load staticfiles %}
 {% load thumbnail %}
 
 {% block title %}{{ photo.title }} | {% trans "Photography" %} | {{ block.super }}{% endblock %}
@@ -54,7 +55,7 @@
 {% endblock %}
 
 {% block extra-script %}
-<script src="{{ STATIC_URL }}js/pjax-standalone.js"></script>
+<script src="{% static 'js/pjax-standalone.js' %}"></script>
 <script>
     pjax.connect({
         'container': 'base-content',
