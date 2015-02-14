@@ -16,7 +16,7 @@ django-grappelli==2.6.3
 django-markitup==2.2.2
 django-model-utils==2.2
 django-pagination-py3==1.1.1
-django-pgallery==0.5dev
+django-pgallery==0.5.1dev
 django-reversion==1.8.5
 django-rosetta==0.7.5
 -e git+git://github.com/zsiciarz/django-rosetta-grappelli.git#egg=rosetta_grappelli
