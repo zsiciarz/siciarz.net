@@ -6,19 +6,18 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.db import models
 from django.db.models import F
+from django.db.models.query import QuerySet
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
-from djorm_expressions.base import SqlExpression
-from djorm_expressions.models import ExpressionQuerySet
-from djorm_pgarray.fields import ArrayField
+from djorm_pgarray.fields import TextArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
 
 
-class ArticleQuerySet(ExpressionQuerySet):
+class ArticleQuerySet(QuerySet):
     def drafts(self):
         return self.filter(status='draft')
 
@@ -32,9 +31,7 @@ class ArticleQuerySet(ExpressionQuerySet):
         return self.filter(is_static=True)
 
     def tagged(self, tag):
-        return self.where(
-            SqlExpression("tags", "@>", [tag])
-        )
+        return self.filter(tags__contains=[tag])
 
     def similar(self, article):
         """
@@ -61,7 +58,7 @@ class Article(StatusModel, TimeStampedModel):
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
-    tags = ArrayField(_("tags"), dbtype="text")
+    tags = TextArrayField()
     header_image = models.ImageField(_("header image"), blank=True, null=True, upload_to='articles/%Y/%m/%d')
 
     objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
