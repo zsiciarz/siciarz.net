@@ -133,7 +133,7 @@ RAVEN_CONFIG = {
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 try:
-    from local_settings import *  # noqa
+    from .local_settings import *  # noqa
 except ImportError:
     pass
 
