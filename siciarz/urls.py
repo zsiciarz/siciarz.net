@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2015.
-
-from __future__ import unicode_literals
 
 from django.conf import settings
 from django.conf.urls import patterns, include, url

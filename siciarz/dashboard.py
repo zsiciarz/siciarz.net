@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2015.
-
-from __future__ import unicode_literals
 
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
@@ -76,4 +73,3 @@ class CustomIndexDashboard(Dashboard):
             collapsible=False,
             column=3,
         ))
-

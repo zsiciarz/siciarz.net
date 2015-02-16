@@ -1,13 +1,9 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2015.
-
-from __future__ import unicode_literals
 
 from django.conf import settings
 from django.db import models
 from django.db.models import F
 from django.db.models.query import QuerySet
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from djorm_pgarray.fields import TextArrayField
@@ -43,7 +39,6 @@ class ArticleQuerySet(QuerySet):
         ).exclude(pk=article.pk)
 
 
-@python_2_unicode_compatible
 class Article(StatusModel, TimeStampedModel):
     STATUS = Choices(
         ('draft', _("draft")),

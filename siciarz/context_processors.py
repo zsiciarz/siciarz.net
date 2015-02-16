@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2015.
 
 from django.contrib.sites.models import Site

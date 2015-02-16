@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) Zbigniew Siciarz 2009-2015.
-
-from __future__ import unicode_literals
 
 from django.contrib.sitemaps import Sitemap
 from .models import Article
