@@ -1,5 +1,5 @@
 Django==1.7.4
-Markdown==2.5.2
+Markdown==2.6
 Pillow==2.7.0
 PyGithub==1.25.2
 Pygments==2.0.2
