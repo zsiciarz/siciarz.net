@@ -10,3 +10,4 @@ site_media/
 static/
 media/
 build/
+node_modules/

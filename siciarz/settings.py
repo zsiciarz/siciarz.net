@@ -137,5 +137,5 @@ except ImportError:
 
 if not DEBUG:
     COMPRESS_PRECOMPILERS = (
-        ('text/less', 'lessc {infile} {outfile}'),
+        ('text/less', '%s {infile} {outfile}' % os.path.join(BASE_DIR, 'node_modules/.bin/lessc')),
     )
