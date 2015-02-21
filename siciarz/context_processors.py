@@ -1,9 +1,8 @@
 # Copyright (c) Zbigniew Siciarz 2009-2015.
 
-from django.contrib.sites.models import Site
-
 
 def current_site(request):
+    protocol = 'https' if request.is_secure() else 'http'
     return {
-        'current_site': Site.objects.get_current(),
+        'current_site': '{}://siciarz.net'.format(protocol),
     }
