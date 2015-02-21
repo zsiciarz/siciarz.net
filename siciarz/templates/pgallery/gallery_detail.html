@@ -9,7 +9,7 @@
 
 {% block extra-head %}
     <meta property="og:description" content="{{ gallery.description|striptags }}" />
-    <link rel="canonical" href="http://{{ current_site.domain }}{{ gallery.get_absolute_url }}" />
+    <link rel="canonical" href="{{ gallery.get_absolute_url }}" />
 {% endblock %}
 
 {% block content %}

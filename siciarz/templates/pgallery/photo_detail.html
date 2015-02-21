@@ -10,7 +10,7 @@
 
 {% block extra-head %}
     <meta property="og:description" content="{{ photo.title|striptags }}" />
-    <link rel="canonical" href="http://{{ current_site.domain }}{{ photo.get_absolute_url }}" />
+    <link rel="canonical" href="{{ photo.get_absolute_url }}" />
 {% endblock %}
 
 {% block header-addon %}{% trans "photography" %}{% endblock %}
