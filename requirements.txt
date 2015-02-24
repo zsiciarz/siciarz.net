@@ -25,7 +25,7 @@ ipython==2.4.1
 newrelic==2.44.0.36
 psycopg2==2.6.0
 raven==5.2.0
-requests==2.5.1
+requests==2.5.2
 six==1.9.0
 sorl-thumbnail==12.2
 unicode-slugify==0.1.3
