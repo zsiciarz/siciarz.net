@@ -22,6 +22,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     'django_extensions',
+    'django_hstore',
     'debug_toolbar',
     'rosetta-grappelli',
     'rosetta',
