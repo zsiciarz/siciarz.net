@@ -11,3 +11,6 @@ static/
 media/
 build/
 node_modules/
+.coverage
+*,cover
+htmlcov
