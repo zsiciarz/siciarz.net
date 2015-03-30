@@ -27,3 +27,7 @@ class DraftArticleFactory(ArticleFactory):
 
 class PublishedArticleFactory(ArticleFactory):
     status = 'published'
+
+
+class StaticArticleFactory(ArticleFactory):
+    is_static = True
