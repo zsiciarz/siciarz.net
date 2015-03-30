@@ -19,3 +19,11 @@ class ArticleFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Article
+
+
+class DraftArticleFactory(ArticleFactory):
+    status = 'draft'
+
+
+class PublishedArticleFactory(ArticleFactory):
+    status = 'published'
