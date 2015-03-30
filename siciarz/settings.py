@@ -73,8 +73,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'siciarz.db'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'siciarz',
+        'USER': os.environ.get('DATABASE_USER', 'siciarz'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'siciarz'),
+        'HOST': 'localhost',
     }
 }
 
