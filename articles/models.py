@@ -9,7 +9,6 @@ from django.utils.translation import ugettext_lazy as _
 from djorm_pgarray.fields import TextArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
-from model_utils.managers import PassThroughManager
 from model_utils.models import StatusModel, TimeStampedModel
 
 
@@ -56,7 +55,7 @@ class Article(StatusModel, TimeStampedModel):
     tags = TextArrayField()
     header_image = models.ImageField(_("header image"), blank=True, null=True, upload_to='articles/%Y/%m/%d')
 
-    objects = PassThroughManager.for_queryset_class(ArticleQuerySet)()
+    objects = ArticleQuerySet.as_manager()
 
     class Meta:
         verbose_name_plural = _("Articles")
