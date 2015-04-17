@@ -1,12 +1,12 @@
 # Copyright (c) Zbigniew Siciarz 2009-2015.
 
 from django.conf import settings
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.db.models import F
 from django.db.models.query import QuerySet
 from django.utils.translation import ugettext_lazy as _
 
-from djorm_pgarray.fields import TextArrayField
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.models import StatusModel, TimeStampedModel
@@ -52,7 +52,7 @@ class Article(StatusModel, TimeStampedModel):
     pageviews = models.PositiveIntegerField(default=0, verbose_name=_("pageviews"))
     is_static = models.BooleanField(default=False, verbose_name=_("static page?"))
     language = models.CharField(_("language"), max_length=5, choices=settings.LANGUAGES, default=settings.LANGUAGE_CODE)
-    tags = TextArrayField()
+    tags = ArrayField(models.CharField(max_length=127), blank=True, default=list)
     header_image = models.ImageField(_("header image"), blank=True, null=True, upload_to='articles/%Y/%m/%d')
 
     objects = ArticleQuerySet.as_manager()
