@@ -12,6 +12,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.postgres',
     'django.contrib.sessions',
     'django.contrib.sitemaps',
     'django.contrib.messages',
@@ -22,7 +23,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     'django_extensions',
-    'django_hstore',
     'debug_toolbar',
     'rosetta-grappelli',
     'rosetta',
