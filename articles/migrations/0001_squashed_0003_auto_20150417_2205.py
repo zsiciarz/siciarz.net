@@ -11,8 +11,6 @@ import markitup.fields
 
 class Migration(migrations.Migration):
 
-    replaces = [('articles', '0001_initial'), ('articles', '0002_auto_20150216_1345'), ('articles', '0003_auto_20150417_2205')]
-
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
