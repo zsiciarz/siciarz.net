@@ -1,6 +1,6 @@
 # Copyright (c) Zbigniew Siciarz 2009-2015.
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic.base import RedirectView
 
 from .feeds import ArticleFeed
@@ -9,7 +9,7 @@ from .views import ArticleListView, ArticleDashboardView, TaggedArticleListView,
     ArticleUpdateView
 
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(
         regex=r'^$',
         view=ArticleListView.as_view(),
@@ -54,4 +54,4 @@ urlpatterns = patterns('',
         view=ArticleUpdateView.as_view(),
         name='article_update'
     ),
-)
+]
