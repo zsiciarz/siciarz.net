@@ -5,7 +5,7 @@ PyGithub==1.25.2
 Pygments==2.0.2
 django-appconf==1.0.1
 django-braces==1.8.0
-django-compressor==1.4
+django-compressor==1.5
 django-crispy-forms==1.4.0
 django-debug-toolbar==1.3.0
 git+https://github.com/scottwoodall/django-easy-pjax.git@54da8fd3546363d990d956f53c791c028aef9f2e#egg=easy_pjax
