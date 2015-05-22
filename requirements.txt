@@ -15,7 +15,7 @@ django-markitup==2.2.2
 django-model-utils==2.2
 django-pagination-py3==1.1.1
 django-pgallery==0.6.1dev
-django-reversion==1.8.6
+django-reversion==1.8.7
 django-rosetta==0.7.6
 https://github.com/zsiciarz/django-rosetta-grappelli/archive/d2f8b26ecb12ed369c8e496d6a8f401e923745d0.tar.gz#egg=rosetta_grappelli
 django-twitter-bootstrap==3.3.0
