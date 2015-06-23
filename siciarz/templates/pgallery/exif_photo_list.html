@@ -1,5 +1,6 @@
 {% extends "pgallery/base_photos.html" %}
 {% load i18n %}
+{% load pagination_tags %}
 
 {% block title %}{{ exif_key }}: {{ exif_value }} | {{ block.super }}{% endblock %}
 {% block og-type %}article{% endblock %}
@@ -13,7 +14,9 @@
 {% block content %}
     <article>
         <h1>{{ exif_key }}: {{ exif_value }}</h1>
+        {% autopaginate photo_list 60 %}
         {% include "pgallery/thumbnail_list.html" %}
+        {% paginate %}
     </article>
 {% endblock %}
 
