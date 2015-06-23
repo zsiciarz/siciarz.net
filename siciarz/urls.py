@@ -3,7 +3,9 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
+from django.views.static import serve
 
 from articles.sitemaps import ArticleSitemap
 from pgallery.sitemaps import GallerySitemap, PhotoSitemap
@@ -22,7 +24,7 @@ urlpatterns = [
 
     url(
         r'^sitemap\.xml$',
-        'django.contrib.sitemaps.views.sitemap',
+        sitemap,
         {'sitemaps': {
             'articles': ArticleSitemap,
             'galleries': GallerySitemap,
@@ -38,7 +40,7 @@ if settings.DEBUG:
     urlpatterns += [
         url(
             r'^media/(?P<path>.*)$',
-            'django.views.static.serve',
+            serve,
             {'document_root': settings.MEDIA_ROOT}
         )
     ]
