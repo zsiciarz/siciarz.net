@@ -129,7 +129,7 @@ GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
 
 GRAPPELLI_ADMIN_TITLE = "siciarz.net"
 
-MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['codehilite']})
+MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['markdown.extensions.codehilite']})
 MARKITUP_SET = 'markitup/sets/markdown'
 
 RAVEN_CONFIG = {
