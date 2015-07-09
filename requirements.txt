@@ -27,5 +27,5 @@ psycopg2==2.6.1
 raven==5.4.1
 requests==2.7.0
 six==1.9.0
-sorl-thumbnail==12.2
+sorl-thumbnail==12.3
 unicode-slugify==0.1.3
