@@ -13,6 +13,6 @@ before_script:
   - psql -c 'create extension hstore;' -U postgres -d template1
   - psql -c 'create database siciarz;' -U postgres
 script:
-    coverage run manage.py test
+    make test
 after_success:
   - coveralls
