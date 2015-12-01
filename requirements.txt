@@ -22,7 +22,7 @@ django-twitter-bootstrap==3.3.0
 docutils==0.12
 gunicorn==19.4.1
 ipython==4.0.1
-newrelic==2.58.1.44
+newrelic==2.58.2.45
 psycopg2==2.6.1
 raven==5.8.1
 requests==2.8.1
