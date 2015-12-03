@@ -7,7 +7,7 @@ Administration for articles.
 from django.contrib import admin
 from django.shortcuts import redirect
 
-import reversion
+from reversion.admin import VersionAdmin
 from reversion.models import Revision
 
 from .models import Article
@@ -25,7 +25,7 @@ class RevisionAdmin(admin.ModelAdmin):
 admin.site.register(Revision, RevisionAdmin)
 
 
-class ArticleAdmin(reversion.VersionAdmin):
+class ArticleAdmin(VersionAdmin):
     """
     Administration for articles.
     """
