@@ -9,7 +9,7 @@ django-compressor==1.5
 django-crispy-forms==1.5.2
 django-debug-toolbar==1.4
 django-easy-pjax==1.2.0
-django-extensions==1.5.9
+django-extensions==1.6.1
 django-grappelli==2.7.2
 django-markitup==2.2.2
 django-model-utils==2.4
