@@ -20,7 +20,7 @@ django-rosetta==0.7.8
 https://github.com/zsiciarz/django-rosetta-grappelli/archive/d2f8b26ecb12ed369c8e496d6a8f401e923745d0.tar.gz#egg=rosetta_grappelli
 django-twitter-bootstrap==3.3.0
 docutils==0.12
-gunicorn==19.4.1
+gunicorn==19.4.2
 ipython==4.0.1
 newrelic==2.60.0.46
 psycopg2==2.6.1
