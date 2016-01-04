@@ -1,4 +1,4 @@
-# Copyright (c) Zbigniew Siciarz 2009-2015.
+# Copyright (c) Zbigniew Siciarz 2009-2016.
 
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField

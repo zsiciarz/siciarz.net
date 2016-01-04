@@ -1,4 +1,4 @@
-# Copyright (c) Zbigniew Siciarz 2009-2015.
+# Copyright (c) Zbigniew Siciarz 2009-2016.
 
 from django.core.urlresolvers import reverse
 from django.views.generic import ListView, DetailView, MonthArchiveView

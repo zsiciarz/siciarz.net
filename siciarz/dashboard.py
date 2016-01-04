@@ -1,4 +1,4 @@
-# Copyright (c) Zbigniew Siciarz 2009-2015.
+# Copyright (c) Zbigniew Siciarz 2009-2016.
 
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
