@@ -21,7 +21,7 @@ https://github.com/zsiciarz/django-rosetta-grappelli/archive/d2f8b26ecb12ed369c8
 django-twitter-bootstrap==3.3.0
 docutils==0.12
 gunicorn==19.4.5
-ipython==4.0.2
+ipython==4.0.3
 newrelic==2.60.0.46
 psycopg2==2.6.1
 raven==5.10.0
