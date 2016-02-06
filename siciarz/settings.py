@@ -16,14 +16,11 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'grappelli.dashboard',
-    'grappelli',
     'django.contrib.admin',
     'django.contrib.admindocs',
 
     'django_extensions',
     'debug_toolbar',
-    'rosetta-grappelli',
     'rosetta',
     'compressor',
     'twitter_bootstrap',
@@ -125,10 +122,6 @@ STATICFILES_FINDERS = (
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
-
-GRAPPELLI_INDEX_DASHBOARD = 'siciarz.dashboard.CustomIndexDashboard'
-
-GRAPPELLI_ADMIN_TITLE = "siciarz.net"
 
 MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['markdown.extensions.codehilite']})
 MARKITUP_SET = 'markitup/sets/markdown'

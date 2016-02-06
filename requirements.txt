@@ -10,14 +10,12 @@ django-crispy-forms==1.6.0
 django-debug-toolbar==1.4
 django-easy-pjax==1.2.0
 django-extensions==1.6.1
-django-grappelli==2.7.3
 django-markitup==2.3.0
 django-model-utils==2.4
 django-pagination-py3==1.1.1
 django-pgallery==0.6.1dev
 django-reversion==1.10.1
 django-rosetta==0.7.8
-https://github.com/zsiciarz/django-rosetta-grappelli/archive/d2f8b26ecb12ed369c8e496d6a8f401e923745d0.tar.gz#egg=rosetta_grappelli
 django-twitter-bootstrap==3.3.0
 docutils==0.12
 gunicorn==19.4.5
