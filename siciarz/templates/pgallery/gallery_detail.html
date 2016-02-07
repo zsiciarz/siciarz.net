@@ -5,7 +5,7 @@
 {% block og-type %}article{% endblock %}
 {% block og-title %}{{ gallery.title }} | {{ block.super }}{% endblock %}
 {% block og-url %}{{ gallery.get_absolute_url }}{% endblock %}
-{% block og-image %}{{ gallery.photos.all.0.image.url }}{% endblock %}
+{% block og-image %}{% if gallery.cover_photo %}{{ gallery.cover_photo.url }}{% else %}{{ gallery.photos.all.0.image.url }}{% endif %}{% endblock %}
 
 {% block extra-head %}
     <meta property="og:description" content="{{ gallery.description|striptags }}" />
