@@ -53,14 +53,3 @@
         </section>
     </div>
 {% endblock %}
-
-{% block extra-script %}
-<script src="{% static 'js/pjax-standalone.js' %}"></script>
-<script>
-    pjax.connect({
-        'container': 'base-content',
-        'useClass': 'pjaxer'
-    });
-</script>
-{{ block.super }}
-{% endblock %}
