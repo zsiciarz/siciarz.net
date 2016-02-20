@@ -1,5 +1,5 @@
-// import EpicEditor doesn't work - the source doesn't explicitly export it :(
-import NotReallyAnEpicEditor from 'epiceditor/epiceditor/js/epiceditor.min.js'
+// for some weird reason EpicEditor exports only the Markdown parser
+import marked from 'epiceditor/epiceditor/js/epiceditor.min.js'
 
 document.addEventListener('DOMContentLoaded', e => {
     const ids = ['id_summary', 'id_content']
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', e => {
             textarea: textareaId,
             basePath: basePath,
             clientSideStorage: false,
+            parser: marked,
             button: {
                 preview: false
             }
