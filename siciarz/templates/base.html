@@ -11,11 +11,8 @@
   <meta property="og:url" content="{{ current_site }}{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
   <meta property="og:image" content="{{ current_site }}{% block og-image %}{% static 'images/me.jpeg' %}{% endblock %}" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  {% compress css %}
-  <link rel="stylesheet" type="text/less" href="{% static 'css/main.less' %}">
-  {% endcompress %}
+  <link rel="stylesheet" type="text/css" href="{% static 'build/style.css' %}">
   {% block extra-style %}{% endblock %}
-  {% if debug %}<script src="{% static 'js/less-1.6.2.min.js' %}"></script>{% endif %}
   {% block extra-head %}{% endblock %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% block rss-url %}{% url 'articles:rss' %}{% endblock %}" />
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
