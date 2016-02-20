@@ -4,6 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         app: './siciarz/assets/js/app.js',
+        editor: './siciarz/assets/js/editor.js',
         style: './siciarz/assets/css/main.less'
     },
     output: {
