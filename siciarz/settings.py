@@ -22,7 +22,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'debug_toolbar',
     'rosetta',
-    'compressor',
     'pagination',
     'markitup',
     'reversion',
@@ -117,7 +116,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 INTERNAL_IPS = ('127.0.0.1',)
@@ -135,8 +133,3 @@ try:
     from .local_settings import *  # noqa
 except ImportError:
     pass
-
-if not DEBUG:
-    COMPRESS_PRECOMPILERS = (
-        ('text/less', '%s {infile} {outfile}' % os.path.join(BASE_DIR, 'node_modules/.bin/lessc')),
-    )
