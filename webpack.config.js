@@ -12,6 +12,13 @@ module.exports = {
     },
     module: {
         loaders: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015', 'stage-0']
+            }
+        }, {
             test: /\.less$/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
         },
