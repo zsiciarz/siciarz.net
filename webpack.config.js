@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -39,6 +40,9 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         }),
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("style.css"),
+        new CopyPlugin([
+            {from: 'node_modules/epiceditor/epiceditor', to: 'epiceditor'}
+        ])
     ]
 };
