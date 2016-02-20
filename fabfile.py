@@ -60,7 +60,7 @@ def migrate():
 @task
 @roles("web")
 def collect_static():
-    rsync_project("{}/siciarz/assets/build/".format(PROJECT_PATH), "assets/build/", delete=True)
+    rsync_project("{}/siciarz/assets/build/".format(PROJECT_PATH), "siciarz/assets/build/", delete=True)
     with prepare_project():
         run("python manage.py collectstatic --noinput")
 
