@@ -23,7 +23,6 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'rosetta',
     'compressor',
-    'twitter_bootstrap',
     'pagination',
     'markitup',
     'reversion',
