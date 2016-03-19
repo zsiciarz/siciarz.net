@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt')),
     url(r'^404/$', TemplateView.as_view(template_name='404.html')),
     url(r'^500/$', TemplateView.as_view(template_name='500.html')),
-
+    url(r'^\.well-known/acme-challenge/(?P<path>.*)$', serve, {'document_root': settings.ACME_CHALLENGE_DIR}),
     url(
         r'^sitemap\.xml$',
         sitemap,
