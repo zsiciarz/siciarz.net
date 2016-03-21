@@ -129,8 +129,6 @@ RAVEN_CONFIG = {
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
-ACME_CHALLENGE_DIR = os.path.join(BASE_DIR, 'acme-challenge')
-
 try:
     from .local_settings import *  # noqa
 except ImportError:
