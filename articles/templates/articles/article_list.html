@@ -21,7 +21,11 @@
         {% if forloop.first and latest_gallery %}
             <article>
                 {% with photo_list=latest_gallery.get_teaser_photos %}
-                <header class="image" style="background-image: url('{{ photo_list.0.image.url }}');">
+                    {% if latest_gallery.cover_photo %}
+                        <header class="image" style="background-image: url('{{ latest_gallery.cover_photo.url }}');">
+                    {% else %}
+                        <header class="image" style="background-image: url('{{ photo_list.0.image.url }}');">
+                    {% endif %}
                     <a href="{{ latest_gallery.get_absolute_url }}">
                     <h1>{{ latest_gallery.title }}</h1>
                     </a>
