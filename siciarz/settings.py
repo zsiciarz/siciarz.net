@@ -22,7 +22,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'debug_toolbar',
     'rosetta',
-    'pagination',
+    'linaro_django_pagination',
     'markitup',
     'reversion',
     'sorl.thumbnail',
@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'pagination.middleware.PaginationMiddleware',
+    'linaro_django_pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'siciarz.urls'
