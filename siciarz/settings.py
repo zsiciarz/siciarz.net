@@ -59,6 +59,9 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'siciarz/templates'),
         ),
         'OPTIONS': {
+            "builtins": [
+                "easy_pjax.templatetags.pjax_tags",
+            ],
             'context_processors': (
                 'django.template.context_processors.debug',
                 'django.template.context_processors.i18n',
