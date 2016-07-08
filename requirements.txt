@@ -15,7 +15,7 @@ django-reversion==2.0.5
 django-rosetta==0.7.11
 docutils==0.12
 gunicorn==19.6.0
-ipython==4.2.1
+ipython==5.0.0
 # linaro-django-pagination==2.0.3
 https://github.com/zyga/django-pagination/archive/86caf150984733eb5a0bb07af26cd8fc0a8d8496.zip#egg=linaro_django_pagination
 newrelic==2.66.0.49
