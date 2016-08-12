@@ -21,7 +21,7 @@ https://github.com/zyga/django-pagination/archive/86caf150984733eb5a0bb07af26cd8
 newrelic==2.68.0.50
 psycopg2==2.6.2
 raven==5.24.2
-requests==2.10.0
+requests==2.11.0
 six==1.10.0
 sorl-thumbnail==12.3
 unicode-slugify==0.1.3
