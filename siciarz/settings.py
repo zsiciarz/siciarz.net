@@ -123,7 +123,9 @@ STATICFILES_FINDERS = (
 
 INTERNAL_IPS = ('127.0.0.1',)
 
-MARKITUP_FILTER = ('articles.filters.markitup_filter', {'extensions': ['markdown.extensions.codehilite']})
+MARKITUP_FILTER = ('articles.filters.markitup_filter', {
+    'extensions': ['markdown.extensions.codehilite', 'markdown.extensions.fenced_code'],
+})
 MARKITUP_SET = 'markitup/sets/markdown'
 
 RAVEN_CONFIG = {
