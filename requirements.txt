@@ -13,7 +13,7 @@ django-model-utils==2.6.0
 django-pgallery==0.7.1dev
 django-reversion==2.0.6
 django-rosetta==0.7.12
-docutils==0.12
+docutils==0.13.1
 gunicorn==19.6.0
 ipython==5.1.0
 # linaro-django-pagination==2.0.3
