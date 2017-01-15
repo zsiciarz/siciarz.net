@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 ('header_image', models.ImageField(verbose_name='header image', upload_to='articles/%Y/%m/%d', null=True, blank=True)),
                 ('_summary_rendered', models.TextField(editable=False, blank=True)),
                 ('_content_rendered', models.TextField(editable=False, blank=True)),
-                ('author', models.ForeignKey(verbose_name='author', editable=False, to=settings.AUTH_USER_MODEL)),
+                ('author', models.ForeignKey(verbose_name='author', editable=False, to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
             ],
             options={
                 'verbose_name_plural': 'Articles',
