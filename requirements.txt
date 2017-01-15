@@ -13,11 +13,10 @@ django-model-utils==2.6.1
 django-pgallery==0.7.1dev
 django-reversion==2.0.8
 django-rosetta==0.7.12
+dj-pagination==2.2.1
 docutils==0.13.1
 gunicorn==19.6.0
 ipython==5.1.0
-# linaro-django-pagination==2.0.3
-https://github.com/zyga/django-pagination/archive/86caf150984733eb5a0bb07af26cd8fc0a8d8496.zip#egg=linaro_django_pagination
 newrelic==2.78.0.57
 psycopg2==2.6.2
 raven==5.32.0
