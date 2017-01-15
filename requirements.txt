@@ -1,4 +1,4 @@
-Django==1.9.12
+Django==1.10.5
 Markdown==2.6.7
 Pillow==3.4.2
 PyGithub==1.29
