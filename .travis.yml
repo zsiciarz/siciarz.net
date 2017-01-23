@@ -7,7 +7,7 @@ addons:
 env:
   - DATABASE_USER="postgres" DATABASE_PASSWORD=""
 install:
-  - pip install six
+  - pip install pip setuptools six wheel --upgrade
   - pip install -r test_requirements.txt
   - pip install coveralls
 before_script:
