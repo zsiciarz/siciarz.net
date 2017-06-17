@@ -13,7 +13,7 @@ from pgallery.sitemaps import GallerySitemap, PhotoSitemap
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^rosetta/', include('rosetta.urls')),
     url(r'^markitup/', include('markitup.urls')),
     url(r'^robots\.txt', TemplateView.as_view(template_name='robots.txt')),

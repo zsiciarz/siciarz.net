@@ -9,6 +9,8 @@ from .views import ArticleListView, ArticleDashboardView, TaggedArticleListView,
     ArticleUpdateView
 
 
+app_name = 'articles'
+
 urlpatterns = [
     url(
         regex=r'^$',
