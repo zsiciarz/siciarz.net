@@ -10,7 +10,7 @@ django-extensions==1.8.1
 django-markitup==3.0.0
 django-model-utils==3.0.0
 django-pgallery==0.8.1dev
-django-reversion==2.0.9
+django-reversion==2.0.10
 django-rosetta==0.7.13
 dj-pagination==2.2.1
 docutils==0.13.1
