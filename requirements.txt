@@ -16,7 +16,7 @@ dj-pagination==2.3.0
 docutils==0.14
 gunicorn==19.7.1
 ipython==6.2.1
-newrelic==2.96.0.80
+newrelic==2.98.0.81
 psycopg2==2.7.3.2
 raven==6.3.0
 requests==2.18.4
