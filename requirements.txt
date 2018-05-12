@@ -14,7 +14,7 @@ django-reversion==2.0.13
 django-rosetta==0.8.1
 dj-pagination==2.3.2
 docutils==0.14
-gunicorn==19.7.1
+gunicorn==19.8.1
 ipython==6.2.1
 newrelic==2.106.1.88
 psycopg2==2.7.4
