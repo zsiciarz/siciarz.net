@@ -1,4 +1,4 @@
-Django==1.11.11
+Django==1.11.13
 Markdown==2.6.11
 Pillow==4.3.0
 Pygments==2.2.0
