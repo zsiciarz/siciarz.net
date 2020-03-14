@@ -20,6 +20,5 @@ newrelic==3.4.0.95
 psycopg2==2.7.5
 raven==6.10.0
 requests==2.21.0
-six==1.11.0
 sorl-thumbnail==12.3
 unicode-slugify==0.1.3
