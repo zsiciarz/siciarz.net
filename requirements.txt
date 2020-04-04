@@ -1,5 +1,5 @@
 Django==1.11.29
-Markdown==2.6.11
+Markdown==2.6.11 # Python 3.4
 Pillow==4.3.0
 Pygments==2.2.0
 django-braces==1.13.0
@@ -19,6 +19,6 @@ ipython==7.13.0
 newrelic==3.4.0.95
 psycopg2==2.7.5
 raven==6.10.0
-requests==2.21.0
+requests==2.21.0 # Python 3.4
 sorl-thumbnail==12.3
 unicode-slugify==0.1.3
