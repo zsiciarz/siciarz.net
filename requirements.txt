@@ -1,6 +1,6 @@
 Django==2.0.13
 Markdown==2.6.11 # Python 3.4
-Pillow==5.4.1 # Python 3.4
+Pillow==7.1.1
 Pygments==2.2.0
 django-braces==1.14.0
 django-crispy-forms==1.8.1 # Python 3.4
@@ -14,12 +14,12 @@ https://github.com/zsiciarz/django-pgallery/archive/master.zip#egg=django-pgalle
 django-reversion==2.0.13
 django-rosetta==0.8.1
 dj-pagination==2.3.2
-docutils==0.15.2 # Python 3.4
+docutils==0.16
 gunicorn==19.10.0
-ipython==6.5.0 # Python 3.4
+ipython==7.13.0
 newrelic==3.4.0.95
 psycopg2-binary==2.8.4
 raven==6.10.0
-requests==2.21.0 # Python 3.4
+requests==2.23.0
 sorl-thumbnail==12.6.3
 unicode-slugify==0.1.3
