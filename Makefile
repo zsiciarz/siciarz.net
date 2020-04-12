@@ -1,4 +1,4 @@
-.PHONY: test watch
+.PHONY: test watch deploy
 
 WEBPACK = ./node_modules/.bin/webpack
 WEBPACK_ARGS = --colors --progress
@@ -14,3 +14,6 @@ watch: node_modules
 
 node_modules: package.json
 	@npm install
+
+deploy:
+	ansible-playbook -i hosts playbook.yml
