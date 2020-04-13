@@ -17,7 +17,7 @@ class ArticleFeed(Feed):
     """
 
     title = _("siciarz.net - articles")
-    link = reverse_lazy('articles:article_list')
+    link = reverse_lazy("articles:article_list")
     description = _("Latest blog articles.")
 
     def items(self):

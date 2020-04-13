@@ -12,14 +12,21 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = (
-            'status', 'title', 'subtitle', 'header_image', 'summary', 'content',
-            'is_static', 'language', 'tags',
+            "status",
+            "title",
+            "subtitle",
+            "header_image",
+            "summary",
+            "content",
+            "is_static",
+            "language",
+            "tags",
         )
 
 
 class ArticleCreateForm(UserKwargModelFormMixin, ArticleForm):
     def save(self, *args, **kwargs):
-        kwargs['commit'] = False
+        kwargs["commit"] = False
         article = super(ArticleCreateForm, self).save(*args, **kwargs)
         article.author = self.user
         article.slug = slugify(article.title)

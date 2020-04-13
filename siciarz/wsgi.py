@@ -16,7 +16,7 @@ framework.
 import os
 import newrelic.agent
 
-newrelic_config = os.path.join(os.path.dirname(__file__), '../newrelic.ini')
+newrelic_config = os.path.join(os.path.dirname(__file__), "../newrelic.ini")
 if os.path.isfile(newrelic_config):
     newrelic.agent.initialize(newrelic_config)
 
@@ -30,6 +30,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "siciarz.settings")
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 from django.core.wsgi import get_wsgi_application
+
 application = get_wsgi_application()
 
 # Apply WSGI middleware here.

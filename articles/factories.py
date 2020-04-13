@@ -6,8 +6,8 @@ from .models import Article
 
 
 class UserFactory(factory.django.DjangoModelFactory):
-    username = factory.Sequence(lambda n: 'user_%d' % n)
-    email = factory.Sequence(lambda n: 'user_%d@example.com' % n)
+    username = factory.Sequence(lambda n: "user_%d" % n)
+    email = factory.Sequence(lambda n: "user_%d@example.com" % n)
 
     class Meta:
         model = User
@@ -22,11 +22,11 @@ class ArticleFactory(factory.django.DjangoModelFactory):
 
 
 class DraftArticleFactory(ArticleFactory):
-    status = 'draft'
+    status = "draft"
 
 
 class PublishedArticleFactory(ArticleFactory):
-    status = 'published'
+    status = "published"
 
 
 class StaticArticleFactory(ArticleFactory):

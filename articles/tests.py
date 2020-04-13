@@ -1,7 +1,12 @@
 from django.test import TestCase
 
 from .models import Article
-from .factories import ArticleFactory, DraftArticleFactory, PublishedArticleFactory, StaticArticleFactory
+from .factories import (
+    ArticleFactory,
+    DraftArticleFactory,
+    PublishedArticleFactory,
+    StaticArticleFactory,
+)
 
 
 class ArticleTestCase(TestCase):
@@ -49,9 +54,9 @@ class ArticleTestCase(TestCase):
         self.assertNotIn(article, Article.objects.only_static())
 
     def test_tagged_included(self):
-        article = ArticleFactory(tags=['test'])
-        self.assertIn(article, Article.objects.tagged('test'))
+        article = ArticleFactory(tags=["test"])
+        self.assertIn(article, Article.objects.tagged("test"))
 
     def test_tagged_excluded(self):
-        article = ArticleFactory(tags=['serious'])
-        self.assertNotIn(article, Article.objects.tagged('test'))
+        article = ArticleFactory(tags=["serious"])
+        self.assertNotIn(article, Article.objects.tagged("test"))

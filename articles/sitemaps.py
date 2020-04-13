@@ -5,7 +5,7 @@ from .models import Article
 
 
 class ArticleSitemap(Sitemap):
-    changefreq = 'weekly'
+    changefreq = "weekly"
     priority = 0.5
 
     def items(self):
