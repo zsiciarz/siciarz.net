@@ -57,7 +57,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "DIRS": (os.path.join(BASE_DIR, "siciarz/templates"),),
         "OPTIONS": {
-            "builtins": ["easy_pjax.templatetags.pjax_tags",],
+            "builtins": ["easy_pjax.templatetags.pjax_tags"],
             "context_processors": (
                 "django.template.context_processors.debug",
                 "django.template.context_processors.i18n",
@@ -70,7 +70,7 @@ TEMPLATES = [
             ),
             "debug": DEBUG,
         },
-    },
+    }
 ]
 
 DATABASES = {
@@ -89,10 +89,7 @@ LANGUAGE_CODE = "pl"
 
 ugettext = lambda s: s
 
-LANGUAGES = (
-    ("pl", ugettext("Polish")),
-    ("en", ugettext("English")),
-)
+LANGUAGES = (("pl", ugettext("Polish")), ("en", ugettext("English")))
 
 USE_I18N = True
 

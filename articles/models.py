@@ -35,7 +35,7 @@ class ArticleQuerySet(QuerySet):
         """
         return self.extra(
             select={
-                "common_tag_count": "coalesce(array_length(array(select unnest(tags) intersect select unnest(%s)), 1), 0)",
+                "common_tag_count": "coalesce(array_length(array(select unnest(tags) intersect select unnest(%s)), 1), 0)"
             },
             select_params=(article.tags,),
             order_by=("-common_tag_count",),
@@ -43,7 +43,7 @@ class ArticleQuerySet(QuerySet):
 
 
 class Article(StatusModel, TimeStampedModel):
-    STATUS = Choices(("draft", _("draft")), ("published", _("published")),)
+    STATUS = Choices(("draft", _("draft")), ("published", _("published")))
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         editable=False,
