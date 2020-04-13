@@ -18,7 +18,7 @@ gunicorn==19.10.0
 ipython==7.13.0
 newrelic==3.4.0.95
 psycopg2-binary==2.8.5
-raven==6.10.0
 requests==2.23.0
+sentry-sdk==0.14.3
 sorl-thumbnail==12.6.3
 unicode-slugify==0.1.3

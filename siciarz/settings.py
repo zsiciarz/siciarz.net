@@ -1,5 +1,9 @@
 import os
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = "not-defined-here"
@@ -26,7 +30,6 @@ INSTALLED_APPS = (
     "reversion",
     "sorl.thumbnail",
     "easy_pjax",
-    "raven.contrib.django.raven_compat",
     "crispy_forms",
     "articles",
     "pgallery",
@@ -120,14 +123,12 @@ MARKITUP_FILTER = (
         "extensions": [
             "markdown.extensions.codehilite",
             "markdown.extensions.fenced_code",
-        ],
+        ]
     },
 )
 MARKITUP_SET = "markitup/sets/markdown"
 
-RAVEN_CONFIG = {
-    "dsn": "",
-}
+SENTRY_DSN = ""
 
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 
@@ -135,3 +136,6 @@ try:
     from .local_settings import *  # noqa
 except ImportError:
     pass
+
+if SENTRY_DSN:
+    sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
