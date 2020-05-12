@@ -1,6 +1,6 @@
 Django==2.2.12
 Markdown==3.2.1
-Pillow==7.1.1
+Pillow==7.1.2
 Pygments==2.6.1
 django-braces==1.14.0
 django-crispy-forms==1.9.0
