@@ -12,7 +12,7 @@ django-model-utils==4.0.0
 django-pgallery==0.9.1
 django-reversion==3.0.7
 django-rosetta==0.9.4
-dj-pagination==2.4.0
+dj-pagination==2.5.0
 docutils==0.16
 gunicorn==19.10.0
 ipython==7.14.0
