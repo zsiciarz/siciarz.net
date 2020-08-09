@@ -34,25 +34,9 @@ module.exports = {
             options: {
                 'limit': 100000
             }
-        }, {
-            test: require.resolve('jquery'),
-            use: [
-                {
-                    loader: 'expose-loader',
-                    query: 'jQuery'
-                },
-                {
-                    loader: 'expose-loader',
-                    query: '$'
-                }
-            ]
         }]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        }),
         new ExtractTextPlugin("style.css"),
         new CopyPlugin([
             {from: 'node_modules/epiceditor/epiceditor', to: 'epiceditor'}
