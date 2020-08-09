@@ -29,7 +29,6 @@ INSTALLED_APPS = (
     "markitup",
     "reversion",
     "sorl.thumbnail",
-    "easy_pjax",
     "crispy_forms",
     "articles",
     "pgallery",
@@ -57,7 +56,6 @@ TEMPLATES = [
         "APP_DIRS": True,
         "DIRS": (os.path.join(BASE_DIR, "siciarz/templates"),),
         "OPTIONS": {
-            "builtins": ["easy_pjax.templatetags.pjax_tags"],
             "context_processors": (
                 "django.template.context_processors.debug",
                 "django.template.context_processors.i18n",

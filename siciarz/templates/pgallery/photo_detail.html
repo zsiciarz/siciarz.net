@@ -1,4 +1,4 @@
-{% extends "base.html"|pjax:request %}
+{% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
 {% load thumbnail %}
@@ -18,7 +18,7 @@
 {% block base-content %}
     <div class="col-lg-9 main-content big-photo">
         <article>
-        <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }} | {% trans "Photography" %} | siciarz.net" href="{{ photo.get_next_photo.get_absolute_url }}" class="pjaxer">
+        <a title="{{ photo.title }}" data-title="{{ photo.get_next_photo.title }} | {% trans "Photography" %} | siciarz.net" href="{{ photo.get_next_photo.get_absolute_url }}">
                 <img class="img-responsive" src="{{ photo.image.url }}" alt="{{ photo.title }}" />
             </a>
             {% if user.is_staff %}
