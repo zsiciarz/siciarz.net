@@ -18,7 +18,6 @@
         {% include "pgallery/gallery_menu.html" %}
         {{ gallery.description }}
         {% include "pgallery/thumbnail_list.html" with photo_list=gallery.photos.all %}
-        </ul>
 
         <footer>
             {% trans 'Added on' %} {{ gallery.shot_date|date:"DATE_FORMAT" }}
