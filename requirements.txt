@@ -18,6 +18,6 @@ ipython==7.16.1
 newrelic==5.14.1.144
 psycopg2-binary==2.8.5
 requests==2.24.0
-sentry-sdk==0.16.3
+sentry-sdk==0.17.1
 sorl-thumbnail==12.6.3
 unicode-slugify==0.1.3
