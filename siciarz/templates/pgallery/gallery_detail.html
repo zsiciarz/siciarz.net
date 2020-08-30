@@ -17,7 +17,17 @@
         <h1>{{ gallery.title }}</h1>
         {% include "pgallery/gallery_menu.html" %}
         {{ gallery.description }}
-        {% include "pgallery/thumbnail_list.html" with photo_list=gallery.photos.all %}
+
+        <ul class="fullsize-images">
+            {% for photo in gallery.photos.all %}
+            <li>
+                <a title="{{ photo.title }}" href="{{ photo.get_absolute_url }}">
+                    <img src="{{ photo.image.url }}" alt="{{ photo.title }}" />
+                    <span class="description">{{ photo.title }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
 
         <footer>
             {% trans 'Added on' %} {{ gallery.shot_date|date:"DATE_FORMAT" }}

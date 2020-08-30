@@ -294,6 +294,33 @@ html, body {
         .thumbnails img {
             margin: auto;
         }
+        .fullsize-images {
+            .clearfix;
+            list-style: none;
+        }
+        .fullsize-images li {
+            margin: 20px 0 0;
+            width: 100%;
+            position: relative;
+            a {
+                border: none;
+                box-shadow: none;
+                width: 100%;
+                padding: 0;
+            }
+            .description {
+                position: absolute;
+                z-index: 55;
+                bottom: 10px;
+                left: 10px;
+                display: block;
+                width: ~"calc(100% - 20px)";
+                padding: 10px;
+                font-weight: normal;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.57);
+            }
+        }
         #article-form {
             input, textarea {
                 width: 95%;
