@@ -3,7 +3,7 @@
 {% load pagination_tags %}
 
 {% block content %}
-    {% autopaginate gallery_list 5 %}
+    {% autopaginate gallery_list 10 %}
     {% for gallery in gallery_list %}
         <article>
             {% with photo_list=gallery.get_teaser_photos %}
