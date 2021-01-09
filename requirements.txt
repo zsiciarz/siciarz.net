@@ -19,5 +19,5 @@ newrelic==5.24.0.153
 psycopg2-binary==2.8.6
 requests==2.25.1
 sentry-sdk==0.17.1
-sorl-thumbnail==12.6.3
+sorl-thumbnail==12.7.0
 unicode-slugify==0.1.3
