@@ -1,4 +1,4 @@
-# Copyright (c) Zbigniew Siciarz 2009-2020.
+# Copyright (c) Zbigniew Siciarz 2009-2021.
 
 from django.contrib.sitemaps import Sitemap
 from .models import Article
