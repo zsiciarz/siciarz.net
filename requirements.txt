@@ -17,7 +17,7 @@ gunicorn==20.0.4
 ipython==7.16.1 # last version to support Python 3.6
 newrelic==5.24.0.153
 psycopg2-binary==2.8.6
-requests==2.24.0
+requests==2.25.1
 sentry-sdk==0.17.1
 sorl-thumbnail==12.6.3
 unicode-slugify==0.1.3
