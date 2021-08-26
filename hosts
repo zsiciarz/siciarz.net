@@ -1,2 +1,2 @@
 [web]
-siciarz.net ansible_user=zsiciarz
+daphne ansible_user=django

@@ -2,8 +2,8 @@
 - hosts: web
   vars:
     temp_path: '{{ ansible_env.HOME }}/tmp'
-    project_path: '{{ ansible_env.HOME }}/v/siciarz.net/siciarz.net'
-    virtualenv_path: '{{ ansible_env.HOME }}/.virtualenvs/zsiciarz'
+    project_path: '{{ ansible_env.HOME }}/siciarz.net'
+    virtualenv_path: '{{ ansible_env.HOME }}/.virtualenvs/siciarz.net'
   environment:
     TMPDIR: '{{ temp_path }}'
     TMP: '{{ temp_path }}'
@@ -41,4 +41,4 @@
         virtualenv: '{{ virtualenv_path }}'
     - name: restart app
       shell:
-        cmd: appctl restart zsiciarz
+        cmd: supervisorctl restart siciarz.net
