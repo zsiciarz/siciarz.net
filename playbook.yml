@@ -4,7 +4,6 @@
     temp_path: '{{ ansible_env.HOME }}/tmp'
     project_path: '{{ ansible_env.HOME }}/v/siciarz.net/siciarz.net'
     virtualenv_path: '{{ ansible_env.HOME }}/.virtualenvs/zsiciarz'
-    node_version: v12.16.2
   environment:
     TMPDIR: '{{ temp_path }}'
     TMP: '{{ temp_path }}'
@@ -26,11 +25,6 @@
       pip:
         requirements: '{{ project_path }}/requirements.txt'
         virtualenv: '{{ virtualenv_path }}'
-    - name: install JS packages
-      npm:
-        path: '{{ project_path }}'
-        production: yes
-        executable: '{{ ansible_env.HOME }}/.nvm/versions/node/{{ node_version }}/bin/npm'
     - name: migrate database
       django_manage:
         command: migrate
