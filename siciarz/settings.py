@@ -80,6 +80,7 @@ DATABASES = {
         "HOST": "localhost",
     }
 }
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 TIME_ZONE = "Europe/Warsaw"
 
