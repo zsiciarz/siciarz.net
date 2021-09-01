@@ -1,9 +1,9 @@
 # Copyright (c) Zbigniew Siciarz 2009-2021.
 
 from django.conf import settings
-from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
+from django.urls import include, re_path
 from django.views.generic import TemplateView
 from django.views.static import serve
 
@@ -14,13 +14,13 @@ admin.autodiscover()
 
 
 urlpatterns = [
-    url(r"^admin/", admin.site.urls),
-    url(r"^rosetta/", include("rosetta.urls")),
-    url(r"^markitup/", include("markitup.urls")),
-    url(r"^robots\.txt", TemplateView.as_view(template_name="robots.txt")),
-    url(r"^404/$", TemplateView.as_view(template_name="404.html")),
-    url(r"^500/$", TemplateView.as_view(template_name="500.html")),
-    url(
+    re_path(r"^admin/", admin.site.urls),
+    re_path(r"^rosetta/", include("rosetta.urls")),
+    re_path(r"^markitup/", include("markitup.urls")),
+    re_path(r"^robots\.txt", TemplateView.as_view(template_name="robots.txt")),
+    re_path(r"^404/$", TemplateView.as_view(template_name="404.html")),
+    re_path(r"^500/$", TemplateView.as_view(template_name="500.html")),
+    re_path(
         r"^sitemap\.xml$",
         sitemap,
         {
@@ -31,15 +31,15 @@ urlpatterns = [
             }
         },
     ),
-    url(r"^photos/", include("pgallery.urls", namespace="pgallery")),
-    url(r"^", include("articles.urls", namespace="articles")),
+    re_path(r"^photos/", include("pgallery.urls", namespace="pgallery")),
+    re_path(r"^", include("articles.urls", namespace="articles")),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
 
-    urlpatterns += [url(r"^__debug__/", include(debug_toolbar.urls))]
+    urlpatterns += [re_path(r"^__debug__/", include(debug_toolbar.urls))]
     # static files (images, css, javascript, etc.)
     urlpatterns += [
-        url(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT})
+        re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT})
     ]
