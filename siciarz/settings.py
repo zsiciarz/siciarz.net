@@ -85,9 +85,9 @@ TIME_ZONE = "Europe/Warsaw"
 
 LANGUAGE_CODE = "pl"
 
-ugettext = lambda s: s
+gettext = lambda s: s
 
-LANGUAGES = (("pl", ugettext("Polish")), ("en", ugettext("English")))
+LANGUAGES = (("pl", gettext("Polish")), ("en", gettext("English")))
 
 USE_I18N = True
 
