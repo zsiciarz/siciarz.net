@@ -32,6 +32,7 @@ class ArticleListView(StaffAccessMixin, ListView):
         return context
 
 
+# TODO: consider built-in Django mixins from django.contrib.auth.mixins
 class ArticleDashboardView(
     LoginRequiredMixin, StaffuserRequiredMixin, StaffAccessMixin, ListView
 ):
