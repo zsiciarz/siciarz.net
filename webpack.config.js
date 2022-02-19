@@ -1,12 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
         app: './siciarz/assets/js/app.js',
-        editor: './siciarz/assets/js/editor.js',
         style: './siciarz/assets/css/main.less'
     },
     output: {
@@ -37,9 +35,6 @@ module.exports = {
         }]
     },
     plugins: [
-        new ExtractTextPlugin("style.css"),
-        new CopyPlugin([
-            {from: 'node_modules/epiceditor/epiceditor', to: 'epiceditor'}
-        ])
+        new ExtractTextPlugin("style.css")
     ]
 };
