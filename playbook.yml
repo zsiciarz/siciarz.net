@@ -8,10 +8,6 @@
     TMPDIR: '{{ temp_path }}'
     TMP: '{{ temp_path }}'
   tasks:
-    - name: build production assets
-      local_action:
-        module: shell
-        cmd: make production_assets
     - name: create local temp directory
       file:
         path: '{{ temp_path }}'
@@ -30,10 +26,6 @@
         command: migrate
         app_path: '{{ project_path }}'
         virtualenv: '{{ virtualenv_path }}'
-    - name: copy static files
-      copy:
-        src: siciarz/assets/build/
-        dest: '{{ project_path }}/siciarz/assets/build/'
     - name: collect static files
       django_manage:
         command: collectstatic

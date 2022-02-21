@@ -11,7 +11,7 @@
   <meta property="og:url" content="{{ current_site }}{% block og-url %}{{ request.get_full_path }}{% endblock %}" />
   <meta property="og:image" content="{{ current_site }}{% block og-image %}{% static 'images/me.jpeg' %}{% endblock %}" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="{% static 'build/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   {% block extra-style %}{% endblock %}
   {% block extra-head %}{% endblock %}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{% block rss-url %}{% url 'articles:rss' %}{% endblock %}" />
@@ -58,14 +58,13 @@
         <div id="push"></div>
     </div>
     <footer>
-        <p class="copyright">Copyright <strong>Zbigniew Siciarz</strong> 2009-2021.</p>
+        <p class="copyright">Copyright <strong>Zbigniew Siciarz</strong> 2009-2022.</p>
         <p class="social">
             <a href="https://www.facebook.com/zbigniew.siciarz"><i class="fa fa-facebook"></i></a>
             <a href="https://twitter.com/zsiciarz"><i class="fa fa-twitter"></i></a>
             <a href="https://github.com/zsiciarz"><i class="fa fa-github"></i></a>
         </p>
     </footer>
-    <script defer src="{% static 'build/app.js' %}"></script>
     {% block extra-script %}{% endblock %}
 </body>
 </html>
