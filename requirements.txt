@@ -3,7 +3,7 @@ Markdown==3.3.4
 Pillow==9.0.0
 Pygments==2.10.0
 django-braces==1.15.0
-django-crispy-forms==1.13.0
+django-crispy-forms==1.14.0
 django-debug-toolbar==3.2.4
 django-extensions==3.1.5
 django-markitup==4.0.0
