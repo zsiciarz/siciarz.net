@@ -3,7 +3,6 @@ import os
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = "not-defined-here"
@@ -30,6 +29,7 @@ INSTALLED_APPS = (
     "reversion",
     "sorl.thumbnail",
     "crispy_forms",
+    "crispy_bootstrap3",
     "articles",
     "pgallery",
 )
