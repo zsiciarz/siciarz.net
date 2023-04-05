@@ -13,7 +13,7 @@ django-pgallery==0.10.0
 django-reversion==5.0.4
 django-rosetta==0.9.8
 dj-pagination==2.5.0
-docutils==0.17.1
+docutils==0.19
 gunicorn==20.1.0
 ipython==8.12.0
 newrelic==5.24.0.153
