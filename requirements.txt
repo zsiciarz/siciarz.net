@@ -1,5 +1,5 @@
 Django==3.2.18
-Markdown==3.3.7
+Markdown==3.4.3
 Pillow==9.5.0
 Pygments==2.14.0
 django-braces==1.15.0
