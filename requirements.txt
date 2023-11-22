@@ -1,5 +1,5 @@
 Django==3.2.18
-Markdown==3.4.3
+Markdown==3.5.1
 Pillow==9.5.0
 Pygments==2.14.0
 crispy-bootstrap3==2022.1
