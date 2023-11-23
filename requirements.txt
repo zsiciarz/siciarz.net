@@ -1,7 +1,7 @@
 Django==4.2.7
 Markdown==3.5.1
 Pillow==10.1.0
-Pygments==2.14.0
+Pygments==2.17.2
 crispy-bootstrap3==2022.1
 django-braces==1.15.0
 django-crispy-forms==2.0
