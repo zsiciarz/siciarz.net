@@ -7,7 +7,6 @@ from django.db.models import F
 from django.db.models.query import QuerySet
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-
 from markitup.fields import MarkupField
 from model_utils import Choices
 from model_utils.models import StatusModel, TimeStampedModel
@@ -35,7 +34,7 @@ class ArticleQuerySet(QuerySet):
         """
         return self.extra(
             select={
-                "common_tag_count": "coalesce(array_length(array(select unnest(tags) intersect select unnest(%s)), 1), 0)"
+                "common_tag_count": "coalesce(array_length(array(select unnest(tags) intersect select unnest(%s::text[])), 1), 0)"
             },
             select_params=(article.tags,),
             order_by=("-common_tag_count",),

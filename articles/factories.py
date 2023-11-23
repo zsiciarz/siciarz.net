@@ -1,5 +1,4 @@
 import factory
-
 from django.contrib.auth.models import User
 
 from .models import Article
@@ -15,6 +14,7 @@ class UserFactory(factory.django.DjangoModelFactory):
 
 class ArticleFactory(factory.django.DjangoModelFactory):
     title = "Hello"
+    slug = factory.Sequence(lambda n: f"title_{n}")
     author = factory.SubFactory(UserFactory)
 
     class Meta:
