@@ -15,7 +15,7 @@ django-rosetta==0.10.1
 dj-pagination==2.5.0
 docutils==0.19
 gunicorn==23.0
-ipython==8.29.0
+ipython==8.30.0
 newrelic==9.2.0
 psycopg[binary]==3.1.13
 requests==2.31.0
