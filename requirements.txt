@@ -19,6 +19,6 @@ ipython==8.30.0
 newrelic==9.2.0
 psycopg[binary]==3.2.3
 requests==2.31.0
-sentry-sdk==1.36.0
+sentry-sdk==2.19.2
 sorl-thumbnail==12.11.0
 unicode-slugify==0.1.5
