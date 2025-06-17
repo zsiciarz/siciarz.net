@@ -4,7 +4,7 @@ Pillow==11.0.0
 Pygments==2.18
 crispy-bootstrap3==2024.1
 django-braces==1.17.0
-django-crispy-forms==2.3
+django-crispy-forms==2.4
 django-debug-toolbar==4.4.6
 django-extensions==3.2.3
 django-markitup==4.1.0
