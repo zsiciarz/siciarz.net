@@ -16,7 +16,7 @@ dj-pagination==2.5.0
 gunicorn==23.0
 ipython==8.37.0
 newrelic==10.13.0
-psycopg[binary]==3.2.3
+psycopg[binary]==3.2.9
 requests==2.32.3
 sentry-sdk==2.30.0
 sorl-thumbnail==12.11.0
