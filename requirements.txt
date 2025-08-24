@@ -15,7 +15,7 @@ django-rosetta==0.10.2
 dj-pagination==2.5.0
 gunicorn==23.0
 ipython==8.37.0
-newrelic==10.13.0
+newrelic==10.16.0
 psycopg[binary]==3.2.9
 requests==2.32.4
 sentry-sdk==2.35.0
