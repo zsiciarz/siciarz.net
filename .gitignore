@@ -15,3 +15,5 @@ node_modules/
 *,cover
 htmlcov
 .mypy_cache
+.envrc
+.claude
