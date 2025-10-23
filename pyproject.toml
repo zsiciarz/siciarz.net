@@ -1,0 +1,37 @@
+[project]
+name = "siciarz-net"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.rst"
+requires-python = ">=3.10"
+dependencies = [
+    "crispy-bootstrap3==2024.1",
+    "dj-pagination==2.5.0",
+    "django==4.2.25",
+    "django-braces==1.17.0",
+    "django-crispy-forms==2.4",
+    "django-debug-toolbar==6.0.0",
+    "django-extensions==4.1",
+    "django-markitup==4.1.0",
+    "django-model-utils==5.0.0",
+    "django-pgallery==0.12.0",
+    "django-reversion==6.0.0",
+    "django-rosetta==0.10.2",
+    "gunicorn==23.0",
+    "ipython==8.37.0",
+    "markdown==3.9",
+    "newrelic==10.16.0",
+    "pillow==11.3.0",
+    "psycopg[binary]==3.2.10",
+    "pygments==2.18",
+    "requests==2.32.5",
+    "sentry-sdk==2.42.0",
+    "sorl-thumbnail==12.11.0",
+    "unicode-slugify==0.1.5",
+]
+
+[dependency-groups]
+dev = [
+    "coverage==7.11.0",
+    "factory-boy==3.3.3",
+]
