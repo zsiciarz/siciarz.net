@@ -3,7 +3,7 @@
   vars:
     temp_path: '{{ ansible_env.HOME }}/tmp'
     project_path: '{{ ansible_env.HOME }}/siciarz.net'
-    virtualenv_path: '{{ ansible_env.HOME }}/.virtualenvs/siciarz.net'
+    uv_path: '{{ ansible_env.HOME }}/.local/bin/uv'
   environment:
     TMPDIR: '{{ temp_path }}'
     TMP: '{{ temp_path }}'
@@ -18,19 +18,17 @@
         dest: '{{ project_path }}'
         clone: no
     - name: install Python requirements
-      pip:
-        requirements: '{{ project_path }}/requirements.txt'
-        virtualenv: '{{ virtualenv_path }}'
+      shell:
+        cmd: '{{ uv_path }} sync --locked --no-dev'
+        chdir: '{{ project_path }}'
     - name: migrate database
-      django_manage:
-        command: migrate
-        app_path: '{{ project_path }}'
-        virtualenv: '{{ virtualenv_path }}'
+      shell:
+        cmd: '{{ uv_path }} run manage.py migrate'
+        chdir: '{{ project_path }}'
     - name: collect static files
-      django_manage:
-        command: collectstatic
-        app_path: '{{ project_path }}'
-        virtualenv: '{{ virtualenv_path }}'
+      shell:
+        cmd: '{{ uv_path }} run manage.py collectstatic --noinput'
+        chdir: '{{ project_path }}'
     - name: restart app
       shell:
         cmd: supervisorctl restart siciarz.net
