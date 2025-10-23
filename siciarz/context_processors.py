@@ -4,5 +4,5 @@
 def current_site(request):
     protocol = "https" if request.is_secure() else "http"
     return {
-        "current_site": "{}://siciarz.net".format(protocol),
+        "current_site": f"{protocol}://siciarz.net",
     }

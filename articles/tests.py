@@ -1,7 +1,11 @@
 from django.test import TestCase
 
-from .factories import (ArticleFactory, DraftArticleFactory,
-                        PublishedArticleFactory, StaticArticleFactory)
+from .factories import (
+    ArticleFactory,
+    DraftArticleFactory,
+    PublishedArticleFactory,
+    StaticArticleFactory,
+)
 from .models import Article
 
 
@@ -61,7 +65,7 @@ class ArticleTestCase(TestCase):
         article1 = ArticleFactory(title="PTC", tags=["potato", "tomato", "cucumber"])
         article2 = ArticleFactory(title="PTC2", tags=["potato", "cucumber", "tomato"])
         article3 = ArticleFactory(title="TC", tags=["tomato", "cucumber"])
-        article4 = ArticleFactory(title="CM", tags=["cheese", "milk"])
+        _ = ArticleFactory(title="CM", tags=["cheese", "milk"])
         similar = Article.objects.similar(article1)
         assert similar[0] == article2
         assert similar[1] == article3

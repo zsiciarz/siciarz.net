@@ -1,6 +1,7 @@
 import os
 
 import sentry_sdk
+from django.utils.translation import gettext_lazy as _
 from sentry_sdk.integrations.django import DjangoIntegration
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -86,9 +87,8 @@ TIME_ZONE = "Europe/Warsaw"
 
 LANGUAGE_CODE = "pl"
 
-gettext = lambda s: s
 
-LANGUAGES = (("pl", gettext("Polish")), ("en", gettext("English")))
+LANGUAGES = (("pl", _("Polish")), ("en", _("English")))
 
 USE_I18N = True
 

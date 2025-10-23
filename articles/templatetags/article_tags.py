@@ -1,8 +1,7 @@
 # Copyright (c) Zbigniew Siciarz 2009-2021.
 
-from django import template
-
 from articles.models import Article
+from django import template
 
 register = template.Library()
 
@@ -24,7 +23,7 @@ def get_related_articles(article, count=3):
         Article.objects.only_articles()
         .published()
         .similar(article)
-        .only("slug", "title",)
+        .only("slug", "title")
     )
     return [obj for obj in queryset if obj.common_tag_count > 0][:count]
 

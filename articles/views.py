@@ -1,18 +1,16 @@
 # Copyright (c) Zbigniew Siciarz 2009-2021.
 
-from django.urls import reverse
-from django.views.generic import ListView, DetailView, MonthArchiveView
-from django.views.generic.edit import CreateView, UpdateView
-
 from braces.views import LoginRequiredMixin, StaffuserRequiredMixin, UserFormKwargsMixin
-
-from .forms import ArticleForm, ArticleCreateForm
-from .models import Article
-
+from django.urls import reverse
+from django.views.generic import DetailView, ListView, MonthArchiveView
+from django.views.generic.edit import CreateView, UpdateView
 from pgallery.models import Gallery
 
+from .forms import ArticleCreateForm, ArticleForm
+from .models import Article
 
-class StaffAccessMixin(object):
+
+class StaffAccessMixin:
     """
     Allow staff members to see all articles, including drafts.
 
@@ -27,7 +25,7 @@ class StaffAccessMixin(object):
 
 class ArticleListView(StaffAccessMixin, ListView):
     def get_context_data(self, *args, **kwargs):
-        context = super(ArticleListView, self).get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs)
         context["latest_gallery"] = Gallery.objects.first()
         return context
 
@@ -39,7 +37,7 @@ class ArticleDashboardView(
     template_name = "articles/article_dashboard.html"
 
     def get_context_data(self, *args, **kwargs):
-        context = super(ArticleDashboardView, self).get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs)
         context["drafts"] = Article.objects.only_articles().drafts()
         context["published"] = Article.objects.only_articles().published()
         return context
@@ -47,7 +45,7 @@ class ArticleDashboardView(
 
 class TaggedArticleListView(StaffAccessMixin, ListView):
     def get_queryset(self):
-        queryset = super(TaggedArticleListView, self).get_queryset()
+        queryset = super().get_queryset()
         return queryset.tagged(self.kwargs["tag"])
 
 
@@ -68,12 +66,12 @@ class ArticleDetailsView(DetailView):
         return Article.objects.published()
 
     def get_object(self):
-        article = super(ArticleDetailsView, self).get_object()
+        article = super().get_object()
         article.update_pageviews()
         return article
 
     def get_context_data(self, *args, **kwargs):
-        context = super(ArticleDetailsView, self).get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs)
         try:
             context["next_article"] = self.object.get_next_by_created(
                 status="published"

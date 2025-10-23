@@ -1,8 +1,7 @@
 # Copyright (c) Zbigniew Siciarz 2009-2021.
 
-from django import forms
-
 from braces.forms import UserKwargModelFormMixin
+from django import forms
 from slugify import slugify
 
 from .models import Article
@@ -27,7 +26,7 @@ class ArticleForm(forms.ModelForm):
 class ArticleCreateForm(UserKwargModelFormMixin, ArticleForm):
     def save(self, *args, **kwargs):
         kwargs["commit"] = False
-        article = super(ArticleCreateForm, self).save(*args, **kwargs)
+        article = super().save(*args, **kwargs)
         article.author = self.user
         article.slug = slugify(article.title)
         article.save()
